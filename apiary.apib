@@ -11,13 +11,13 @@ API Rest para la aplicación checkin de LAN.com
 + Request (application/json)
        
         {
-            lastName: string
-            application: string
-            checkInput: string
-            portal: string
-            language: string
-            serviceName: string
-            country: prueba2
+            lastName: "string",
+            application: "string",
+            checkInput: "string",
+            portal: "string",
+            language: "string",
+            serviceName: "string,
+            country: "prueba2"
         }
         
 + Response 200 (application/json)
@@ -26,6 +26,7 @@ API Rest para la aplicación checkin de LAN.com
 
             flowId:a4f390e1-af0d-4bcd-8682-fd932d2d8ad
             trackId:4264964
+            Content-Type: application/json
     
     + Body
 
@@ -78,120 +79,5 @@ API Rest para la aplicación checkin de LAN.com
 
         { "id": 3, "title": "Buy cheese and bread for breakfast." }       
        
-
-
-## API Information [/api/get_api_information]
-### Get API information [POST]
-
-
-+ Request (application/json)
-
-        {
-            recordLocator: string
-            application: string
-            segments: 
-                [
-                    {
-                        passengers: [
-                            {
-                                dateOfBirth: stringData
-                                lastName: string
-                                nationality: string
-                                frequentFlyerNumber: string
-                                name: string
-                                gender: string
-                                ticketNumber: string
-                                frequentFlyerProgram: string
-                                productId: string
-                            }
-                        ]
-                        departureAirport: string
-                        arrivalAirport: string
-                        operatingAirline: string
-                    }
-                ]
-            portal: string
-            language: string
-            country: string
-        }
-
-
-+ Response 200 (application/json)
-
-
-    + Header
-
-            flowId:a4f390e1-af0d-4bcd-8682-fd932d2d8ad
-            trackId:4264964
-    
-    + Body
-    
-            {
-                status:
-                {
-                    message: string
-                    code: number
-                }
-                data:
-                    {
-                        passengers: 
-                        [
-                            {
-                                id: string
-                                lastName: string
-                                name: string
-                                ticketNumber: string
-                                blockElements: 
-                                [
-                                    {
-                                        name: string
-                                        fieldElements: 
-                                        [
-                                            {
-                                                elementId: string
-                                                defaultValue: string
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                        identifiers: 
-                        [
-                            {
-                                segmentId: string
-                                passengerId: string
-                                passengerSegmentId: string
-                            }
-                        ]
-                        warningSegments: 
-                        [
-                            {
-                                id: string
-                                departureAirport: string
-                                arrivalCountry: string
-                                arrivalAirport: string
-                                departureCountry: string
-                            }
-                        ]
-                        warnings: 
-                        [
-                            {
-                                latamWarningCode: string
-                                message: string
-                                identificators: 
-                                [
-                                    {
-                                        id: string
-                                        context: string
-                                    }
-                                ]
-                                criticity: string
-                            }
-                        ]
-                    }
-            }
-
-
 
 
