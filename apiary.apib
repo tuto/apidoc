@@ -31,45 +31,45 @@ API Rest para la aplicación checkin de LAN.com
     + Body
 
             {
-                status: {
-                    message: "string",
-                    code: "prueba2",
+                "status": {
+                    "message": "string",
+                    "code": "prueba2",
                 },
-                data: {
-                    journeys: 
+                "data": {
+                    "journeys": 
                     [
                         {
-                            passengers:
+                            "passengers":
                             [
                                 {
-                                dateOfBirth: "datestring",
-                                lastName: "string",
-                                segments: [
+                                "dateOfBirth": "datestring",
+                                "lastName": "string",
+                                "segments": [
                                     {
-                                        id: "string",
-                                        status: "string",
-                                          seat: "string",
-                                        number: "string",
+                                        "id": "string",
+                                        "status": "string",
+                                          "seat": "string",
+                                        "number": "string",
                                     }
                                 ],
-                                status: "string",
-                                passengerId: "string",
-                                infant: 
+                                "status": "string",
+                                "passengerId": "string",
+                                "infant": 
                                     {
-                                    lastName: "string",
-                                    name: "string"
+                                    	"lastName": "string",
+                                   	"name: "string"
                                     },
                                 },
                             ],
-                            openSegments: [],
-                            closeSegments:[],
-                            arrivalCity: {
-                              name: "string",
-                              code: "string",
+                            "openSegments": [],
+                            "closeSegments":[],
+                            "arrivalCity": {
+                              "name": "string",
+                              "code": "string",
                             },
                         },
                     ],
-                recordLocator: "string",
+                "recordLocator": "string",
                 
                 }
             }
