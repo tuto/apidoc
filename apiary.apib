@@ -70,6 +70,22 @@ API Rest para la aplicación checkin de LAN.com
                     "recordLocator": "string" 
                 }             
             }
+
+    + Schema
+
+            {
+                "type": "object",
+                "required": false,
+                "properties": {
+                    "message": {
+                        "type": ["string", "null"],
+                    },
+                    "id": {
+                        "type": "number",
+                    }
+                }
+                "required" : ["status", "number"]
+            }
        
        
 + Response 501 (application/json)
