@@ -3353,15 +3353,15 @@ API Rest para la aplicación checkin de LAN.com
                         "required":false
                     }
                 }
-            }
+            }    
+
++ Response 200 (application/json)       
 
 
     + Header
 
                 flowId:a4f390e1-af0d-4bcd-8682-fd932d2d8ad
                 trackId:4264964     
-
-+ Response 200 (application/json)       
         
     + Body
 
@@ -3466,14 +3466,9 @@ API Rest para la aplicación checkin de LAN.com
                         "required":false
                     }
                 }
-            }
+            }    
 
-            
-
-    + Header
-
-                flowId:a4f390e1-af0d-4bcd-8682-fd932d2d8ad
-                trackId:4264964     
+     
 
 + Response 200 (application/pdf)       
         
@@ -3483,33 +3478,200 @@ API Rest para la aplicación checkin de LAN.com
 ### Get Seat Map Data [POST]
 
 + Request (application/json)
+
+
+    + Header
+
+                flowId:a4f390e1-af0d-4bcd-8682-fd932d2d8ad
+                trackId:4264964   
     
-    {
-        "language":"ES",
-        "country":"CL",
-        "portal":"personas",
-        "application":"checkin",
-        "boardingPassElementRequest":[
-            {
-                "passengerSegmentIdentification":"2317154800006590"
-            }
-        ]
-    }
+    + Body
+
+       {
+            "language": "PT",
+            "country": "BR",
+            "portal": "personas",
+            "application": "checkin",
+            "recordLocator": "6VKQD5",
+            "segments": [
+                {
+                    "segmentNumber": "3339",
+                    "departureAirport": "IGU",
+                    "arrivalAirport": "CGH",
+                    "departureDateTime": "2014-05-07T16:07:00.000",
+                    "arrivalDateTime": "2014-05-07T17:38:00.000",
+                    "legs": [
+                        {
+                            "departureAirport": "IGU",
+                            "arrivalAirport": "CGH",
+                            "departureDateTime": "2014-05-07T16:07:00.000",
+                            "arrivalDateTime": "2014-05-07T17:38:00.000",
+                            "flight": {
+                                "operatingAirline": "JJ",
+                                "number": "3339"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "passengers": [
+                {
+                    "name": "MARIA",
+                    "lastName": "PAULA SOARES SAMPLES",
+                    "typeCode": "ADT",
+                    "gdsIdentification": "2317154800006590"
+                }
+            ]
+        }
 
     + Schema
 
-             
+            {
+                "type":"object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required":false,
+                "properties":{
+                    "application": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "country": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "language": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "passengers": {
+                        "type":"array",
+                        "required":false,
+                        "items":
+                            {
+                                "type":"object",
+                                "required":false,
+                                "properties":{
+                                    "gdsIdentification": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "lastName": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "name": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "typeCode": {
+                                        "type":"string",
+                                        "required":false
+                                    }
+                                }
+                            }
+                        
 
-            
+                    },
+                    "portal": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "recordLocator": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "segments": {
+                        "type":"array",
+                        "required":false,
+                        "items":
+                            {
+                                "type":"object",
+                                "required":false,
+                                "properties":{
+                                    "arrivalAirport": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "arrivalDateTime": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "departureAirport": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "departureDateTime": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "legs": {
+                                        "type":"array",
+                                        "required":false,
+                                        "items":
+                                            {
+                                                "type":"object",
+                                                "required":false,
+                                                "properties":{
+                                                    "arrivalAirport": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "arrivalDateTime": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "departureAirport": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "departureDateTime": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "flight": {
+                                                        "type":"object",
+                                                        "required":false,
+                                                        "properties":{
+                                                            "number": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "operatingAirline": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        
+
+                                    },
+                                    "segmentNumber": {
+                                        "type":"string",
+                                        "required":false
+                                    }
+                                }
+                            }
+                        
+
+                    }
+                }
+            }
+                         
+
+
++ Response 200 (application/json)     
 
     + Header
 
                 flowId:a4f390e1-af0d-4bcd-8682-fd932d2d8ad
                 trackId:4264964     
 
-+ Response 200 (application/json)       
+    + Body  
         
-           {
+        {
                 "status": {
                     "code": 201,
                     "message": "Validation problem has occurred, please view the warnings"
@@ -3896,8 +4058,9 @@ API Rest para la aplicación checkin de LAN.com
                     ]
                 }
             }
+            
               
-        + Schema
+    + Schema
 
             {
                 "type":"object",
