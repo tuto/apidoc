@@ -3468,3 +3468,968 @@ API Rest para la aplicación checkin de LAN.com
      
 
 + Response 200 (application/pdf)
+
+
+
+## Seat Map [/ws/api/checkin/1.0/rest/seat_map/get_seat_map]
+### Get Seat Map Data [POST]
+
++ Request (application/json)
+
+        {
+            "language": "PT",
+            "country": "BR",
+            "portal": "personas",
+            "application": "checkin",
+            "recordLocator": "6VKQD5",
+            "segments": [
+                {
+                    "segmentNumber": "3339",
+                    "departureAirport": "IGU",
+                    "arrivalAirport": "CGH",
+                    "departureDateTime": "2014-05-07T16:07:00.000",
+                    "arrivalDateTime": "2014-05-07T17:38:00.000",
+                    "legs": [
+                        {
+                            "departureAirport": "IGU",
+                            "arrivalAirport": "CGH",
+                            "departureDateTime": "2014-05-07T16:07:00.000",
+                            "arrivalDateTime": "2014-05-07T17:38:00.000",
+                            "flight": {
+                                "operatingAirline": "JJ",
+                                "number": "3339"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "passengers": [
+                {
+                    "name": "MARIA",
+                    "lastName": "PAULA SOARES SAMPLES",
+                    "typeCode": "ADT",
+                    "gdsIdentification": "2317154800006590"
+                }
+            ]
+        }
+
+        + Schema
+
+            {
+                "type":"object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required":false,
+                "properties":{
+                    "application": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "country": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "language": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "passengers": {
+                        "type":"array",
+                        "required":false,
+                        "items":
+                            {
+                                "type":"object",
+                                "required":false,
+                                "properties":{
+                                    "gdsIdentification": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "lastName": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "name": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "typeCode": {
+                                        "type":"string",
+                                        "required":false
+                                    }
+                                }
+                            }
+                        
+
+                    },
+                    "portal": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "recordLocator": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "segments": {
+                        "type":"array",
+                        "required":false,
+                        "items":
+                            {
+                                "type":"object",
+                                "required":false,
+                                "properties":{
+                                    "arrivalAirport": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "arrivalDateTime": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "departureAirport": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "departureDateTime": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "legs": {
+                                        "type":"array",
+                                        "required":false,
+                                        "items":
+                                            {
+                                                "type":"object",
+                                                "required":false,
+                                                "properties":{
+                                                    "arrivalAirport": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "arrivalDateTime": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "departureAirport": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "departureDateTime": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "flight": {
+                                                        "type":"object",
+                                                        "required":false,
+                                                        "properties":{
+                                                            "number": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "operatingAirline": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        
+
+                                    },
+                                    "segmentNumber": {
+                                        "type":"string",
+                                        "required":false
+                                    }
+                                }
+                            }
+                        
+
+                    }
+                }
+            }
+                         
+
+
++ Response 200 (application/json)     
+
+    + Header
+
+                flowId:a4f390e1-af0d-4bcd-8682-fd932d2d8ad
+                trackId:4264964     
+
+    + Body  
+        
+            {
+                "status": {
+                    "code": 201,
+                    "message": "Validation problem has occurred, please view the warnings"
+                },
+                "data": {
+                    "passengers": [
+                        {
+                            "paxNumber": 1,
+                            "lastName": "PAULA SOARES SAMPLES",
+                            "name": "MARIA"
+                        }
+                    ],
+                    "segments": [
+                        {
+                            "segmentNumber": 1,
+                            "arrivalAirport": {
+                                "code": "CGH",
+                                "name": "SAO PAULO - CONGONHAS"
+                            },
+                            "arrivalCity": {
+                                "code": "SAO",
+                                "name": "S&atilde;o Paulo"
+                            },
+                            "departureCity": {
+                                "code": "IGU",
+                                "name": "Foz do Igua&ccedil;u"
+                            },
+                            "departureAirport": {
+                                "code": "IGU",
+                                "name": "CATARATAS"
+                            },
+                            "legs": [
+                                {
+                                    "legNumber": 1,
+                                    "arrivalAirport": {
+                                        "code": "CGH",
+                                        "name": "SAO PAULO - CONGONHAS"
+                                    },
+                                    "arrivalCity": {
+                                        "code": "SAO",
+                                        "name": "S&atilde;o Paulo"
+                                    },
+                                    "departureAirport": {
+                                        "code": "IGU",
+                                        "name": "CATARATAS"
+                                    },
+                                    "departureCity": {
+                                        "code": "IGU",
+                                        "name": "Foz do Igua&ccedil;u"
+                                    },
+                                    "flight": {
+                                        "marketingAirline": "JJ",
+                                        "operatingAirline": "JJ",
+                                        "number": 3339,
+                                        "seatMap": {
+                                            "cabins": [
+                                                {
+                                                    "cabinId": "Y",
+                                                    "columns": [
+                                                        {
+                                                            "columnId": "A",
+                                                            "seats": [
+                                                                {
+                                                                    "row": 1,
+                                                                    "statusCode": "A",
+                                                                    "status": "AVAILABLE",
+                                                                    "characteristics": {
+                                                                        "window": true,
+                                                                        "aisle": false,
+                                                                        "wing": false,
+                                                                        "emergencyExit": false,
+                                                                        "exit": false
+                                                                    },
+                                                                    "displayCategories": {
+                                                                        "comodoro": "normal",
+                                                                        "normal": "normal",
+                                                                        "cip": "normal"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "row": 29,
+                                                                    "statusCode": "A",
+                                                                    "status": "AVAILABLE",
+                                                                    "characteristics": {
+                                                                        "window": true,
+                                                                        "aisle": false,
+                                                                        "wing": false,
+                                                                        "emergencyExit": false,
+                                                                        "exit": false
+                                                                    },
+                                                                    "displayCategories": {
+                                                                        "comodoro": "normal",
+                                                                        "normal": "normal",
+                                                                        "cip": "normal"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "columnId": "B",
+                                                            "seats": [
+                                                                {
+                                                                    "row": 1,
+                                                                    "statusCode": "A",
+                                                                    "status": "AVAILABLE",
+                                                                    "characteristics": {
+                                                                        "window": false,
+                                                                        "aisle": false,
+                                                                        "wing": false,
+                                                                        "emergencyExit": false,
+                                                                        "exit": false
+                                                                    },
+                                                                    "displayCategories": {
+                                                                        "comodoro": "normal",
+                                                                        "normal": "normal",
+                                                                        "cip": "normal"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "row": 29,
+                                                                    "statusCode": "A",
+                                                                    "status": "AVAILABLE",
+                                                                    "characteristics": {
+                                                                        "window": false,
+                                                                        "aisle": false,
+                                                                        "wing": false,
+                                                                        "emergencyExit": false,
+                                                                        "exit": false
+                                                                    },
+                                                                    "displayCategories": {
+                                                                        "comodoro": "normal",
+                                                                        "normal": "normal",
+                                                                        "cip": "normal"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "columnId": "C",
+                                                            "seats": [
+                                                                {
+                                                                    "row": 1,
+                                                                    "statusCode": "A",
+                                                                    "status": "AVAILABLE",
+                                                                    "characteristics": {
+                                                                        "window": false,
+                                                                        "aisle": true,
+                                                                        "wing": false,
+                                                                        "emergencyExit": false,
+                                                                        "exit": false
+                                                                    },
+                                                                    "displayCategories": {
+                                                                        "comodoro": "normal",
+                                                                        "normal": "normal",
+                                                                        "cip": "normal"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "row": 28,
+                                                                    "statusCode": "A",
+                                                                    "status": "AVAILABLE",
+                                                                    "characteristics": {
+                                                                        "window": false,
+                                                                        "aisle": true,
+                                                                        "wing": false,
+                                                                        "emergencyExit": false,
+                                                                        "exit": false
+                                                                    },
+                                                                    "displayCategories": {
+                                                                        "comodoro": "normal",
+                                                                        "normal": "normal",
+                                                                        "cip": "normal"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "row": 29,
+                                                                    "statusCode": "A",
+                                                                    "status": "AVAILABLE",
+                                                                    "characteristics": {
+                                                                        "window": false,
+                                                                        "aisle": true,
+                                                                        "wing": false,
+                                                                        "emergencyExit": false,
+                                                                        "exit": false
+                                                                    },
+                                                                    "displayCategories": {
+                                                                        "comodoro": "normal",
+                                                                        "normal": "normal",
+                                                                        "cip": "normal"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "columnId": "D",
+                                                            "seats": [
+                                                                {
+                                                                    "row": 1,
+                                                                    "statusCode": "U",
+                                                                    "status": "UNAVAILABLE",
+                                                                    "characteristics": {
+                                                                        "window": false,
+                                                                        "aisle": true,
+                                                                        "wing": false,
+                                                                        "emergencyExit": false,
+                                                                        "exit": false
+                                                                    },
+                                                                    "displayCategories": {
+                                                                        "comodoro": "normal",
+                                                                        "normal": "normal",
+                                                                        "cip": "normal"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "row": 27,
+                                                                    "statusCode": "A",
+                                                                    "status": "AVAILABLE",
+                                                                    "characteristics": {
+                                                                        "window": false,
+                                                                        "aisle": true,
+                                                                        "wing": false,
+                                                                        "emergencyExit": false,
+                                                                        "exit": false
+                                                                    },
+                                                                    "displayCategories": {
+                                                                        "comodoro": "normal",
+                                                                        "normal": "normal",
+                                                                        "cip": "normal"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "row": 28,
+                                                                    "statusCode": "A",
+                                                                    "status": "AVAILABLE",
+                                                                    "characteristics": {
+                                                                        "window": false,
+                                                                        "aisle": true,
+                                                                        "wing": false,
+                                                                        "emergencyExit": false,
+                                                                        "exit": false
+                                                                    },
+                                                                    "displayCategories": {
+                                                                        "comodoro": "normal",
+                                                                        "normal": "normal",
+                                                                        "cip": "normal"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "row": 29,
+                                                                    "statusCode": "A",
+                                                                    "status": "AVAILABLE",
+                                                                    "characteristics": {
+                                                                        "window": false,
+                                                                        "aisle": true,
+                                                                        "wing": false,
+                                                                        "emergencyExit": false,
+                                                                        "exit": false
+                                                                    },
+                                                                    "displayCategories": {
+                                                                        "comodoro": "normal",
+                                                                        "normal": "normal",
+                                                                        "cip": "normal"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "columnId": "E",
+                                                            "seats": [
+                                                                {
+                                                                    "row": 1,
+                                                                    "statusCode": "A",
+                                                                    "status": "AVAILABLE",
+                                                                    "characteristics": {
+                                                                        "window": false,
+                                                                        "aisle": false,
+                                                                        "wing": false,
+                                                                        "emergencyExit": false,
+                                                                        "exit": false
+                                                                    },
+                                                                    "displayCategories": {
+                                                                        "comodoro": "normal",
+                                                                        "normal": "normal",
+                                                                        "cip": "normal"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "row": 29,
+                                                                    "statusCode": "A",
+                                                                    "status": "AVAILABLE",
+                                                                    "characteristics": {
+                                                                        "window": false,
+                                                                        "aisle": false,
+                                                                        "wing": false,
+                                                                        "emergencyExit": false,
+                                                                        "exit": false
+                                                                    },
+                                                                    "displayCategories": {
+                                                                        "comodoro": "normal",
+                                                                        "normal": "normal",
+                                                                        "cip": "normal"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "columnId": "F",
+                                                            "seats": [
+                                                                {
+                                                                    "row": 1,
+                                                                    "statusCode": "A",
+                                                                    "status": "AVAILABLE",
+                                                                    "characteristics": {
+                                                                        "window": true,
+                                                                        "aisle": false,
+                                                                        "wing": false,
+                                                                        "emergencyExit": false,
+                                                                        "exit": false
+                                                                    },
+                                                                    "displayCategories": {
+                                                                        "comodoro": "normal",
+                                                                        "normal": "normal",
+                                                                        "cip": "normal"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "row": 28,
+                                                                    "statusCode": "A",
+                                                                    "status": "AVAILABLE",
+                                                                    "characteristics": {
+                                                                        "window": true,
+                                                                        "aisle": false,
+                                                                        "wing": false,
+                                                                        "emergencyExit": false,
+                                                                        "exit": false
+                                                                    },
+                                                                    "displayCategories": {
+                                                                        "comodoro": "normal",
+                                                                        "normal": "normal",
+                                                                        "cip": "normal"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "row": 29,
+                                                                    "statusCode": "A",
+                                                                    "status": "AVAILABLE",
+                                                                    "characteristics": {
+                                                                        "window": true,
+                                                                        "aisle": false,
+                                                                        "wing": false,
+                                                                        "emergencyExit": false,
+                                                                        "exit": false
+                                                                    },
+                                                                    "displayCategories": {
+                                                                        "comodoro": "normal",
+                                                                        "normal": "normal",
+                                                                        "cip": "normal"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "estimatedArrivalDateTime": "2014-05-07T17:38:00.000Z",
+                                        "estimatedDepartureDateTime": "2014-05-07T16:07:00.000Z",
+                                        "equipment": "320"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "message": "Infelizmente, n&atilde;o &eacute; poss&iacute;vel continuar com seu Check-in. Dirija-se at&eacute; o balc&atilde;o do aeroporto no dia da viagem para emitir seus cart&otilde;es de embarque.",
+                            "criticity": "error",
+                            "contextIdentifiers": [],
+                            "warningCode": "3006"
+                        }
+                    ],
+                    "Identifiers": [
+                        {}
+                    ]
+                }
+            }
+            
+              
+    + Schema
+
+            {
+                "type":"object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required":false,
+                "properties":{
+                    "data": {
+                        "type":"object",
+                        "required":false,
+                        "properties":{
+                            "Identifiers": {
+                                "type":"array",
+                                "required":false,
+                                "items":
+                                    {
+                                        "type":"object",
+                                        "required":false
+                                    }
+                                
+
+                            },
+                            "passengers": {
+                                "type":"array",
+                                "required":false,
+                                "items":
+                                    {
+                                        "type":"object",
+                                        "required":false,
+                                        "properties":{
+                                            "lastName": {
+                                                "type":"string",
+                                                "required":false
+                                            },
+                                            "name": {
+                                                "type":"string",
+                                                "required":false
+                                            },
+                                            "paxNumber": {
+                                                "type":"number",
+                                                "required":false
+                                            }
+                                        }
+                                    }
+                                
+
+                            },
+                            "segments": {
+                                "type":"array",
+                                "required":false,
+                                "items":
+                                    {
+                                        "type":"object",
+                                        "required":false,
+                                        "properties":{
+                                            "arrivalAirport": {
+                                                "type":"object",
+                                                "required":false,
+                                                "properties":{
+                                                    "code": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "name": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    }
+                                                }
+                                            },
+                                            "arrivalCity": {
+                                                "type":"object",
+                                                "required":false,
+                                                "properties":{
+                                                    "code": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "name": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    }
+                                                }
+                                            },
+                                            "departureAirport": {
+                                                "type":"object",
+                                                "required":false,
+                                                "properties":{
+                                                    "code": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "name": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    }
+                                                }
+                                            },
+                                            "departureCity": {
+                                                "type":"object",
+                                                "required":false,
+                                                "properties":{
+                                                    "code": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "name": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    }
+                                                }
+                                            },
+                                            "legs": {
+                                                "type":"array",
+                                                "required":false,
+                                                "items":
+                                                    {
+                                                        "type":"object",
+                                                        "required":false,
+                                                        "properties":{
+                                                            "arrivalAirport": {
+                                                                "type":"object",
+                                                                "required":false,
+                                                                "properties":{
+                                                                    "code": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    },
+                                                                    "name": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    }
+                                                                }
+                                                            },
+                                                            "arrivalCity": {
+                                                                "type":"object",
+                                                                "required":false,
+                                                                "properties":{
+                                                                    "code": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    },
+                                                                    "name": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    }
+                                                                }
+                                                            },
+                                                            "departureAirport": {
+                                                                "type":"object",
+                                                                "required":false,
+                                                                "properties":{
+                                                                    "code": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    },
+                                                                    "name": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    }
+                                                                }
+                                                            },
+                                                            "departureCity": {
+                                                                "type":"object",
+                                                                "required":false,
+                                                                "properties":{
+                                                                    "code": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    },
+                                                                    "name": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    }
+                                                                }
+                                                            },
+                                                            "flight": {
+                                                                "type":"object",
+                                                                "required":false,
+                                                                "properties":{
+                                                                    "equipment": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    },
+                                                                    "estimatedArrivalDateTime": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    },
+                                                                    "estimatedDepartureDateTime": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    },
+                                                                    "marketingAirline": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    },
+                                                                    "number": {
+                                                                        "type":"number",
+                                                                        "required":false
+                                                                    },
+                                                                    "operatingAirline": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    },
+                                                                    "seatMap": {
+                                                                        "type":"object",
+                                                                        "required":false,
+                                                                        "properties":{
+                                                                            "cabins": {
+                                                                                "type":"array",
+                                                                                "required":false,
+                                                                                "items":
+                                                                                    {
+                                                                                        "type":"object",
+                                                                                        "required":false,
+                                                                                        "properties":{
+                                                                                            "cabinId": {
+                                                                                                "type":"string",
+                                                                                                "required":false
+                                                                                            },
+                                                                                            "columns": {
+                                                                                                "type":"array",
+                                                                                                "required":false,
+                                                                                                "items":
+                                                                                                    {
+                                                                                                        "type":"object",
+                                                                                                        "required":false,
+                                                                                                        "properties":{
+                                                                                                            "columnId": {
+                                                                                                                "type":"string",
+                                                                                                                "required":false
+                                                                                                            },
+                                                                                                            "seats": {
+                                                                                                                "type":"array",
+                                                                                                                "required":false,
+                                                                                                                "items":
+                                                                                                                    {
+                                                                                                                        "type":"object",
+                                                                                                                        "required":false,
+                                                                                                                        "properties":{
+                                                                                                                            "characteristics": {
+                                                                                                                                "type":"object",
+                                                                                                                                "required":false,
+                                                                                                                                "properties":{
+                                                                                                                                    "aisle": {
+                                                                                                                                        "type":"boolean",
+                                                                                                                                        "required":false
+                                                                                                                                    },
+                                                                                                                                    "emergencyExit": {
+                                                                                                                                        "type":"boolean",
+                                                                                                                                        "required":false
+                                                                                                                                    },
+                                                                                                                                    "exit": {
+                                                                                                                                        "type":"boolean",
+                                                                                                                                        "required":false
+                                                                                                                                    },
+                                                                                                                                    "window": {
+                                                                                                                                        "type":"boolean",
+                                                                                                                                        "required":false
+                                                                                                                                    },
+                                                                                                                                    "wing": {
+                                                                                                                                        "type":"boolean",
+                                                                                                                                        "required":false
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                            },
+                                                                                                                            "displayCategories": {
+                                                                                                                                "type":"object",
+                                                                                                                                "required":false,
+                                                                                                                                "properties":{
+                                                                                                                                    "cip": {
+                                                                                                                                        "type":"string",
+                                                                                                                                        "required":false
+                                                                                                                                    },
+                                                                                                                                    "comodoro": {
+                                                                                                                                        "type":"string",
+                                                                                                                                        "required":false
+                                                                                                                                    },
+                                                                                                                                    "normal": {
+                                                                                                                                        "type":"string",
+                                                                                                                                        "required":false
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                            },
+                                                                                                                            "row": {
+                                                                                                                                "type":"number",
+                                                                                                                                "required":false
+                                                                                                                            },
+                                                                                                                            "statusCode": {
+                                                                                                                                "type":"string",
+                                                                                                                                "required":false
+                                                                                                                            },
+                                                                                                                            "status": {
+                                                                                                                                "type":"string",
+                                                                                                                                "required":false
+                                                                                                                            }
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                
+
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                
+
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                
+
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                            "legNumber": {
+                                                                "type":"number",
+                                                                "required":false
+                                                            }
+                                                        }
+                                                    }
+                                                
+
+                                            },
+                                            "segmentNumber": {
+                                                "type":"number",
+                                                "required":false
+                                            }
+                                        }
+                                    }
+                                
+
+                            },
+                            "warnings": {
+                                "type":"array",
+                                "required":false,
+                                "items":
+                                    {
+                                        "type":"object",
+                                        "required":false,
+                                        "properties":{
+                                            "contextIdentifiers": {
+                                                "type":"array",
+                                                "required":false
+                                            },
+                                            "criticity": {
+                                                "type":"string",
+                                                "required":false
+                                            },
+                                            "message": {
+                                                "type":"string",
+                                                "required":false
+                                            },
+                                            "warningCode": {
+                                                "type":"string",
+                                                "required":false
+                                            }
+                                        }
+                                    }
+                                
+
+                            }
+                        }
+                    },
+                    "status": {
+                        "type":"object",
+                        "required":false,
+                        "properties":{
+                            "code": {
+                                "type":"number",
+                                "required":false
+                            },
+                            "message": {
+                                "type":"string",
+                                "required":false
+                            }
+                        }
+                    }
+                }
+            }
+
+
+           
+            
