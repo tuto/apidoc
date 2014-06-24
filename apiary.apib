@@ -1714,80 +1714,494 @@ API Rest para la aplicación checkin de LAN.com
 ### Check Passengers [POST]
 
 + Request (application/json)
-       
-        {
+
+       {
+            "language": "PT",
+            "country": "BR",
+            "portal": "personas",
+            "recordLocator": "6VKQD5",
+            "surName": "SIMPSON",
             "application": "checkin",
-            "nationality": "BR",
             "segments": [
                 {
-                    "departureAirportCode": "IGU",
-                    "arrivalAirportCode": "CGH"
+                    "flightNumber": "3339",
+                    "departureAirport": "IGU",
+                    "arrivalAirport": "CGH",
+                    "departureDateTime": "07-05-2014 16:07",
+                    "arrivalDateTime": "07-05-2014 17:38",
+                    "operatingAirline": "JJ",
+                    "passengers": [
+                        {
+                            "foid": {
+                                "number": "3215487",
+                                "type": "PP",
+                                "country": "BR"
+                            },
+                            "name": "maria",
+                            "lastName": "paula soares samples",
+                            "ticketNumber": "9572483127883",
+                            "seatNumber": "4A",
+                            "apiInformation": [
+                                {
+                                    "elementId": "ticketNumber",
+                                    "value": "9572483127883"
+                                },
+                                {
+                                    "elementId": "emergencyContactName",
+                                    "value": "fulano"
+                                },
+                                {
+                                    "elementId": "areaPhoneCode",
+                                    "value": "321"
+                                },
+                                {
+                                    "elementId": "countryPhoneCode",
+                                    "value": "55"
+                                },
+                                {
+                                    "elementId": "phoneNumber",
+                                    "value": "654987"
+                                },
+                                {
+                                    "elementId": "countryPhone",
+                                    "value": "BR"
+                                },
+                                {
+                                    "elementId": "phoneType",
+                                    "value": "1"
+                                },
+                                {
+                                    "elementId": "frequentFlyerProgram",
+                                    "value": "JJ"
+                                },
+                                {
+                                    "elementId": "frequentFlyerNumber",
+                                    "value": "1681462637"
+                                },
+                                {
+                                    "elementId": "dateOfBirth",
+                                    "value": "1985-10-10"
+                                },
+                                {
+                                    "elementId": "nationality",
+                                    "value": "BR"
+                                },
+                                {
+                                    "elementId": "foidNumber",
+                                    "value": "3215487"
+                                },
+                                {
+                                    "elementId": "foidType",
+                                    "value": "PP"
+                                },
+                                {
+                                    "elementId": "genre",
+                                    "value": "F"
+                                },
+                                {
+                                    "elementId": "passportIssueCountry",
+                                    "value": "BR"
+                                },
+                                {
+                                    "elementId": "passportExpirationDate",
+                                    "value": "2018-10-10"
+                                }
+                            ],
+                            "id": "2317154800006590"
+                        },
+                        {
+                            "foid": {
+                                "number": "3216549875",
+                                "type": "PP",
+                                "country": "BR"
+                            },
+                            "name": "lisa",
+                            "lastName": "simpson",
+                            "ticketNumber": "9572483127885",
+                            "seatNumber": "5A",
+                            "apiInformation": [
+                                {
+                                    "elementId": "ticketNumber",
+                                    "value": "9572483127885"
+                                },
+                                {
+                                    "elementId": "emergencyContactName",
+                                    "value": "fulano"
+                                },
+                                {
+                                    "elementId": "areaPhoneCode",
+                                    "value": "654"
+                                },
+                                {
+                                    "elementId": "countryPhoneCode",
+                                    "value": "55"
+                                },
+                                {
+                                    "elementId": "phoneNumber",
+                                    "value": "987526"
+                                },
+                                {
+                                    "elementId": "countryPhone",
+                                    "value": "BR"
+                                },
+                                {
+                                    "elementId": "phoneType",
+                                    "value": "1"
+                                },
+                                {
+                                    "elementId": "dateOfBirth",
+                                    "value": "2011-04-05"
+                                },
+                                {
+                                    "elementId": "nationality",
+                                    "value": "BR"
+                                },
+                                {
+                                    "elementId": "foidNumber",
+                                    "value": "3216549875"
+                                },
+                                {
+                                    "elementId": "foidType",
+                                    "value": "PP"
+                                },
+                                {
+                                    "elementId": "genre",
+                                    "value": "F"
+                                },
+                                {
+                                    "elementId": "passportIssueCountry",
+                                    "value": "BR"
+                                },
+                                {
+                                    "elementId": "passportExpirationDate",
+                                    "value": "2018-10-10"
+                                }
+                            ],
+                            "id": "231715480000658F"
+                        }
+                    ]
                 },
                 {
-                    "departureAirportCode": "CGH",
-                    "arrivalAirportCode": "SDU"
+                    "flightNumber": "3952",
+                    "departureAirport": "CGH",
+                    "arrivalAirport": "SDU",
+                    "departureDateTime": "07-05-2014 19:00",
+                    "arrivalDateTime": "07-05-2014 20:06",
+                    "operatingAirline": "JJ",
+                    "passengers": [
+                        {
+                            "foid": {
+                                "number": "3215487",
+                                "type": "PP",
+                                "country": "BR"
+                            },
+                            "name": "maria",
+                            "lastName": "paula soares samples",
+                            "ticketNumber": "9572483127883",
+                            "seatNumber": "5A",
+                            "apiInformation": [
+                                {
+                                    "elementId": "ticketNumber",
+                                    "value": "9572483127883"
+                                },
+                                {
+                                    "elementId": "emergencyContactName",
+                                    "value": "fulano"
+                                },
+                                {
+                                    "elementId": "areaPhoneCode",
+                                    "value": "321"
+                                },
+                                {
+                                    "elementId": "countryPhoneCode",
+                                    "value": "55"
+                                },
+                                {
+                                    "elementId": "phoneNumber",
+                                    "value": "654987"
+                                },
+                                {
+                                    "elementId": "countryPhone",
+                                    "value": "BR"
+                                },
+                                {
+                                    "elementId": "phoneType",
+                                    "value": "1"
+                                },
+                                {
+                                    "elementId": "frequentFlyerProgram",
+                                    "value": "JJ"
+                                },
+                                {
+                                    "elementId": "frequentFlyerNumber",
+                                    "value": "1681462637"
+                                },
+                                {
+                                    "elementId": "dateOfBirth",
+                                    "value": "1985-10-10"
+                                },
+                                {
+                                    "elementId": "nationality",
+                                    "value": "BR"
+                                },
+                                {
+                                    "elementId": "foidNumber",
+                                    "value": "3215487"
+                                },
+                                {
+                                    "elementId": "foidType",
+                                    "value": "PP"
+                                },
+                                {
+                                    "elementId": "genre",
+                                    "value": "F"
+                                },
+                                {
+                                    "elementId": "passportIssueCountry",
+                                    "value": "BR"
+                                },
+                                {
+                                    "elementId": "passportExpirationDate",
+                                    "value": "2018-10-10"
+                                }
+                            ],
+                            "id": "2317154800006593"
+                        },
+                        {
+                            "foid": {
+                                "number": "3216549875",
+                                "type": "PP",
+                                "country": "BR"
+                            },
+                            "name": "lisa",
+                            "lastName": "simpson",
+                            "ticketNumber": "9572483127885",
+                            "seatNumber": "6A",
+                            "apiInformation": [
+                                {
+                                    "elementId": "ticketNumber",
+                                    "value": "9572483127885"
+                                },
+                                {
+                                    "elementId": "emergencyContactName",
+                                    "value": "fulano"
+                                },
+                                {
+                                    "elementId": "areaPhoneCode",
+                                    "value": "654"
+                                },
+                                {
+                                    "elementId": "countryPhoneCode",
+                                    "value": "55"
+                                },
+                                {
+                                    "elementId": "phoneNumber",
+                                    "value": "987526"
+                                },
+                                {
+                                    "elementId": "countryPhone",
+                                    "value": "BR"
+                                },
+                                {
+                                    "elementId": "phoneType",
+                                    "value": "1"
+                                },
+                                {
+                                    "elementId": "dateOfBirth",
+                                    "value": "2011-04-05"
+                                },
+                                {
+                                    "elementId": "nationality",
+                                    "value": "BR"
+                                },
+                                {
+                                    "elementId": "foidNumber",
+                                    "value": "3216549875"
+                                },
+                                {
+                                    "elementId": "foidType",
+                                    "value": "PP"
+                                },
+                                {
+                                    "elementId": "genre",
+                                    "value": "F"
+                                },
+                                {
+                                    "elementId": "passportIssueCountry",
+                                    "value": "BR"
+                                },
+                                {
+                                    "elementId": "passportExpirationDate",
+                                    "value": "2018-10-10"
+                                }
+                            ],
+                            "id": "2317154800006592"
+                        }
+                    ]
                 },
                 {
-                    "departureAirportCode": "GIG",
-                    "arrivalAirportCode": "POA"
+                    "flightNumber": "3411",
+                    "departureAirport": "GIG",
+                    "arrivalAirport": "POA",
+                    "departureDateTime": "08-05-2014 08:14",
+                    "arrivalDateTime": "08-05-2014 10:17",
+                    "operatingAirline": "JJ",
+                    "passengers": [
+                        {
+                            "foid": {
+                                "number": "3215487",
+                                "type": "PP",
+                                "country": "BR"
+                            },
+                            "name": "maria",
+                            "lastName": "paula soares samples",
+                            "ticketNumber": "9572483127883",
+                            "seatNumber": "5A",
+                            "apiInformation": [
+                                {
+                                    "elementId": "ticketNumber",
+                                    "value": "9572483127883"
+                                },
+                                {
+                                    "elementId": "emergencyContactName",
+                                    "value": "fulano"
+                                },
+                                {
+                                    "elementId": "areaPhoneCode",
+                                    "value": "321"
+                                },
+                                {
+                                    "elementId": "countryPhoneCode",
+                                    "value": "55"
+                                },
+                                {
+                                    "elementId": "phoneNumber",
+                                    "value": "654987"
+                                },
+                                {
+                                    "elementId": "countryPhone",
+                                    "value": "BR"
+                                },
+                                {
+                                    "elementId": "phoneType",
+                                    "value": "1"
+                                },
+                                {
+                                    "elementId": "frequentFlyerProgram",
+                                    "value": "JJ"
+                                },
+                                {
+                                    "elementId": "frequentFlyerNumber",
+                                    "value": "1681462637"
+                                },
+                                {
+                                    "elementId": "dateOfBirth",
+                                    "value": "1985-10-10"
+                                },
+                                {
+                                    "elementId": "nationality",
+                                    "value": "BR"
+                                },
+                                {
+                                    "elementId": "foidNumber",
+                                    "value": "3215487"
+                                },
+                                {
+                                    "elementId": "foidType",
+                                    "value": "PP"
+                                },
+                                {
+                                    "elementId": "genre",
+                                    "value": "F"
+                                },
+                                {
+                                    "elementId": "passportIssueCountry",
+                                    "value": "BR"
+                                },
+                                {
+                                    "elementId": "passportExpirationDate",
+                                    "value": "2018-10-10"
+                                }
+                            ],
+                            "id": "2317154800006596"
+                        },
+                        {
+                            "foid": {
+                                "number": "3216549875",
+                                "type": "PP",
+                                "country": "BR"
+                            },
+                            "name": "lisa",
+                            "lastName": "simpson",
+                            "ticketNumber": "9572483127885",
+                            "seatNumber": "6A",
+                            "apiInformation": [
+                                {
+                                    "elementId": "ticketNumber",
+                                    "value": "9572483127885"
+                                },
+                                {
+                                    "elementId": "emergencyContactName",
+                                    "value": "fulano"
+                                },
+                                {
+                                    "elementId": "areaPhoneCode",
+                                    "value": "654"
+                                },
+                                {
+                                    "elementId": "countryPhoneCode",
+                                    "value": "55"
+                                },
+                                {
+                                    "elementId": "phoneNumber",
+                                    "value": "987526"
+                                },
+                                {
+                                    "elementId": "countryPhone",
+                                    "value": "BR"
+                                },
+                                {
+                                    "elementId": "phoneType",
+                                    "value": "1"
+                                },
+                                {
+                                    "elementId": "dateOfBirth",
+                                    "value": "2011-04-05"
+                                },
+                                {
+                                    "elementId": "nationality",
+                                    "value": "BR"
+                                },
+                                {
+                                    "elementId": "foidNumber",
+                                    "value": "3216549875"
+                                },
+                                {
+                                    "elementId": "foidType",
+                                    "value": "PP"
+                                },
+                                {
+                                    "elementId": "genre",
+                                    "value": "F"
+                                },
+                                {
+                                    "elementId": "passportIssueCountry",
+                                    "value": "BR"
+                                },
+                                {
+                                    "elementId": "passportExpirationDate",
+                                    "value": "2018-10-10"
+                                }
+                            ],
+                            "id": "2317154800006595"
+                        }
+                    ]
                 }
-            ],
-            "portal": "personas",
-            "language": "PT",
-            "country": "BR"
+            ]
         }
 
-        + Schema
+   
 
-            {
-                "type":"object",
-                "$schema": "http://json-schema.org/draft-03/schema",
-                "id": "http://jsonschema.net",
-                "required":false,
-                "properties":{
-                    "application": {
-                        "type":"string",
-                        "required":false
-                    },
-                    "country": {
-                        "type":"string",
-                        "required":false
-                    },
-                    "language": {
-                        "type":"string",
-                        "required":false
-                    },
-                    "nationality": {
-                        "type":"string",
-                        "required":false
-                    },
-                    "portal": {
-                        "type":"string",
-                        "required":false
-                    },
-                    "segments": {
-                        "type":"array",
-                        "required":false,
-                        "items":
-                            {
-                                "type":"object",
-                                "required":false,
-                                "properties":{
-                                    "arrivalAirportCode": {
-                                        "type":"string",
-                                        "required":false
-                                    },
-                                    "departureAirportCode": {
-                                        "type":"string",
-                                        "required":false
-                                    }
-                                }
-                            }
-                        
-
-                    }
-                }
-            }
 
 
     
