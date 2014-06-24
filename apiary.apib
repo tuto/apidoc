@@ -3176,22 +3176,68 @@ API Rest para la aplicación checkin de LAN.com
 
 + Request (application/json)
 
-    {
-        "language":"ES",
-        "country":"CL",
-        "portal":"personas",
-        "application":"checkin",
-        "email":"jsd@csda.com",
-        "boardingPassElementRequest":[
+        {
+            "language":"ES",
+            "country":"CL",
+            "portal":"personas",
+            "application":"checkin",
+            "email":"jsd@csda.com",
+            "boardingPassElementRequest":[
+                {
+                    "passengerSegmentIdentification":2317154800006512
+                }
+            ]
+        }
+
+    + Schema
+
             {
-                "passengerSegmentIdentification":2317154800006512
+                "type":"object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required":false,
+                "properties":{
+                    "application": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "boardingPassElementRequest": {
+                        "type":"array",
+                        "required":false,
+                        "items":
+                            {
+                                "type":"object",
+                                "required":false,
+                                "properties":{
+                                    "passengerSegmentIdentification": {
+                                        "type":"number",
+                                        "required":false
+                                    }
+                                }
+                            }
+                        
+
+                    },
+                    "country": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "email": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "language": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "portal": {
+                        "type":"string",
+                        "required":false
+                    }
+                }
             }
-        ]
-    }
+    
 
-
-
-        
 
 + Response 200 (application/json)
 
