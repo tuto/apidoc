@@ -3488,41 +3488,41 @@ API Rest para la aplicación checkin de LAN.com
     + Body
 
             {
-            "language": "PT",
-            "country": "BR",
-            "portal": "personas",
-            "application": "checkin",
-            "recordLocator": "6VKQD5",
-            "segments": [
-                {
-                    "segmentNumber": "3339",
-                    "departureAirport": "IGU",
-                    "arrivalAirport": "CGH",
-                    "departureDateTime": "2014-05-07T16:07:00.000",
-                    "arrivalDateTime": "2014-05-07T17:38:00.000",
-                    "legs": [
-                        {
-                            "departureAirport": "IGU",
-                            "arrivalAirport": "CGH",
-                            "departureDateTime": "2014-05-07T16:07:00.000",
-                            "arrivalDateTime": "2014-05-07T17:38:00.000",
-                            "flight": {
-                                "operatingAirline": "JJ",
-                                "number": "3339"
+                "language": "PT",
+                "country": "BR",
+                "portal": "personas",
+                "application": "checkin",
+                "recordLocator": "6VKQD5",
+                "segments": [
+                    {
+                        "segmentNumber": "3339",
+                        "departureAirport": "IGU",
+                        "arrivalAirport": "CGH",
+                        "departureDateTime": "2014-05-07T16:07:00.000",
+                        "arrivalDateTime": "2014-05-07T17:38:00.000",
+                        "legs": [
+                            {
+                                "departureAirport": "IGU",
+                                "arrivalAirport": "CGH",
+                                "departureDateTime": "2014-05-07T16:07:00.000",
+                                "arrivalDateTime": "2014-05-07T17:38:00.000",
+                                "flight": {
+                                    "operatingAirline": "JJ",
+                                    "number": "3339"
+                                }
                             }
-                        }
-                    ]
-                }
-            ],
-            "passengers": [
-                {
-                    "name": "MARIA",
-                    "lastName": "PAULA SOARES SAMPLES",
-                    "typeCode": "ADT",
-                    "gdsIdentification": "2317154800006590"
-                }
-            ]
-        }
+                        ]
+                    }
+                ],
+                "passengers": [
+                    {
+                        "name": "MARIA",
+                        "lastName": "PAULA SOARES SAMPLES",
+                        "typeCode": "ADT",
+                        "gdsIdentification": "2317154800006590"
+                    }
+                ]
+            }
 
     + Schema
 
@@ -3671,7 +3671,7 @@ API Rest para la aplicación checkin de LAN.com
 
     + Body  
         
-        {
+            {
                 "status": {
                     "code": 201,
                     "message": "Validation problem has occurred, please view the warnings"
