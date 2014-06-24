@@ -3172,3 +3172,314 @@ API Rest para la aplicación checkin de LAN.com
                     }
                 }
             }
+
+
+## Email Boarding Pass [/ws/api/checkin/1.0/rest/document/send_email_boarding_pass]
+### Send Email Boarding Pass [POST]
+
++ Request (application/json)
+
+    {
+        "language":"ES",
+        "country":"CL",
+        "portal":"personas",
+        "application":"checkin",
+        "email":"jsd@csda.com",
+        "boardingPassElementRequest":[
+            {
+                "passengerSegmentIdentification":2317154800006512
+            }
+        ]
+    }
+
+    + Schema
+
+            {
+                "type":"object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required":false,
+                "properties":{
+                    "application": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "boardingPassElementRequest": {
+                        "type":"array",
+                        "required":false,
+                        "items":
+                            {
+                                "type":"object",
+                                "required":false,
+                                "properties":{
+                                    "passengerSegmentIdentification": {
+                                        "type":"number",
+                                        "required":false
+                                    }
+                                }
+                            }
+                        
+
+                    },
+                    "country": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "email": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "language": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "portal": {
+                        "type":"string",
+                        "required":false
+                    }
+                }
+            }
+
+
++ Response 200 (application/json)
+
+
+    + Header
+
+            flowId:a4f390e1-af0d-4bcd-8682-fd932d2d8ad
+            trackId:4264964            
+    
+    + Body
+
+            {
+                "status":{
+                    "code":200,
+                    "message":""
+                },
+                "data":null
+            }
+
+    + Schema
+
+            {
+                "type":"object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required":false,
+                "properties":{
+                    "data": {
+                        "type":"null",
+                        "required":false
+                    },
+                    "status": {
+                        "type":"object",
+                        "required":false,
+                        "properties":{
+                            "code": {
+                                "type":"number",
+                                "required":false
+                            },
+                            "message": {
+                                "type":"string",
+                                "required":false
+                            }
+                        }
+                    }
+                }
+            }
+
+
+## Mobile Boarding Pass [/ws/api/checkin/1.0/rest/document/send_mobile_boarding_pass]
+### Send Mobile Boarding Pass [POST]
+
++ Request (application/json)
+    
+    {
+        "language":"ES",
+        "country":"CL",
+        "portal":"personas",
+        "application":"checkin",
+        "email":"jlueiza@gmail.com",
+        "boardingPassElementRequest":[
+            {
+                "passengerSegmentIdentification":2317154800006590
+            }
+        ]
+    }
+
+    + Schema
+
+            {
+                "type":"object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required":false,
+                "properties":{
+                    "application": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "boardingPassElementRequest": {
+                        "type":"array",
+                        "required":false,
+                        "items":
+                            {
+                                "type":"object",
+                                "required":false,
+                                "properties":{
+                                    "passengerSegmentIdentification": {
+                                        "type":"number",
+                                        "required":false
+                                    }
+                                }
+                            }
+                        
+
+                    },
+                    "country": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "email": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "language": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "portal": {
+                        "type":"string",
+                        "required":false
+                    }
+                }
+            }
+
+
+    + Header
+
+                flowId:a4f390e1-af0d-4bcd-8682-fd932d2d8ad
+                trackId:4264964     
+
++ Response 200 (application/json)       
+        
+    + Body
+
+                {
+                    "status":{
+                        "code":509,
+                        "message":"Error Send Mobile Boarding Pass"
+                    },
+                    "data":null
+                }
+
+    + Schema
+
+            {
+                "type":"object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required":false,
+                "properties":{
+                    "data": {
+                        "type":"null",
+                        "required":false
+                    },
+                    "status": {
+                        "type":"object",
+                        "required":false,
+                        "properties":{
+                            "code": {
+                                "type":"number",
+                                "required":false
+                            },
+                            "message": {
+                                "type":"string",
+                                "required":false
+                            }
+                        }
+                    }
+                }
+            }
+
+
+## Mobile Boarding Pass [/ws/api/checkin/1.0/rest/document/boarding_pass_pdf]
+### Send Mobile Boarding Pass [POST]
+
++ Request (application/json)
+    
+    {
+        "language":"ES",
+        "country":"CL",
+        "portal":"personas",
+        "application":"checkin",
+        "boardingPassElementRequest":[
+            {
+                "passengerSegmentIdentification":"2317154800006590"
+            }
+        ]
+    }
+
+    + Schema
+
+             {
+                "type":"object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required":false,
+                "properties":{
+                    "application": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "boardingPassElementRequest": {
+                        "type":"array",
+                        "required":false,
+                        "items":
+                            {
+                                "type":"object",
+                                "required":false,
+                                "properties":{
+                                    "passengerSegmentIdentification": {
+                                        "type":"number",
+                                        "required":false
+                                    }
+                                }
+                            }
+                        
+
+                    },
+                    "country": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "email": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "language": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "portal": {
+                        "type":"string",
+                        "required":false
+                    }
+                }
+            }
+
+            
+
+    + Header
+
+                flowId:a4f390e1-af0d-4bcd-8682-fd932d2d8ad
+                trackId:4264964     
+
++ Response 200 (application/pdf)       
+        
+
+              
+
+
+           
+            
