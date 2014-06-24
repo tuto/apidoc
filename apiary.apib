@@ -1505,3 +1505,205 @@ API Rest para la aplicación checkin de LAN.com
                     }
                 }
             }
+
+
+## Identification Documents [/display_identification_document]
+### Get Identification document [POST]
+
++ Request (application/json)
+       
+        {
+            "application": "checkin",
+            "nationality": "BR",
+            "segments": [
+                {
+                    "departureAirportCode": "IGU",
+                    "arrivalAirportCode": "CGH"
+                },
+                {
+                    "departureAirportCode": "CGH",
+                    "arrivalAirportCode": "SDU"
+                },
+                {
+                    "departureAirportCode": "GIG",
+                    "arrivalAirportCode": "POA"
+                }
+            ],
+            "portal": "personas",
+            "language": "PT",
+            "country": "BR"
+        }
+
+        + Schema
+
+            {
+                "type":"object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required":false,
+                "properties":{
+                    "application": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "country": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "language": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "nationality": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "portal": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "segments": {
+                        "type":"array",
+                        "required":false,
+                        "items":
+                            {
+                                "type":"object",
+                                "required":false,
+                                "properties":{
+                                    "arrivalAirportCode": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "departureAirportCode": {
+                                        "type":"string",
+                                        "required":false
+                                    }
+                                }
+                            }
+                        
+
+                    }
+                }
+            }
+
+
++ Response 200 (application/json)
+
+
+    + Header
+
+            flowId:a4f390e1-af0d-4bcd-8682-fd932d2d8ad
+            trackId:4264964            
+    
+    + Body
+
+            {
+                "status": {
+                    "code": 200,
+                    "message": ""
+                },
+                "data": {
+                    "nationality": "BR",
+                    "documents": [
+                        {
+                            "code": "AA",
+                            "name": "CHT de Comiss&aacute;rio"
+                        },
+                        {
+                            "code": "BC",
+                            "name": "Certid&atilde;o de Nascimento"
+                        },
+                        {
+                            "code": "DL",
+                            "name": "Carteira de Motorista"
+                        },
+                        {
+                            "code": "FM",
+                            "name": "CHT de Mecânico de Voo"
+                        },
+                        {
+                            "code": "CI",
+                            "name": "Numero do documento de identidade"
+                        },
+                        {
+                            "code": "LA",
+                            "name": "Identidade Profissional"
+                        },
+                        {
+                            "code": "MI",
+                            "name": "Identidade Militar"
+                        },
+                        {
+                            "code": "OD",
+                            "name": "CHT de Despachante Operacional de Voo"
+                        },
+                        {
+                            "code": "PP",
+                            "name": "Passaporte"
+                        },
+                        {
+                            "code": "PL",
+                            "name": "CHT de Piloto"
+                        },
+                        {
+                            "code": "WL",
+                            "name": "Carteira de Trabalho"
+                        }
+                    ]
+                }
+            }
+
+            + Schema
+                {
+                    "type":"object",
+                    "$schema": "http://json-schema.org/draft-03/schema",
+                    "id": "http://jsonschema.net",
+                    "required":false,
+                    "properties":{
+                        "data": {
+                            "type":"object",
+                            "required":false,
+                            "properties":{
+                                "documents": {
+                                    "type":"array",
+                                    "required":false,
+                                    "items":
+                                        {
+                                            "type":"object",
+                                            "required":false,
+                                            "properties":{
+                                                "code": {
+                                                    "type":"string",
+                                                    "required":false
+                                                },
+                                                "name": {
+                                                    "type":"string",
+                                                    "required":false
+                                                }
+                                            }
+                                        }
+                                    
+
+                                },
+                                "nationality": {
+                                    "type":"string",
+                                    "required":false
+                                }
+                            }
+                        },
+                        "status": {
+                            "type":"object",
+                            "required":false,
+                            "properties":{
+                                "code": {
+                                    "type":"number",
+                                    "required":false
+                                },
+                                "message": {
+                                    "type":"string",
+                                    "required":false
+                                }
+                            }
+                        }
+                    }
+                }
