@@ -11,13 +11,12 @@ API Rest para la aplicación checkin de LAN.com
 + Request (application/json)
        
         {
-            lastName: "string",
-            application: "string",
-            checkInput: "string",
-            portal: "string",
-            language: "string",
-            serviceName: "string,
-            country: "prueba2"
+            "portal": "personas",
+            "application": "checkin",
+            "country": "BR",
+            "language": "PT",
+            "check_input": "6VKQD5",
+            "lastName": "SIMPSON"
         }
         
 + Response 200 (application/json)
@@ -31,61 +30,740 @@ API Rest para la aplicación checkin de LAN.com
 
             {
                 "status": {
-                    "message": "string",
-                    "code": "prueba2"
+                    "code": 201,
+                    "message": "Validation problem has occurred, please view the warnings"
                 },
                 "data": {
                     "journeys": [
                         {
+                            "departureCity": {
+                                "code": "IGU",
+                                "name": "Foz de Iguaz&uacute;"
+                            },
+                            "arrivalCity": {
+                                "code": "RIO",
+                                "name": "R&iacute;o de Janeiro"
+                            },
+                            "openSegments": [
+                                {
+                                    "departureAirport": {
+                                        "code": "IGU",
+                                        "name": "CATARATAS"
+                                    },
+                                    "departureCity": {
+                                        "code": "IGU",
+                                        "name": "Foz de Iguaz&uacute;"
+                                    },
+                                    "arrivalAirport": {
+                                        "code": "CGH",
+                                        "name": "SAO PAULO - CONGONHAS"
+                                    },
+                                    "arrivalCity": {
+                                        "code": "SAO",
+                                        "name": "Sao Paulo"
+                                    },
+                                    "estimatedDepartureDateTime": "2014-05-07T16:07",
+                                    "estimatedArrivalDateTime": "2014-05-07T17:38",
+                                    "operatingAirline": "JJ",
+                                    "marketingAirline": "JJ",
+                                    "enabledCheckbox": false,
+                                    "id": "JJ-3339-20140507",
+                                    "number": "3339"
+                                },
+                                {
+                                    "departureAirport": {
+                                        "code": "CGH",
+                                        "name": "SAO PAULO - CONGONHAS"
+                                    },
+                                    "departureCity": {
+                                        "code": "SAO",
+                                        "name": "Sao Paulo"
+                                    },
+                                    "arrivalAirport": {
+                                        "code": "SDU",
+                                        "name": "SANTOS DUMONT"
+                                    },
+                                    "arrivalCity": {
+                                        "code": "RIO",
+                                        "name": "R&iacute;o de Janeiro"
+                                    },
+                                    "estimatedDepartureDateTime": "2014-05-07T19:00",
+                                    "estimatedArrivalDateTime": "2014-05-07T20:06",
+                                    "operatingAirline": "JJ",
+                                    "marketingAirline": "JJ",
+                                    "enabledCheckbox": false,
+                                    "id": "JJ-3952-20140507",
+                                    "number": "3952"
+                                }
+                            ],
+                            "closeSegments": [],
                             "passengers": [
                                 {
-                                    "dateOfBirth": "datestring",
-                                    "lastName": "string",
+                                    "name": "MARIA",
+                                    "lastName": "PAULA SOARES SAMPLES",
+                                    "gender": "",
+                                    "frequentFlyerProgram": "JJ",
+                                    "frequentFlyerNumber": "1681462637",
+                                    "ticketNumber": "9572483127883",
+                                    "typeCode": "ADT",
                                     "segments": [
-                                            {
-                                                "id": "string",
-                                                "status": "string",
-                                                  "seat": "string",
-                                                "number": "string"
-                                            }
-                                        ],
-                                    "status": "string",
-                                    "passengerId": "string",
-                                    "infant": 
                                         {
-                                            "lastName": "string",
-                                            "name": "string"
-                                    }, 
-                                    "openSegments": [],
-                                    "closeSegments":[],
+                                            "id": "2317154800006590",
+                                            "number": "3339",
+                                            "seat": "",
+                                            "status": "NOT CHECKED"
+                                        },
+                                        {
+                                            "id": "2317154800006593",
+                                            "number": "3952",
+                                            "seat": "",
+                                            "status": "NOT CHECKED"
+                                        }
+                                    ],
+                                    "id": "23161548000063A1"
+                                },
+                                {
+                                    "name": "HOMERO",
+                                    "lastName": "SIMPSON",
+                                    "infant": {
+                                        "name": "MAGGIE",
+                                        "lastName": "SIMPSON"
+                                    },
+                                    "gender": "",
+                                    "ticketNumber": "9572483127884",
+                                    "typeCode": "ADT",
+                                    "segments": [
+                                        {
+                                            "id": "231715480000658E",
+                                            "number": "3339",
+                                            "seat": "",
+                                            "status": "NOT CHECKED"
+                                        },
+                                        {
+                                            "id": "2317154800006591",
+                                            "number": "3952",
+                                            "seat": "",
+                                            "status": "NOT CHECKED"
+                                        }
+                                    ],
+                                    "id": "3362054900001A3B"
+                                },
+                                {
+                                    "name": "LISA",
+                                    "lastName": "SIMPSON",
+                                    "gender": "",
+                                    "dateOfBirth": "2011-04-05",
+                                    "ticketNumber": "9572483127885",
+                                    "typeCode": "CHD",
+                                    "segments": [
+                                        {
+                                            "id": "231715480000658F",
+                                            "number": "3339",
+                                            "seat": "",
+                                            "status": "NOT CHECKED"
+                                        },
+                                        {
+                                            "id": "2317154800006592",
+                                            "number": "3952",
+                                            "seat": "",
+                                            "status": "NOT CHECKED"
+                                        }
+                                    ],
+                                    "id": "3362054900001A3C"
+                                }
+                            ]
+                        },
+                        {
+                            "departureCity": {
+                                "code": "RIO",
+                                "name": "R&iacute;o de Janeiro"
+                            },
+                            "arrivalCity": {
+                                "code": "POA",
+                                "name": "Porto Alegre"
+                            },
+                            "openSegments": [
+                                {
+                                    "departureAirport": {
+                                        "code": "GIG",
+                                        "name": "GALE&Atilde;O INTL"
+                                    },
+                                    "departureCity": {
+                                        "code": "RIO",
+                                        "name": "R&iacute;o de Janeiro"
+                                    },
+                                    "arrivalAirport": {
+                                        "code": "POA",
+                                        "name": "SALGADO FIL"
+                                    },
                                     "arrivalCity": {
-                                      "name": "string",
-                                      "code": "string"
-                                    }
-                                }   
-                            ]                          
+                                        "code": "POA",
+                                        "name": "Porto Alegre"
+                                    },
+                                    "estimatedDepartureDateTime": "2014-05-08T08:14",
+                                    "estimatedArrivalDateTime": "2014-05-08T10:17",
+                                    "operatingAirline": "JJ",
+                                    "marketingAirline": "JJ",
+                                    "enabledCheckbox": false,
+                                    "id": "JJ-3411-20140508",
+                                    "number": "3411"
+                                }
+                            ],
+                            "closeSegments": [],
+                            "passengers": [
+                                {
+                                    "name": "MARIA",
+                                    "lastName": "PAULA SOARES SAMPLES",
+                                    "gender": "",
+                                    "frequentFlyerProgram": "JJ",
+                                    "frequentFlyerNumber": "1681462637",
+                                    "ticketNumber": "9572483127883",
+                                    "typeCode": "ADT",
+                                    "segments": [
+                                        {
+                                            "id": "2317154800006596",
+                                            "number": "3411",
+                                            "seat": "",
+                                            "status": "NOT CHECKED"
+                                        }
+                                    ],
+                                    "id": "23161548000063A1"
+                                },
+                                {
+                                    "name": "HOMERO",
+                                    "lastName": "SIMPSON",
+                                    "infant": {
+                                        "name": "MAGGIE",
+                                        "lastName": "SIMPSON"
+                                    },
+                                    "gender": "",
+                                    "ticketNumber": "9572483127884",
+                                    "typeCode": "ADT",
+                                    "segments": [
+                                        {
+                                            "id": "2317154800006594",
+                                            "number": "3411",
+                                            "seat": "",
+                                            "status": "NOT CHECKED"
+                                        }
+                                    ],
+                                    "id": "3362054900001A3B"
+                                },
+                                {
+                                    "name": "LISA",
+                                    "lastName": "SIMPSON",
+                                    "gender": "",
+                                    "dateOfBirth": "2011-04-05",
+                                    "ticketNumber": "9572483127885",
+                                    "typeCode": "CHD",
+                                    "segments": [
+                                        {
+                                            "id": "2317154800006595",
+                                            "number": "3411",
+                                            "seat": "",
+                                            "status": "NOT CHECKED"
+                                        }
+                                    ],
+                                    "id": "3362054900001A3C"
+                                }
+                            ]
                         }
-
                     ],
-                    "recordLocator": "string" 
-                }             
-            }
+                    "recordLocator": "6VKQD5",
+                    "warnings": [
+                        {
+                            "message": "Infelizmente, n&atilde;o &eacute; poss&iacute;vel continuar com seu Check-in. Dirija-se at&eacute; o balc&atilde;o do aeroporto no dia da viagem para emitir seus cart&otilde;es de embarque.",
+                            "criticity": "advertencia",
+                            "contextIdentifiers": [
+                                {
+                                    "context": "product",
+                                    "id": "231715480000658E"
+                                },
+                                {
+                                    "context": "product",
+                                    "id": "2317154800006591"
+                                },
+                                {
+                                    "context": "product",
+                                    "id": "2317154800006594"
+                                }
+                            ],
+                            "warningCode": "1019"
+                        },
+                        {
+                            "message": "CKI_MSJ_NO_MOBILE_BOARDING",
+                            "criticity": "advertencia",
+                            "contextIdentifiers": [
+                                {
+                                    "context": "product",
+                                    "id": "231715480000658E"
+                                },
+                                {
+                                    "context": "product",
+                                    "id": "2317154800006591"
+                                },
+                                {
+                                    "context": "product",
+                                    "id": "2317154800006594"
+                                }
+                            ],
+                            "warningCode": "1100"
+                        },
+                        {
+                            "message": "Um dos passageiros ter&aacute; que se dirigir ao balc&atilde;o do aeroporto no dia da viagem para obter seu cart&atilde;o de embarque. Baixar e imprimir os documentos do Check-in dos outros passageiros.",
+                            "criticity": "advertencia",
+                            "contextIdentifiers": [
+                                {
+                                    "context": "product",
+                                    "id": "231715480000658E"
+                                },
+                                {
+                                    "context": "product",
+                                    "id": "2317154800006591"
+                                },
+                                {
+                                    "context": "product",
+                                    "id": "2317154800006594"
+                                }
+                            ],
+                            "warningCode": "1017"
+                        }
+                    ]
+                }
+            }            
 
     + Schema
 
-            {
-                "type": "object",
-                "required": false,
-                "properties": {
-                    "message": {
-                        "type": ["string", "null"]
+            {   
+                "type":"object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required":false,
+                "properties":{
+                    "data": {
+                        "type":"object",
+                        "required":false,
+                        "properties":{
+                            "journeys": {
+                                "type":"array",
+                                "required":false,
+                                "items":
+                                    {
+                                        "type":"object",
+                                        "required":false,
+                                        "properties":{
+                                            "arrivalCity": {
+                                                "type":"object",
+                                                "required":false,
+                                                "properties":{
+                                                    "code": {
+                                                        "type":"string",                                    
+                                                        "required":false
+                                                    },
+                                                    "name": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    }
+                                                }
+                                            },
+                                            "closeSegments": {
+                                                "type":"array",
+                                                "required":false
+                                            },
+                                            "departureCity": {
+                                                "type":"object",
+                                                "required":false,
+                                                "properties":{
+                                                    "code": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "name": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    }
+                                                }
+                                            },
+                                            "openSegments": {
+                                                "type":"array",
+                                                "required":false,
+                                                "items":
+                                                    {
+                                                        "type":"object",
+                                                        "required":false,
+                                                        "properties":{
+                                                            "arrivalAirport": {
+                                                                "type":"object",
+                                                                "required":false,
+                                                                "properties":{
+                                                                    "code": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    },
+                                                                    "name": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    }
+                                                                }
+                                                            },
+                                                            "arrivalCity": {
+                                                                "type":"object",
+                                                                "required":false,
+                                                                "properties":{
+                                                                    "code": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    },
+                                                                    "name": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    }
+                                                                }
+                                                            },
+                                                            "departureAirport": {
+                                                                "type":"object",
+                                                                "required":false,
+                                                                "properties":{
+                                                                    "code": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    },
+                                                                    "name": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    }
+                                                                }
+                                                            },
+                                                            "departureCity": {
+                                                                "type":"object",
+                                                                "required":false,
+                                                                "properties":{
+                                                                    "code": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    },
+                                                                    "name": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    }
+                                                                }
+                                                            },
+                                                            "enabledCheckbox": {
+                                                                "type":"boolean",
+                                                                "required":false
+                                                            },
+                                                            "estimatedArrivalDateTime": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "estimatedDepartureDateTime": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "id": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "marketingAirline": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "number": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "operatingAirline": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            }
+                                                        }
+                                                    }
+                                                
+
+                                            },
+                                            "passengers": {
+                                                "type":"array",
+                                                "required":false,
+                                                "items":[
+                                                    {
+                                                        "type":"object",
+                                                        "required":false,
+                                                        "properties":{
+                                                            "frequentFlyerNumber": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "frequentFlyerProgram": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "gender": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "id": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "lastName": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "name": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "segments": {
+                                                                "type":"array",
+                                                                "required":false,
+                                                                "items":
+                                                                    {
+                                                                        "type":"object",
+                                                                        "required":false,
+                                                                        "properties":{
+                                                                            "id": {
+                                                                                "type":"string",
+                                                                                "required":false
+                                                                            },
+                                                                            "number": {
+                                                                                "type":"string",
+                                                                                "required":false
+                                                                            },
+                                                                            "seat": {
+                                                                                "type":"string",
+                                                                                "required":false
+                                                                            },
+                                                                            "status": {
+                                                                                "type":"string",
+                                                                                "required":false
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                
+
+                                                            },
+                                                            "ticketNumber": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "typeCode": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "type":"object",
+                                                        "required":false,
+                                                        "properties":{
+                                                            "gender": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "id": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "infant": {
+                                                                "type":"object",
+                                                                "required":false,
+                                                                "properties":{
+                                                                    "lastName": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    },
+                                                                    "name": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    }
+                                                                }
+                                                            },
+                                                            "lastName": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "name": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "segments": {
+                                                                "type":"array",
+                                                                "required":false,
+                                                                "items":
+                                                                    {
+                                                                        "type":"object",
+                                                                        "required":false,
+                                                                        "properties":{
+                                                                            "id": {
+                                                                                "type":"string",
+                                                                                "required":false
+                                                                            },
+                                                                            "number": {
+                                                                                "type":"string",
+                                                                                "required":false
+                                                                            },
+                                                                            "seat": {
+                                                                                "type":"string",
+                                                                                "required":false
+                                                                            },
+                                                                            "status": {
+                                                                                "type":"string",
+                                                                                "required":false
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                
+
+                                                            },
+                                                            "ticketNumber": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "typeCode": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "type":"object",
+                                                        "required":false,
+                                                        "properties":{
+                                                            "dateOfBirth": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "gender": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "id": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "lastName": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "name": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "segments": {
+                                                                "type":"array",
+                                                                "required":false,
+                                                                "items":
+                                                                    {
+                                                                        "type":"object",
+                                                                        "required":false,
+                                                                        "properties":{
+                                                                            "id": {
+                                                                                "type":"string",
+                                                                                "required":false
+                                                                            },
+                                                                            "number": {
+                                                                                "type":"string",
+                                                                                "required":false
+                                                                            },
+                                                                            "seat": {
+                                                                                "type":"string",
+                                                                                "required":false
+                                                                            },
+                                                                            "status": {
+                                                                                "type":"string",
+                                                                                "required":false
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                
+
+                                                            },
+                                                            "ticketNumber": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "typeCode": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                
+
+                            },
+                            "recordLocator": {
+                                "type":"string",
+                                "required":false
+                            },
+                            "warnings": {
+                                "type":"array",
+                                "required":false,
+                                "items":
+                                    {
+                                        "type":"object",
+                                        "required":false,
+                                        "properties":{
+                                            "contextIdentifiers": {
+                                                "type":"array",
+                                                "required":false,
+                                                "items":
+                                                    {
+                                                        "type":"object",
+                                                        "required":false,
+                                                        "properties":{
+                                                            "context": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "id": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            }
+                                                        }
+                                                    }
+                                                
+
+                                            },
+                                            "criticity": {
+                                                "type":"string",
+                                                "required":false
+                                            },
+                                            "message": {
+                                                "type":"string",
+                                                "required":false
+                                            },
+                                            "warningCode": {
+                                                "type":"string",
+                                                "required":false
+                                            }
+                                        }
+                                    }
+                                
+
+                            }
+                        }
                     },
-                    "id": {
-                        "type": "number"
+                    "status": {
+                        "type":"object",
+                        "required":false,
+                        "properties":{
+                            "code": {
+                                "type":"number",
+                                "required":false
+                            },
+                            "message": {
+                                "type":"string",
+                                "required":false
+                            }
+                        }
                     }
-                },
-                "required" : ["status", "number"]
+                }
             }
+   
        
        
 + Response 501 (application/json)
