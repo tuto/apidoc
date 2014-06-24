@@ -3189,9 +3189,53 @@ API Rest para la aplicación checkin de LAN.com
             ]
         }
 
+        +Schema
 
+            {
+                "type":"object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required":false,
+                "properties":{
+                    "application": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "boardingPassElementRequest": {
+                        "type":"array",
+                        "required":false,
+                        "items":
+                            {
+                                "type":"object",
+                                "required":false,
+                                "properties":{
+                                    "passengerSegmentIdentification": {
+                                        "type":"number",
+                                        "required":false
+                                    }
+                                }
+                            }
+                        
 
-            
+                    },
+                    "country": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "email": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "language": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "portal": {
+                        "type":"string",
+                        "required":false
+                    }
+                }
+            }           
     
 
 
