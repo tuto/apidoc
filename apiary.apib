@@ -1709,3 +1709,1365 @@ API Rest para la aplicación checkin de LAN.com
                 }
             }
 
+
+## Seat Map [/ws/api/checkin/1.0/rest/seat_map/get_seat_map]
+### Get Identification document [POST]
+
++ Request (application/json)
+    
+        {
+            "language": "PT",
+            "country": "BR",
+            "portal": "personas",
+            "application": "checkin",
+            "recordLocator": "6VKQD5",
+            "segments": [
+                {
+                    "segmentNumber": "3339",
+                    "departureAirport": "IGU",
+                    "arrivalAirport": "CGH",
+                    "departureDateTime": "2014-05-07T16:07:00.000",
+                    "arrivalDateTime": "2014-05-07T17:38:00.000",
+                    "legs": [
+                        {
+                            "departureAirport": "IGU",
+                            "arrivalAirport": "CGH",
+                            "departureDateTime": "2014-05-07T16:07:00.000",
+                            "arrivalDateTime": "2014-05-07T17:38:00.000",
+                            "flight": {
+                                "operatingAirline": "JJ",
+                                "number": "3339"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "passengers": [
+                {
+                    "name": "MARIA",
+                    "lastName": "PAULA SOARES SAMPLES",
+                    "typeCode": "ADT",
+                    "gdsIdentification": "2317154800006590"
+                }
+            ]
+        }       
+      
+        + Schema
+
+            {
+                "type":"object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required":false,
+                "properties":{
+                    "application": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "country": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "language": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "passengers": {
+                        "type":"array",
+                        "required":false,
+                        "items":
+                            {
+                                "type":"object",
+                                "required":false,
+                                "properties":{
+                                    "gdsIdentification": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "lastName": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "name": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "typeCode": {
+                                        "type":"string",
+                                        "required":false
+                                    }
+                                }
+                            }
+                        
+
+                    },
+                    "portal": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "recordLocator": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "segments": {
+                        "type":"array",
+                        "required":false,
+                        "items":
+                            {
+                                "type":"object",
+                                "required":false,
+                                "properties":{
+                                    "arrivalAirport": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "arrivalDateTime": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "departureAirport": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "departureDateTime": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "legs": {
+                                        "type":"array",
+                                        "required":false,
+                                        "items":
+                                            {
+                                                "type":"object",
+                                                "required":false,
+                                                "properties":{
+                                                    "arrivalAirport": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "arrivalDateTime": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "departureAirport": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "departureDateTime": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "flight": {
+                                                        "type":"object",
+                                                        "required":false,
+                                                        "properties":{
+                                                            "number": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "operatingAirline": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        
+
+                                    },
+                                    "segmentNumber": {
+                                        "type":"string",
+                                        "required":false
+                                    }
+                                }
+                            }
+                        
+
+                    }
+                }
+            }
+
+
++ Response 200 (application/json)
+
+
+    + Header
+
+            flowId:a4f390e1-af0d-4bcd-8682-fd932d2d8ad
+            trackId:4264964            
+    
+    + Body
+
+
+
+    + Schema
+
+
+## Perform Checkin [/ws/api/checkin/1.0/rest/reservation/passengers_checkin]
+### Check Passengers [POST]
+
++ Request (application/json)
+
+   {
+        "language": "PT",
+        "country": "BR",
+        "portal": "personas",
+        "recordLocator": "6VKQD5",
+        "surName": "SIMPSON",
+        "application": "checkin",
+        "segments": [
+            {
+                "flightNumber": "3339",
+                "departureAirport": "IGU",
+                "arrivalAirport": "CGH",
+                "departureDateTime": "07-05-2014 16:07",
+                "arrivalDateTime": "07-05-2014 17:38",
+                "operatingAirline": "JJ",
+                "passengers": [
+                    {
+                        "foid": {
+                            "number": "3215487",
+                            "type": "PP",
+                            "country": "BR"
+                        },
+                        "name": "maria",
+                        "lastName": "paula soares samples",
+                        "ticketNumber": "9572483127883",
+                        "seatNumber": "4A",
+                        "apiInformation": [
+                            {
+                                "elementId": "ticketNumber",
+                                "value": "9572483127883"
+                            },
+                            {
+                                "elementId": "emergencyContactName",
+                                "value": "fulano"
+                            },
+                            {
+                                "elementId": "areaPhoneCode",
+                                "value": "321"
+                            },
+                            {
+                                "elementId": "countryPhoneCode",
+                                "value": "55"
+                            },
+                            {
+                                "elementId": "phoneNumber",
+                                "value": "654987"
+                            },
+                            {
+                                "elementId": "countryPhone",
+                                "value": "BR"
+                            },
+                            {
+                                "elementId": "phoneType",
+                                "value": "1"
+                            },
+                            {
+                                "elementId": "frequentFlyerProgram",
+                                "value": "JJ"
+                            },
+                            {
+                                "elementId": "frequentFlyerNumber",
+                                "value": "1681462637"
+                            },
+                            {
+                                "elementId": "dateOfBirth",
+                                "value": "1985-10-10"
+                            },
+                            {
+                                "elementId": "nationality",
+                                "value": "BR"
+                            },
+                            {
+                                "elementId": "foidNumber",
+                                "value": "3215487"
+                            },
+                            {
+                                "elementId": "foidType",
+                                "value": "PP"
+                            },
+                            {
+                                "elementId": "genre",
+                                "value": "F"
+                            },
+                            {
+                                "elementId": "passportIssueCountry",
+                                "value": "BR"
+                            },
+                            {
+                                "elementId": "passportExpirationDate",
+                                "value": "2018-10-10"
+                            }
+                        ],
+                        "id": "2317154800006590"
+                    },
+                    {
+                        "foid": {
+                            "number": "3216549875",
+                            "type": "PP",
+                            "country": "BR"
+                        },
+                        "name": "lisa",
+                        "lastName": "simpson",
+                        "ticketNumber": "9572483127885",
+                        "seatNumber": "5A",
+                        "apiInformation": [
+                            {
+                                "elementId": "ticketNumber",
+                                "value": "9572483127885"
+                            },
+                            {
+                                "elementId": "emergencyContactName",
+                                "value": "fulano"
+                            },
+                            {
+                                "elementId": "areaPhoneCode",
+                                "value": "654"
+                            },
+                            {
+                                "elementId": "countryPhoneCode",
+                                "value": "55"
+                            },
+                            {
+                                "elementId": "phoneNumber",
+                                "value": "987526"
+                            },
+                            {
+                                "elementId": "countryPhone",
+                                "value": "BR"
+                            },
+                            {
+                                "elementId": "phoneType",
+                                "value": "1"
+                            },
+                            {
+                                "elementId": "dateOfBirth",
+                                "value": "2011-04-05"
+                            },
+                            {
+                                "elementId": "nationality",
+                                "value": "BR"
+                            },
+                            {
+                                "elementId": "foidNumber",
+                                "value": "3216549875"
+                            },
+                            {
+                                "elementId": "foidType",
+                                "value": "PP"
+                            },
+                            {
+                                "elementId": "genre",
+                                "value": "F"
+                            },
+                            {
+                                "elementId": "passportIssueCountry",
+                                "value": "BR"
+                            },
+                            {
+                                "elementId": "passportExpirationDate",
+                                "value": "2018-10-10"
+                            }
+                        ],
+                        "id": "231715480000658F"
+                    }
+                ]
+            },
+            {
+                "flightNumber": "3952",
+                "departureAirport": "CGH",
+                "arrivalAirport": "SDU",
+                "departureDateTime": "07-05-2014 19:00",
+                "arrivalDateTime": "07-05-2014 20:06",
+                "operatingAirline": "JJ",
+                "passengers": [
+                    {
+                        "foid": {
+                            "number": "3215487",
+                            "type": "PP",
+                            "country": "BR"
+                        },
+                        "name": "maria",
+                        "lastName": "paula soares samples",
+                        "ticketNumber": "9572483127883",
+                        "seatNumber": "5A",
+                        "apiInformation": [
+                            {
+                                "elementId": "ticketNumber",
+                                "value": "9572483127883"
+                            },
+                            {
+                                "elementId": "emergencyContactName",
+                                "value": "fulano"
+                            },
+                            {
+                                "elementId": "areaPhoneCode",
+                                "value": "321"
+                            },
+                            {
+                                "elementId": "countryPhoneCode",
+                                "value": "55"
+                            },
+                            {
+                                "elementId": "phoneNumber",
+                                "value": "654987"
+                            },
+                            {
+                                "elementId": "countryPhone",
+                                "value": "BR"
+                            },
+                            {
+                                "elementId": "phoneType",
+                                "value": "1"
+                            },
+                            {
+                                "elementId": "frequentFlyerProgram",
+                                "value": "JJ"
+                            },
+                            {
+                                "elementId": "frequentFlyerNumber",
+                                "value": "1681462637"
+                            },
+                            {
+                                "elementId": "dateOfBirth",
+                                "value": "1985-10-10"
+                            },
+                            {
+                                "elementId": "nationality",
+                                "value": "BR"
+                            },
+                            {
+                                "elementId": "foidNumber",
+                                "value": "3215487"
+                            },
+                            {
+                                "elementId": "foidType",
+                                "value": "PP"
+                            },
+                            {
+                                "elementId": "genre",
+                                "value": "F"
+                            },
+                            {
+                                "elementId": "passportIssueCountry",
+                                "value": "BR"
+                            },
+                            {
+                                "elementId": "passportExpirationDate",
+                                "value": "2018-10-10"
+                            }
+                        ],
+                        "id": "2317154800006593"
+                    },
+                    {
+                        "foid": {
+                            "number": "3216549875",
+                            "type": "PP",
+                            "country": "BR"
+                        },
+                        "name": "lisa",
+                        "lastName": "simpson",
+                        "ticketNumber": "9572483127885",
+                        "seatNumber": "6A",
+                        "apiInformation": [
+                            {
+                                "elementId": "ticketNumber",
+                                "value": "9572483127885"
+                            },
+                            {
+                                "elementId": "emergencyContactName",
+                                "value": "fulano"
+                            },
+                            {
+                                "elementId": "areaPhoneCode",
+                                "value": "654"
+                            },
+                            {
+                                "elementId": "countryPhoneCode",
+                                "value": "55"
+                            },
+                            {
+                                "elementId": "phoneNumber",
+                                "value": "987526"
+                            },
+                            {
+                                "elementId": "countryPhone",
+                                "value": "BR"
+                            },
+                            {
+                                "elementId": "phoneType",
+                                "value": "1"
+                            },
+                            {
+                                "elementId": "dateOfBirth",
+                                "value": "2011-04-05"
+                            },
+                            {
+                                "elementId": "nationality",
+                                "value": "BR"
+                            },
+                            {
+                                "elementId": "foidNumber",
+                                "value": "3216549875"
+                            },
+                            {
+                                "elementId": "foidType",
+                                "value": "PP"
+                            },
+                            {
+                                "elementId": "genre",
+                                "value": "F"
+                            },
+                            {
+                                "elementId": "passportIssueCountry",
+                                "value": "BR"
+                            },
+                            {
+                                "elementId": "passportExpirationDate",
+                                "value": "2018-10-10"
+                            }
+                        ],
+                        "id": "2317154800006592"
+                    }
+                ]
+            },
+            {
+                "flightNumber": "3411",
+                "departureAirport": "GIG",
+                "arrivalAirport": "POA",
+                "departureDateTime": "08-05-2014 08:14",
+                "arrivalDateTime": "08-05-2014 10:17",
+                "operatingAirline": "JJ",
+                "passengers": [
+                    {
+                        "foid": {
+                            "number": "3215487",
+                            "type": "PP",
+                            "country": "BR"
+                        },
+                        "name": "maria",
+                        "lastName": "paula soares samples",
+                        "ticketNumber": "9572483127883",
+                        "seatNumber": "5A",
+                        "apiInformation": [
+                            {
+                                "elementId": "ticketNumber",
+                                "value": "9572483127883"
+                            },
+                            {
+                                "elementId": "emergencyContactName",
+                                "value": "fulano"
+                            },
+                            {
+                                "elementId": "areaPhoneCode",
+                                "value": "321"
+                            },
+                            {
+                                "elementId": "countryPhoneCode",
+                                "value": "55"
+                            },
+                            {
+                                "elementId": "phoneNumber",
+                                "value": "654987"
+                            },
+                            {
+                                "elementId": "countryPhone",
+                                "value": "BR"
+                            },
+                            {
+                                "elementId": "phoneType",
+                                "value": "1"
+                            },
+                            {
+                                "elementId": "frequentFlyerProgram",
+                                "value": "JJ"
+                            },
+                            {
+                                "elementId": "frequentFlyerNumber",
+                                "value": "1681462637"
+                            },
+                            {
+                                "elementId": "dateOfBirth",
+                                "value": "1985-10-10"
+                            },
+                            {
+                                "elementId": "nationality",
+                                "value": "BR"
+                            },
+                            {
+                                "elementId": "foidNumber",
+                                "value": "3215487"
+                            },
+                            {
+                                "elementId": "foidType",
+                                "value": "PP"
+                            },
+                            {
+                                "elementId": "genre",
+                                "value": "F"
+                            },
+                            {
+                                "elementId": "passportIssueCountry",
+                                "value": "BR"
+                            },
+                            {
+                                "elementId": "passportExpirationDate",
+                                "value": "2018-10-10"
+                            }
+                        ],
+                        "id": "2317154800006596"
+                    },
+                    {
+                        "foid": {
+                            "number": "3216549875",
+                            "type": "PP",
+                            "country": "BR"
+                        },
+                        "name": "lisa",
+                        "lastName": "simpson",
+                        "ticketNumber": "9572483127885",
+                        "seatNumber": "6A",
+                        "apiInformation": [
+                            {
+                                "elementId": "ticketNumber",
+                                "value": "9572483127885"
+                            },
+                            {
+                                "elementId": "emergencyContactName",
+                                "value": "fulano"
+                            },
+                            {
+                                "elementId": "areaPhoneCode",
+                                "value": "654"
+                            },
+                            {
+                                "elementId": "countryPhoneCode",
+                                "value": "55"
+                            },
+                            {
+                                "elementId": "phoneNumber",
+                                "value": "987526"
+                            },
+                            {
+                                "elementId": "countryPhone",
+                                "value": "BR"
+                            },
+                            {
+                                "elementId": "phoneType",
+                                "value": "1"
+                            },
+                            {
+                                "elementId": "dateOfBirth",
+                                "value": "2011-04-05"
+                            },
+                            {
+                                "elementId": "nationality",
+                                "value": "BR"
+                            },
+                            {
+                                "elementId": "foidNumber",
+                                "value": "3216549875"
+                            },
+                            {
+                                "elementId": "foidType",
+                                "value": "PP"
+                            },
+                            {
+                                "elementId": "genre",
+                                "value": "F"
+                            },
+                            {
+                                "elementId": "passportIssueCountry",
+                                "value": "BR"
+                            },
+                            {
+                                "elementId": "passportExpirationDate",
+                                "value": "2018-10-10"
+                            }
+                        ],
+                        "id": "2317154800006595"
+                    }
+                ]
+            }
+        ]
+    }
+
+    + Schema
+
+            {
+                "type":"object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required":false,
+                "properties":{
+                    "application": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "country": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "language": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "portal": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "recordLocator": {
+                        "type":"string",
+                        "required":false
+                    },
+                    "segments": {
+                        "type":"array",
+                        "required":false,
+                        "items":
+                            {
+                                "type":"object",
+                                "required":false,
+                                "properties":{
+                                    "arrivalAirport": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "arrivalDateTime": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "departureAirport": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "departureDateTime": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "flightNumber": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "operatingAirline": {
+                                        "type":"string",
+                                        "required":false
+                                    },
+                                    "passengers": {
+                                        "type":"array",
+                                        "required":false,
+                                        "items":
+                                            {
+                                                "type":"object",
+                                                "required":false,
+                                                "properties":{
+                                                    "apiInformation": {
+                                                        "type":"array",
+                                                        "required":false,
+                                                        "items":
+                                                            {
+                                                                "type":"object",
+                                                                "required":false,
+                                                                "properties":{
+                                                                    "elementId": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    },
+                                                                    "value": {
+                                                                        "type":"string",
+                                                                        "required":false
+                                                                    }
+                                                                }
+                                                            }
+                                                        
+
+                                                    },
+                                                    "foid": {
+                                                        "type":"object",
+                                                        "required":false,
+                                                        "properties":{
+                                                            "country": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "number": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "type": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            }
+                                                        }
+                                                    },
+                                                    "id": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "lastName": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "name": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "seatNumber": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "ticketNumber": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    }
+                                                }
+                                            }
+                                        
+
+                                    }
+                                }
+                            }
+                        
+
+                    },
+                    "surName": {
+                        "type":"string",
+                        "required":false
+                    }
+                }
+            }
+
+
+
+    
+        
++ Response 200 (application/json)
+
+
+    + Header
+
+            flowId:a4f390e1-af0d-4bcd-8682-fd932d2d8ad
+            trackId:4264964            
+    
+    + Body
+
+            {
+                "status": {
+                    "code": 201,
+                    "message": "Validation problem has occurred, please view the warnings"
+                },
+                "data": {
+                    "segments": [
+                        {
+                            "departureAirport": {
+                                "code": "IGU",
+                                "name": "CATARATAS"
+                            },
+                            "departureCity": {
+                                "code": "IGU",
+                                "name": "Foz do Igua&ccedil;u"
+                            },
+                            "arrivalAirport": {
+                                "code": "CGH",
+                                "name": "SAO PAULO - CONGONHAS"
+                            },
+                            "arrivalCity": {
+                                "code": "SAO",
+                                "name": "S&atilde;o Paulo"
+                            },
+                            "estimatedDepartureDateTime": "2014-05-07T16:07",
+                            "estimatedArrivalDateTime": "2014-05-07T17:38",
+                            "flight": {
+                                "number": "3339",
+                                "operatingAirline": "JJ",
+                                "marketingAirline": "JJ"
+                            },
+                            "passengers": [
+                                {
+                                    "name": "maria",
+                                    "lastName": "paula soares samples",
+                                    "status": "CHECKED",
+                                    "seat": "4A",
+                                    "ticketNumber": "9572483127883",
+                                    "segments": [
+                                        {
+                                            "id": "2317154800006590",
+                                            "seat": "4A",
+                                            "status": "CHECKED"
+                                        },
+                                        {
+                                            "id": "2317154800006593",
+                                            "seat": "5A",
+                                            "status": "CHECKED"
+                                        },
+                                        {
+                                            "id": "2317154800006596",
+                                            "seat": "5A",
+                                            "status": "CHECKED"
+                                        }
+                                    ],
+                                    "passengerSegmentIdentification": "2317154800006590",
+                                    "id": "23161548000063A1"
+                                },
+                                {
+                                    "name": "lisa",
+                                    "lastName": "simpson",
+                                    "status": "CHECKED",
+                                    "seat": "5A",
+                                    "ticketNumber": "9572483127885",
+                                    "segments": [
+                                        {
+                                            "id": "231715480000658F",
+                                            "seat": "5A",
+                                            "status": "CHECKED"
+                                        },
+                                        {
+                                            "id": "2317154800006592",
+                                            "seat": "6A",
+                                            "status": "CHECKED"
+                                        },
+                                        {
+                                            "id": "2317154800006595",
+                                            "seat": "6A",
+                                            "status": "CHECKED"
+                                        }
+                                    ],
+                                    "passengerSegmentIdentification": "231715480000658F",
+                                    "id": "3362054900001A3C"
+                                }
+                            ],
+                            "operatingAirline": "JJ",
+                            "marketingAirline": "JJ",
+                            "enabledCheckbox": false,
+                            "id": "JJ-3339-20140507",
+                            "number": "3339"
+                        },
+                        {
+                            "departureAirport": {
+                                "code": "CGH",
+                                "name": "SAO PAULO - CONGONHAS"
+                            },
+                            "departureCity": {
+                                "code": "SAO",
+                                "name": "S&atilde;o Paulo"
+                            },
+                            "arrivalAirport": {
+                                "code": "SDU",
+                                "name": "SANTOS DUMONT"
+                            },
+                            "arrivalCity": {
+                                "code": "RIO",
+                                "name": "Rio de Janeiro"
+                            },
+                            "estimatedDepartureDateTime": "2014-05-07T19:00",
+                            "estimatedArrivalDateTime": "2014-05-07T20:06",
+                            "flight": {
+                                "number": "3952",
+                                "operatingAirline": "JJ",
+                                "marketingAirline": "JJ"
+                            },
+                            "passengers": [
+                                {
+                                    "name": "maria",
+                                    "lastName": "paula soares samples",
+                                    "status": "CHECKED",
+                                    "seat": "5A",
+                                    "ticketNumber": "9572483127883",
+                                    "segments": [
+                                        {
+                                            "id": "2317154800006590",
+                                            "seat": "4A",
+                                            "status": "CHECKED"
+                                        },
+                                        {
+                                            "id": "2317154800006593",
+                                            "seat": "5A",
+                                            "status": "CHECKED"
+                                        },
+                                        {
+                                            "id": "2317154800006596",
+                                            "seat": "5A",
+                                            "status": "CHECKED"
+                                        }
+                                    ],
+                                    "passengerSegmentIdentification": "2317154800006593",
+                                    "id": "23161548000063A1"
+                                },
+                                {
+                                    "name": "lisa",
+                                    "lastName": "simpson",
+                                    "status": "CHECKED",
+                                    "seat": "6A",
+                                    "ticketNumber": "9572483127885",
+                                    "segments": [
+                                        {
+                                            "id": "231715480000658F",
+                                            "seat": "5A",
+                                            "status": "CHECKED"
+                                        },
+                                        {
+                                            "id": "2317154800006592",
+                                            "seat": "6A",
+                                            "status": "CHECKED"
+                                        },
+                                        {
+                                            "id": "2317154800006595",
+                                            "seat": "6A",
+                                            "status": "CHECKED"
+                                        }
+                                    ],
+                                    "passengerSegmentIdentification": "2317154800006592",
+                                    "id": "3362054900001A3C"
+                                }
+                            ],
+                            "operatingAirline": "JJ",
+                            "marketingAirline": "JJ",
+                            "enabledCheckbox": false,
+                            "id": "JJ-3952-20140507",
+                            "number": "3952"
+                        },
+                        {
+                            "departureAirport": {
+                                "code": "GIG",
+                                "name": "GALE&Atilde;O INTL"
+                            },
+                            "departureCity": {
+                                "code": "RIO",
+                                "name": "Rio de Janeiro"
+                            },
+                            "arrivalAirport": {
+                                "code": "POA",
+                                "name": "SALGADO FIL"
+                            },
+                            "arrivalCity": {
+                                "code": "POA",
+                                "name": "Porto Alegre"
+                            },
+                            "estimatedDepartureDateTime": "2014-05-08T08:14",
+                            "estimatedArrivalDateTime": "2014-05-08T10:17",
+                            "flight": {
+                                "number": "3411",
+                                "operatingAirline": "JJ",
+                                "marketingAirline": "JJ"
+                            },
+                            "passengers": [
+                                {
+                                    "name": "maria",
+                                    "lastName": "paula soares samples",
+                                    "status": "CHECKED",
+                                    "seat": "5A",
+                                    "ticketNumber": "9572483127883",
+                                    "segments": [
+                                        {
+                                            "id": "2317154800006590",
+                                            "seat": "4A",
+                                            "status": "CHECKED"
+                                        },
+                                        {
+                                            "id": "2317154800006593",
+                                            "seat": "5A",
+                                            "status": "CHECKED"
+                                        },
+                                        {
+                                            "id": "2317154800006596",
+                                            "seat": "5A",
+                                            "status": "CHECKED"
+                                        }
+                                    ],
+                                    "passengerSegmentIdentification": "2317154800006596",
+                                    "id": "23161548000063A1"
+                                },
+                                {
+                                    "name": "lisa",
+                                    "lastName": "simpson",
+                                    "status": "CHECKED",
+                                    "seat": "6A",
+                                    "ticketNumber": "9572483127885",
+                                    "segments": [
+                                        {
+                                            "id": "231715480000658F",
+                                            "seat": "5A",
+                                            "status": "CHECKED"
+                                        },
+                                        {
+                                            "id": "2317154800006592",
+                                            "seat": "6A",
+                                            "status": "CHECKED"
+                                        },
+                                        {
+                                            "id": "2317154800006595",
+                                            "seat": "6A",
+                                            "status": "CHECKED"
+                                        }
+                                    ],
+                                    "passengerSegmentIdentification": "2317154800006595",
+                                    "id": "3362054900001A3C"
+                                }
+                            ],
+                            "operatingAirline": "JJ",
+                            "marketingAirline": "JJ",
+                            "enabledCheckbox": false,
+                            "id": "JJ-3411-20140508",
+                            "number": "3411"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "message": "Escolhemos outro assento para o voo porque este foi selecionado por outro passageiro enquanto você realizava o Check-in.",
+                            "criticity": "advertencia",
+                            "contextIdentifiers": [],
+                            "warningCode": "1031"
+                        },
+                        {
+                            "message": "N&atilde;o foi poss&iacute;vel acrescentar o n&uacute;mero de viajante frequente &agrave; reserva. Voc&ecirc; pode cancelar o Check-in e tentar novamente.",
+                            "criticity": "advertencia",
+                            "contextIdentifiers": [],
+                            "warningCode": "1030"
+                        }
+                    ]
+                }
+            }
+
+
+    + Schema
+
+            {
+                "type":"object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required":false,
+                "properties":{
+                    "data": {
+                        "type":"object",
+                        "required":false,
+                        "properties":{
+                            "segments": {
+                                "type":"array",
+                                "required":false,
+                                "items":
+                                    {
+                                        "type":"object",
+                                        "required":false,
+                                        "properties":{
+                                            "arrivalAirport": {
+                                                "type":"object",
+                                                "required":false,
+                                                "properties":{
+                                                    "code": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "name": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    }
+                                                }
+                                            },
+                                            "arrivalCity": {
+                                                "type":"object",
+                                                "required":false,
+                                                "properties":{
+                                                    "code": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "name": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    }
+                                                }
+                                            },
+                                            "departureAirport": {
+                                                "type":"object",
+                                                "required":false,
+                                                "properties":{
+                                                    "code": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "name": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    }
+                                                }
+                                            },
+                                            "departureCity": {
+                                                "type":"object",
+                                                "required":false,
+                                                "properties":{
+                                                    "code": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "name": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    }
+                                                }
+                                            },
+                                            "enabledCheckbox": {
+                                                "type":"boolean",
+                                                "required":false
+                                            },
+                                            "estimatedArrivalDateTime": {
+                                                "type":"string",
+                                                "required":false
+                                            },
+                                            "estimatedDepartureDateTime": {
+                                                "type":"string",
+                                                "required":false
+                                            },
+                                            "flight": {
+                                                "type":"object",
+                                                "required":false,
+                                                "properties":{
+                                                    "marketingAirline": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "number": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    },
+                                                    "operatingAirline": {
+                                                        "type":"string",
+                                                        "required":false
+                                                    }
+                                                }
+                                            },
+                                            "id": {
+                                                "type":"string",
+                                                "required":false
+                                            },
+                                            "marketingAirline": {
+                                                "type":"string",
+                                                "required":false
+                                            },
+                                            "number": {
+                                                "type":"string",
+                                                "required":false
+                                            },
+                                            "operatingAirline": {
+                                                "type":"string",
+                                                "required":false
+                                            },
+                                            "passengers": {
+                                                "type":"array",
+                                                "required":false,
+                                                "items":
+                                                    {
+                                                        "type":"object",
+                                                        "required":false,
+                                                        "properties":{
+                                                            "id": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "lastName": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "name": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "passengerSegmentIdentification": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "seat": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "segments": {
+                                                                "type":"array",
+                                                                "required":false,
+                                                                "items":
+                                                                    {
+                                                                        "type":"object",
+                                                                        "required":false,
+                                                                        "properties":{
+                                                                            "id": {
+                                                                                "type":"string",
+                                                                                "required":false
+                                                                            },
+                                                                            "seat": {
+                                                                                "type":"string",
+                                                                                "required":false
+                                                                            },
+                                                                            "status": {
+                                                                                "type":"string",
+                                                                                "required":false
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                
+
+                                                            },
+                                                            "status": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "ticketNumber": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            }
+                                                        }
+                                                    }
+                                                
+
+                                            }
+                                        }
+                                    }
+                                
+
+                            },
+                            "warnings": {
+                                "type":"array",
+                                "id": "http://jsonschema.net/data/warnings",
+                                "required":false,
+                                "items":
+                                    {
+                                        "type":"object",
+                                        "required":false,
+                                        "properties":{
+                                            "contextIdentifiers": {
+                                                "type":"array",
+                                                "required":false
+                                            },
+                                            "criticity": {
+                                                "type":"string",
+                                                "required":false
+                                            },
+                                            "message": {
+                                                "type":"string",
+                                                "required":false
+                                            },
+                                            "warningCode": {
+                                                "type":"string",
+                                                "required":false
+                                            }
+                                        }
+                                    }
+                                
+
+                            }
+                        }
+                    },
+                    "status": {
+                        "type":"object",
+                        "required":false,
+                        "properties":{
+                            "code": {
+                                "type":"number",
+                                "required":false
+                            },
+                            "message": {
+                                "type":"string",
+                                "required":false
+                            }
+                        }
+                    }
+                }
+            }
