@@ -31,15 +31,19 @@ API Rest para la aplicación checkin de LAN.com
 
             {
                 "status": {
-                    "code": 200,
+                    "code": 200
                 },
                 "data": {
-                    "bookings" : {                            
-                        "asdfds":{
-                            "segments" :{                                 
-                                "S01":{
-                                    "flights":{        
-                                        "JJ23323": {
+                    "bookings" :[ 
+                        {
+                            "id" :1,                            
+                            "recordLocator": "asdfds",
+                            "segments" :[
+                                {                                 
+                                    "id" : 1,
+                                    "flights":[
+                                        {
+                                            "id" : 1,        
                                             "flightNumber": 23323,
                                             "operatingAirlineCode":"JJ",
                                             "marketinfAirlineCode":"LA",
@@ -73,8 +77,10 @@ API Rest para la aplicación checkin de LAN.com
                                                     "text":"Este vuelo esta abierto para checkin"
                                                 }
                                             ],
-                                            "passengers" : {
-                                                "04534245452342" :{
+                                            "passengers" : [ 
+                                                {
+                                                    "id" : 1,
+                                                    "ticketNumber":"04534245452342" ,
                                                     "status" : "ENABLE",
                                                     "documents" : {
                                                         "boardingpasspdf" : "ENABLE",
@@ -82,7 +88,9 @@ API Rest para la aplicación checkin de LAN.com
                                                         "mobileboardingpass" : "DISABLE"   
                                                     }
                                                 },
-                                                "04534245452343" :{
+                                                {    
+                                                    "id" : 2,
+                                                    "ticketNumber" : "04534245452343",
                                                     "status" : "ENABLE",
                                                     "documents" : {
                                                         "boardingpasspdf" : "ENABLE",
@@ -90,7 +98,9 @@ API Rest para la aplicación checkin de LAN.com
                                                         "mobileboardingpass" : "DISABLE"    
                                                     }
                                                 },
-                                                "04534245452344" :{
+                                                {
+                                                    "id" :3,
+                                                    "ticketNumber":"04534245452344",
                                                     "status" : "ENABLE",
                                                     "documents" : {
                                                         "boardingpasspdf" : "ENABLE",
@@ -98,10 +108,10 @@ API Rest para la aplicación checkin de LAN.com
                                                         "mobileboardingpass" : "DISABLE"   
                                                     }
                                                 }
-                                            }
-
-                                        },                                        
-                                        "JJ23324": {
+                                            ]
+                                        },
+                                        {
+                                            "id" : 2,
                                             "flightNumber": 23324,
                                             "operatingAirlineCode":"JJ",
                                             "marketinfAirlineCode":"LA",
@@ -138,8 +148,10 @@ API Rest para la aplicación checkin de LAN.com
                                                     "text":"Por favor dirigirse al counter"
                                                 }
                                             ],
-                                            "passengers" : {
-                                                "04534245452342" :{
+                                            "passengers" : [
+                                                {
+                                                    "id" : 1,
+                                                    "ticketNumber" : "04534245452342",
                                                     "status" : "ENABLE",
                                                     "documents" : {
                                                         "boardingpasspdf" : "ENABLE",
@@ -147,7 +159,9 @@ API Rest para la aplicación checkin de LAN.com
                                                         "mobileboardingpass" : "DISABLE"    
                                                     }
                                                 },
-                                                "04534245452343" :{
+                                                {
+                                                    "id" : 2,   
+                                                    "ticketNumber":"04534245452343",
                                                     "status" : "ENABLE",
                                                     "documents" : {
                                                         "boardingpasspdf" : "ENABLE",
@@ -155,7 +169,9 @@ API Rest para la aplicación checkin de LAN.com
                                                         "mobileboardingpass" : "DISABLE"    
                                                     }
                                                 },
-                                                "04534245452344" :{
+                                                {
+                                                    "id" : 3,
+                                                    "ticketNumber": "04534245452344",
                                                     "status" : "DISABLE",
                                                     "messages" : [
                                                         {
@@ -168,9 +184,10 @@ API Rest para la aplicación checkin de LAN.com
                                                         "mobileboardingpass" : "DISABLE"    
                                                     }
                                                 }
-                                            }
+                                            ]
                                         },
-                                        "JJ23325":{
+                                        {
+                                            "id" : 4,
                                             "flightNumber": 23325,
                                             "operatingAirlineCode":"JJ",
                                             "marketinfAirlineCode":"LA",
@@ -207,8 +224,9 @@ API Rest para la aplicación checkin de LAN.com
                                                     "text":"Por favor dirigirse al counter"
                                                 }
                                             ],
-                                            "passengers" : {
-                                                "04534245452342" :{
+                                            "passengers" : [ 
+                                                {
+                                                    "id":1,
                                                     "status" : "ENABLE",
                                                     "documents" : {
                                                         "boardingpasspdf" : "ENABLE",
@@ -216,7 +234,8 @@ API Rest para la aplicación checkin de LAN.com
                                                         "mobileboardingpass" : "DISABLE"    
                                                     }
                                                 },
-                                                "04534245452343" :{
+                                                {
+                                                    "id" :"2",
                                                     "status" : "ENABLE",
                                                     "documents" : {
                                                         "boardingpasspdf" : "ENABLE",
@@ -224,7 +243,8 @@ API Rest para la aplicación checkin de LAN.com
                                                         "mobileboardingpass" : "DISABLE"    
                                                     }
                                                 },
-                                                "04534245452344" :{
+                                                {
+                                                    "id" :"3",
                                                     "status" : "DISABLE",
                                                     "messages" : [
                                                         {
@@ -237,9 +257,9 @@ API Rest para la aplicación checkin de LAN.com
                                                         "mobileboardingpass" : "DISABLE"    
                                                     }
                                                 }
-                                            }    
-                                        }                                  
-                                    },
+                                            ]                                    
+                                        }
+                                    ],
                                     "status":"NO_CHEQUEABLE",
                                     "messages" :[
                                         {
@@ -247,9 +267,11 @@ API Rest para la aplicación checkin de LAN.com
                                         }
                                     ]    
                                 },
-                                "S02":{
-                                    "flights":{        
-                                        "JJ23323": {
+                                {
+                                    "id": 2,
+                                    "flights": [
+                                        {
+                                            "id" : 5,        
                                             "flightNumber": 23323,
                                             "operatingAirlineCode":"JJ",
                                             "marketinfAirlineCode":"LA",
@@ -282,8 +304,9 @@ API Rest para la aplicación checkin de LAN.com
                                                     "text":"Vuelo abierto para checkin"
                                                 }
                                             ],
-                                            "passengers" : {
-                                                "04534245452342" :{
+                                            "passengers" : [
+                                                {
+                                                    "id" : 2,
                                                     "status" : "ENABLE",
                                                     "documents" : {
                                                         "boardingpasspdf" : "ENABLE",
@@ -291,7 +314,8 @@ API Rest para la aplicación checkin de LAN.com
                                                         "mobileboardingpass" : "DISABLE"    
                                                     }
                                                 },
-                                                "04534245452344" :{
+                                                {
+                                                    "id":"3",
                                                     "status" : "DISABLE",
                                                     "documents" : {
                                                         "boardingpasspdf" : "ENABLE",
@@ -304,9 +328,9 @@ API Rest para la aplicación checkin de LAN.com
                                                         }
                                                     ]
                                                 }
-                                            }    
+                                            ]    
                                         }           
-                                    },
+                                    ],
                                     "status" : "CHEQUEABLE",
                                     "messages" :[
                                         {
@@ -314,9 +338,11 @@ API Rest para la aplicación checkin de LAN.com
                                         }
                                     ]            
                                 }
-                            },
-                            "passengers" : {
-                                "04534245452342": {
+                            ],
+                            "passengers" : [ 
+                                {
+                                    "id" : 1,
+                                    "ticketNumber": "04534245452342",
                                     "name" : "TUTO",
                                     "lastName" : "PEREZ",
                                     "gender" : "MALE",
@@ -324,7 +350,9 @@ API Rest para la aplicación checkin de LAN.com
                                     "frequentFlyerNumber" : 23453254,
                                     "type" : "ADT"
                                 },
-                                "04534245452343": {
+                                {
+                                    "id" : 2,
+                                    "ticketNumber": "04534245452343",
                                     "name" : "TUTIN",
                                     "lastName" : "PEREZ",
                                     "gender" : "MALE",
@@ -332,7 +360,9 @@ API Rest para la aplicación checkin de LAN.com
                                     "frequentFlyerNumber" : 23453254,
                                     "type" : "CHD"
                                 },
-                                "04534245452344": {
+                                {
+                                    "id" : 3,
+                                    "ticketNumber": "04534245452344",
                                     "name" : "TUTITO",
                                     "lastName" : "PEREZ",
                                     "gender" : "MALE",
@@ -340,12 +370,16 @@ API Rest para la aplicación checkin de LAN.com
                                     "frequentFlyerNumber" : 23453254,
                                     "type" : "INF"
                                 }
-
-                            }
+                            ]
                         }
-                    }
+                    ]    
                 }
-            }    
+            }
+
+
+
+
+
 
 + Response 501 (application/json)
 
