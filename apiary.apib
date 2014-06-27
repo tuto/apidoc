@@ -70,8 +70,9 @@ API Rest para la aplicación checkin de LAN.com
                                                 },
                                                 "estimatedArrivalDateTime" : "2014-05-07T17:38"
                                             },
-                                            "connectionWith": "JJ23324",
+                                            "connectionWith": 2,
                                             "status" : "OPEN",
+                                            "isLeg": false,
                                             "messages" :[
                                                 {
                                                     "text":"Este vuelo esta abierto para checkin"
@@ -138,8 +139,9 @@ API Rest para la aplicación checkin de LAN.com
                                                 },
                                                 "estimatedArrivalDateTime" : "2014-05-07T17:38"
                                             },
-                                            "connectionWith": "JJ23324",
+                                            "connectionWith": 4,
                                             "status": "CLOSED",
+                                            "isLeg": false,
                                             "messages" :[
                                                 {
                                                     "text":"Vuelo cerrado para checkin por que aun no se abre"
@@ -215,6 +217,7 @@ API Rest para la aplicación checkin de LAN.com
                                                 "estimatedArrivalDateTime" : "2014-05-07T17:38"
                                             },
                                             "isLeg": true,
+                                            "connectionWith": null,
                                             "status": "CLOSED",
                                             "messages" :[
                                                 {
@@ -304,6 +307,8 @@ API Rest para la aplicación checkin de LAN.com
                                                     "text":"Vuelo abierto para checkin"
                                                 }
                                             ],
+                                            "isLeg": true,
+                                            "connectionWith": null,
                                             "passengers" : [
                                                 {
                                                     "id" : 2,
