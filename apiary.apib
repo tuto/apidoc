@@ -76,7 +76,7 @@ API Rest para la aplicación checkin de LAN.com
                                                 "estimatedArrivalDateTime" : "2014-05-07T17:38"
                                             },
                                             "connectionWith": 2,
-                                            "status" : "OPEN",
+                                            "status" : "OPEN", // OPEN = vuelo abierto para checkin, CLOSE = Vuelo cerrado para checkin, paso la ventana operacional, //NOTOPENYET = Vuelo aun no llega a la ventana operacional
                                             "isLeg": false,
                                             "messages" :[
                                                 {
@@ -397,30 +397,30 @@ API Rest para la aplicación checkin de LAN.com
                 }
             }
 
+            + Response 500 (application/json)
+            
+                { "title": "Fatal Error" }
 
+            + Response 501 (application/json)
 
+                { "title": "No paso la validacion del apellido o record locator, intente de nuevo" } 
 
+            + Response 502 (application/json)  
 
+                { "title": "Error llamando al servicio, trate en un rato" }         
 
-+ Response 501 (application/json)
+            + Response 503 (application/json)
 
-        { "title": "No paso la validacion del apellido o record locator, intente de nuevo" } 
+                { "title": "No disponible el checkin" }
 
-+ Response 502 (application/json)
+            + Response 510 (application/json)
 
-        { "title": "Error llamando al servicio, trate en un rato" }         
+                { "title": "Reserva inhibida para checkin" }
 
-+ Response 503 (application/json)
+            + Response 521 (application/json)
 
-        { "title": "No disponible el checkin" }
+                { "title": "Redirigiendo a sitio tam", "url" : "tam.com.br/supercheckindetam" }
 
-+ Response 510 (application/json)
-
-        { "title": "Reserva inhibida para checkin" }
-
-+ Response 521 (application/json)
-
-        { "title": "Redirigiendo a sitio tam", "url" : "tam.com.br/supercheckindetam" }
-
-+ Response 500 (application/json)
-        { "title": "Fatal Error" }
+            + Response 530 (application/json)
+            
+                { "title": "Reserva de grupo, pedir ingreso foid o eticket" }
