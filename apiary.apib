@@ -75,9 +75,9 @@ API Rest para la aplicación checkin de LAN.com
                                                 },
                                                 "estimatedArrivalDateTime" : "2014-05-07T17:38"
                                             },
-                                            "connectionWith": 2,
+                                            "connectionWith": 2, // 2 = numero de vuelo con el que está en conexion
                                             "status" : "OPEN", // OPEN = vuelo abierto para checkin, CLOSE = Vuelo cerrado para checkin, paso la ventana operacional, //NOTOPENYET = Vuelo aun no llega a la ventana operacional
-                                            "isLeg": false,
+                                            "isLeg": false, // isLeg = true significa que es este vuelo es una escala del segmento
                                             "messages" :[
                                                 {
                                                     "text":"Este vuelo esta abierto para checkin"
@@ -87,11 +87,11 @@ API Rest para la aplicación checkin de LAN.com
                                                 {
                                                     "id" : 1,
                                                     "ticketNumber":"04534245452342" ,
-                                                    "status" : "ENABLE",
+                                                    "status" : "ENABLE", //ENABLE = Disponible para checkin, DISABLE = No disponible para checkin, las razones deberian venir en el campo messages
                                                     "documents" : {
-                                                        "boardingpasspdf" : "ENABLE",
-                                                        "emailboardingpass" : "ENABLE",
-                                                        "mobileboardingpass" : "DISABLE",
+                                                        "boardingpasspdf" : true, 
+                                                        "emailboardingpass" : true,
+                                                        "mobileboardingpass" : false,
                                                         "precheckvoucher" : true   
                                                     }
                                                 },
@@ -100,9 +100,9 @@ API Rest para la aplicación checkin de LAN.com
                                                     "ticketNumber" : "04534245452343",
                                                     "status" : "ENABLE",
                                                     "documents" : {
-                                                        "boardingpasspdf" : "ENABLE",
-                                                        "emailboardingpass" : "ENABLE",
-                                                        "mobileboardingpass" : "DISABLE",
+                                                        "boardingpasspdf" : true,
+                                                        "emailboardingpass" : true,
+                                                        "mobileboardingpass" : false,
                                                         "precheckvoucher" : true     
                                                     }
                                                 },
@@ -111,9 +111,9 @@ API Rest para la aplicación checkin de LAN.com
                                                     "ticketNumber":"04534245452344",
                                                     "status" : "ENABLE",
                                                     "documents" : {
-                                                        "boardingpasspdf" : "ENABLE",
-                                                        "emailboardingpass" : "ENABLE",
-                                                        "mobileboardingpass" : "DISABLE",
+                                                        "boardingpasspdf" : true,
+                                                        "emailboardingpass" : true,
+                                                        "mobileboardingpass" : false,
                                                         "precheckvoucher" : true    
                                                     }
                                                 }
@@ -164,9 +164,9 @@ API Rest para la aplicación checkin de LAN.com
                                                     "ticketNumber" : "04534245452342",
                                                     "status" : "ENABLE",
                                                     "documents" : {
-                                                        "boardingpasspdf" : "ENABLE",
-                                                        "emailboardingpass" : "ENABLE",
-                                                        "mobileboardingpass" : "DISABLE",
+                                                        "boardingpasspdf" : true,
+                                                        "emailboardingpass" : true,
+                                                        "mobileboardingpass" : false,
                                                         "precheckvoucher" : false     
                                                     }
                                                 },
@@ -175,9 +175,9 @@ API Rest para la aplicación checkin de LAN.com
                                                     "ticketNumber":"04534245452343",
                                                     "status" : "ENABLE",
                                                     "documents" : {
-                                                        "boardingpasspdf" : "ENABLE",
-                                                        "emailboardingpass" : "ENABLE",
-                                                        "mobileboardingpass" : "DISABLE",
+                                                        "boardingpasspdf" : true,
+                                                        "emailboardingpass" : false,
+                                                        "mobileboardingpass" : true,
                                                         "precheckvoucher" : false     
                                                     }
                                                 },
@@ -191,9 +191,9 @@ API Rest para la aplicación checkin de LAN.com
                                                         }
                                                     ],
                                                     "documents" : {
-                                                        "boardingpasspdf" : "ENABLE",
-                                                        "emailboardingpass" : "ENABLE",
-                                                        "mobileboardingpass" : "DISABLE",
+                                                        "boardingpasspdf" : false,
+                                                        "emailboardingpass" : false,
+                                                        "mobileboardingpass" : false,
                                                         "precheckvoucher" : false     
                                                     }
                                                 }
@@ -243,9 +243,9 @@ API Rest para la aplicación checkin de LAN.com
                                                     "id":1,
                                                     "status" : "ENABLE",
                                                     "documents" : {
-                                                        "boardingpasspdf" : "ENABLE",
-                                                        "emailboardingpass" : "ENABLE",
-                                                        "mobileboardingpass" : "DISABLE",
+                                                        "boardingpasspdf" : false,
+                                                        "emailboardingpass" : false,
+                                                        "mobileboardingpass" : true,
                                                         "precheckvoucher" : false     
                                                     }
                                                 },
@@ -253,9 +253,9 @@ API Rest para la aplicación checkin de LAN.com
                                                     "id" :"2",
                                                     "status" : "ENABLE",
                                                     "documents" : {
-                                                        "boardingpasspdf" : "ENABLE",
-                                                        "emailboardingpass" : "ENABLE",
-                                                        "mobileboardingpass" : "DISABLE",
+                                                        "boardingpasspdf" : true,
+                                                        "emailboardingpass" : true,
+                                                        "mobileboardingpass" : false,
                                                         "precheckvoucher" : false     
                                                     }
                                                 },
@@ -268,16 +268,16 @@ API Rest para la aplicación checkin de LAN.com
                                                         }
                                                     ],
                                                     "documents" : {
-                                                        "boardingpasspdf" : "ENABLE",
-                                                        "emailboardingpass" : "ENABLE",
-                                                        "mobileboardingpass" : "DISABLE",
-                                                        "precheckvoucher" : false     
+                                                        "boardingpasspdf" : false,
+                                                        "emailboardingpass" : false,
+                                                        "mobileboardingpass" : true,
+                                                        "precheckvouchercheq" : false     
                                                     }
                                                 }
                                             ]                                    
                                         }
                                     ],
-                                    "status":"NO_CHEQUEABLE",
+                                    "status":"NOCHECK", // CHECK = segmento chequeable, NOCHECK = segmento no chequeable
                                     "messages" :[
                                         {
                                             "text":"Segmento no chequeble"
@@ -328,9 +328,9 @@ API Rest para la aplicación checkin de LAN.com
                                                     "id" : 2,
                                                     "status" : "ENABLE",
                                                     "documents" : {
-                                                        "boardingpasspdf" : "ENABLE",
-                                                        "emailboardingpass" : "ENABLE",
-                                                        "mobileboardingpass" : "DISABLE",
+                                                        "boardingpasspdf" : true,
+                                                        "emailboardingpass" : true,
+                                                        "mobileboardingpass" : false,
                                                         "precheckvoucher" : false     
                                                     }
                                                 },
@@ -338,9 +338,9 @@ API Rest para la aplicación checkin de LAN.com
                                                     "id":"3",
                                                     "status" : "DISABLE",
                                                     "documents" : {
-                                                        "boardingpasspdf" : "ENABLE",
-                                                        "emailboardingpass" : "ENABLE",
-                                                        "mobileboardingpass" : "DISABLE",
+                                                        "boardingpasspdf" : true,
+                                                        "emailboardingpass" : true,
+                                                        "mobileboardingpass" : false,
                                                         "precheckvoucher" : false    
                                                     },
                                                     "messages" : [
@@ -352,7 +352,7 @@ API Rest para la aplicación checkin de LAN.com
                                             ]    
                                         }           
                                     ],
-                                    "status" : "CHEQUEABLE",
+                                    "status" : "CHECK",
                                     "messages" :[
                                         {
                                             "text":"Segmento chequeble "
@@ -391,8 +391,16 @@ API Rest para la aplicación checkin de LAN.com
                                     "frequentFlyerNumber" : 23453254,
                                     "type" : "INF"
                                 }
-                            ]
-                        }
+                            ],
+                            "status" : "ENABLE" //ENABLE = reserva habilitada para checkin, DISABLE = reserva no habilitada para checkin
+                            "messages" : [
+                                {
+                                    "text" : "Reserva no habilitada para checkin"
+                                    "url" : "lan.com/cgi-bin/checkin/paso2.cgi" //si este campo trae una url es porque esta reserva debe chequearse en ese sitio, sino debe ser null
+                                }
+                            ] 
+
+                        }, 
                     ]    
                 }
             }
