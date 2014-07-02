@@ -1343,3 +1343,27 @@ API Rest para la aplicación checkin de LAN.com
                     }
                 }
             }
+
++ Response 500 (application/json)
+
+        { "title": "Fatal Error" }
+
++ Response 501 (application/json)
+
+        { "title": "No paso la validacion del apellido o record locator, intente de nuevo" } 
+
++ Response 502 (application/json)  
+
+        { "title": "Error llamando al servicio, trate en un rato" }         
+
++ Response 503 (application/json)
+
+        { "title": "No disponible el checkin" }
+
++ Response 510 (application/json)
+
+        { "title": "Reserva inhibida para checkin" }
+
++ Response 522 (application/json)
+
+        { "title": "No se puede obtener la configuracion de la api para este origen destino"}
