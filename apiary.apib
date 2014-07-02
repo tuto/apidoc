@@ -39,375 +39,699 @@ API Rest para la aplicación checkin de LAN.com
                     "code": 200
                 },
                 "data": {
-                    "bookings" :[ 
+                    "bookings": [
                         {
-                            "id" :1,                            
                             "recordLocator": "asdfds",
-                            "segments" :[
-                                {                                 
-                                    "id" : 1,
-                                    "flights":[
-                                        {
-                                            "id" : 1,        
-                                            "flightNumber": 23323,
-                                            "operatingAirlineCode":"JJ",
-                                            "marketinfAirlineCode":"LA",
-                                            "departureData" : {
-                                                "departureCity": {
-                                                    "code" : "IGU",
-                                                    "name" : "Foz de Iguazu"
-                                                },
-                                                "departureAirport": {
-                                                    "code" : "IGU",
-                                                    "name" : "Foz de Iguazu"
-                                                },
-                                                "estimatedDepartureDateTime" : "2014-05-07T16:07"
-                                            },
-                                            "arrivalData" : {
-                                                    "arrivalCity": {
-                                                    "code" : "SCL",
-                                                    "name" : "Santiado de Chile"
-                                                },
-                                                    
-                                                 "arrivalAirport": {
-                                                    "code" : "SCL",
-                                                    "name" : "Santiado de Chile"
-                                                },
-                                                "estimatedArrivalDateTime" : "2014-05-07T17:38"
-                                            },
-                                            "connectionWith": 2, // 2 = numero de vuelo con el que está en conexion
-                                            "status" : "OPEN", // OPEN = vuelo abierto para checkin, CLOSE = Vuelo cerrado para checkin, paso la ventana operacional, //NOTOPENYET = Vuelo aun no llega a la ventana operacional
-                                            "isLeg": false, // isLeg = true significa que es este vuelo es una escala del segmento
-                                            "messages" :[
-                                                {
-                                                    "text":"Este vuelo esta abierto para checkin"
-                                                }
-                                            ],
-                                            "passengers" : [ 
-                                                {
-                                                    "id" : 1,
-                                                    "ticketNumber":"04534245452342" ,
-                                                    "status" : "ENABLE", //ENABLE = Disponible para checkin, DISABLE = No disponible para checkin, las razones deberian venir en el campo messages
-                                                    "documents" : {
-                                                        "boardingpasspdf" : true, 
-                                                        "emailboardingpass" : true,
-                                                        "mobileboardingpass" : false,
-                                                        "precheckvoucher" : true   
-                                                    }
-                                                },
-                                                {    
-                                                    "id" : 2,
-                                                    "ticketNumber" : "04534245452343",
-                                                    "status" : "ENABLE",
-                                                    "documents" : {
-                                                        "boardingpasspdf" : true,
-                                                        "emailboardingpass" : true,
-                                                        "mobileboardingpass" : false,
-                                                        "precheckvoucher" : true     
-                                                    }
-                                                },
-                                                {
-                                                    "id" :3,
-                                                    "ticketNumber":"04534245452344",
-                                                    "status" : "ENABLE",
-                                                    "documents" : {
-                                                        "boardingpasspdf" : true,
-                                                        "emailboardingpass" : true,
-                                                        "mobileboardingpass" : false,
-                                                        "precheckvoucher" : true    
-                                                    }
-                                                }
-                                            ],
-                                            "gds" : 1 // 1 = amadeus, 2 sabre
-                                        },
-                                        {
-                                            "id" : 2,
-                                            "flightNumber": 23324,
-                                            "operatingAirlineCode":"JJ",
-                                            "marketinfAirlineCode":"LA",
-                                            "departureData" : {
-                                                "departureCity": {
-                                                    "code" : "IGU",
-                                                    "name" : "Foz de Iguazu"
-                                                },
-                                                "departureAirport": {
-                                                    "code" : "IGU",
-                                                    "name" : "Foz de Iguazu"
-                                                },
-                                                "estimatedDepartureDateTime" : "2014-05-07T16:07"
-                                            },
-                                            "arrivalData" : {
-                                                    "arrivalCity": {
-                                                    "code" : "SCL",
-                                                    "name" : "Santiado de Chile"
-                                                },
-                                                    
-                                                 "arrivalAirport": {
-                                                    "code" : "SCL",
-                                                    "name" : "Santiado de Chile"
-                                                },
-                                                "estimatedArrivalDateTime" : "2014-05-07T17:38"
-                                            },
-                                            "connectionWith": 4,
-                                            "status": "CLOSED",
-                                            "isLeg": false,
-                                            "messages" :[
-                                                {
-                                                    "text":"Vuelo cerrado para checkin por que aun no se abre"
-                                                },
-                                                {
-                                                    "text":"Por favor dirigirse al counter"
-                                                }
-                                            ],
-                                            "passengers" : [
-                                                {
-                                                    "id" : 1,
-                                                    "ticketNumber" : "04534245452342",
-                                                    "status" : "ENABLE",
-                                                    "documents" : {
-                                                        "boardingpasspdf" : true,
-                                                        "emailboardingpass" : true,
-                                                        "mobileboardingpass" : false,
-                                                        "precheckvoucher" : false     
-                                                    }
-                                                },
-                                                {
-                                                    "id" : 2,   
-                                                    "ticketNumber":"04534245452343",
-                                                    "status" : "ENABLE",
-                                                    "documents" : {
-                                                        "boardingpasspdf" : true,
-                                                        "emailboardingpass" : false,
-                                                        "mobileboardingpass" : true,
-                                                        "precheckvoucher" : false     
-                                                    }
-                                                },
-                                                {
-                                                    "id" : 3,
-                                                    "ticketNumber": "04534245452344",
-                                                    "status" : "DISABLE",
-                                                    "messages" : [
-                                                        {
-                                                            "text" : "Pasajero no habilitado para checkin por que es un terrorista"
-                                                        }
-                                                    ],
-                                                    "documents" : {
-                                                        "boardingpasspdf" : false,
-                                                        "emailboardingpass" : false,
-                                                        "mobileboardingpass" : false,
-                                                        "precheckvoucher" : false     
-                                                    }
-                                                }
-                                            ],
-                                            "gds": 2
-                                        },
-                                        {
-                                            "id" : 4,
-                                            "flightNumber": 23325,
-                                            "operatingAirlineCode":"JJ",
-                                            "marketinfAirlineCode":"LA",
-                                            "departureData" : {
-                                                "departureCity": {
-                                                    "code" : "IGU",
-                                                    "name" : "Foz de Iguazu"
-                                                },
-                                                "departureAirport": {
-                                                    "code" : "IGU",
-                                                    "name" : "Foz de Iguazu"
-                                                },
-                                                "estimatedDepartureDateTime" : "2014-05-07T16:07"
-                                            },
-                                            "arrivalData" : {
-                                                    "arrivalCity": {
-                                                    "code" : "SCL",
-                                                    "name" : "Santiado de Chile"
-                                                },
-                                                    
-                                                 "arrivalAirport": {
-                                                    "code" : "SCL",
-                                                    "name" : "Santiado de Chile"
-                                                },
-                                                "estimatedArrivalDateTime" : "2014-05-07T17:38"
-                                            },
-                                            "isLeg": true,
-                                            "connectionWith": null,
-                                            "status": "CLOSED",
-                                            "messages" :[
-                                                {
-                                                    "text":"Vuelo cerrado para checkin por que aun no se abre"
-                                                },
-                                                {
-                                                    "text":"Por favor dirigirse al counter"
-                                                }
-                                            ],
-                                            "passengers" : [ 
-                                                {
-                                                    "id":1,
-                                                    "status" : "ENABLE",
-                                                    "documents" : {
-                                                        "boardingpasspdf" : false,
-                                                        "emailboardingpass" : false,
-                                                        "mobileboardingpass" : true,
-                                                        "precheckvoucher" : false     
-                                                    }
-                                                },
-                                                {
-                                                    "id" :"2",
-                                                    "status" : "ENABLE",
-                                                    "documents" : {
-                                                        "boardingpasspdf" : true,
-                                                        "emailboardingpass" : true,
-                                                        "mobileboardingpass" : false,
-                                                        "precheckvoucher" : false     
-                                                    }
-                                                },
-                                                {
-                                                    "id" :"3",
-                                                    "status" : "DISABLE",
-                                                    "messages" : [
-                                                        {
-                                                            "text" : "Pasajero no habilitado para checkin por que es un terrorista"
-                                                        }
-                                                    ],
-                                                    "documents" : {
-                                                        "boardingpasspdf" : false,
-                                                        "emailboardingpass" : false,
-                                                        "mobileboardingpass" : true,
-                                                        "precheckvouchercheq" : false     
-                                                    }
-                                                }
-                                            ],
-                                            "gds" : 1                                    
-                                        }
-                                    ],
-                                    "status":"NOCHECK", // CHECK = segmento chequeable, NOCHECK = segmento no chequeable
-                                    "messages" :[
-                                        {
-                                            "text":"Segmento no chequeble"
-                                        }
-                                    ]    
-                                },
+                            "segments": [
                                 {
-                                    "id": 2,
+                                    "id": 1,
                                     "flights": [
                                         {
-                                            "id" : 5,        
+                                            "id": 1,
                                             "flightNumber": 23323,
-                                            "operatingAirlineCode":"JJ",
-                                            "marketinfAirlineCode":"LA",
-                                            "departureData" : {
+                                            "operatingAirlineCode": "JJ",
+                                            "marketinfAirlineCode": "LA",
+                                            "departureData": {
                                                 "departureCity": {
-                                                    "code" : "IGU",
-                                                    "name" : "Foz de Iguazu"
+                                                    "code": "IGU",
+                                                    "name": "Foz de Iguazu"
                                                 },
                                                 "departureAirport": {
-                                                    "code" : "IGU",
-                                                    "name" : "Foz de Iguazu"
+                                                    "code": "IGU",
+                                                    "name": "Foz de Iguazu"
                                                 },
-                                                "estimatedDepartureDateTime" : "2014-05-07T16:07"
+                                                "estimatedDepartureDateTime": "2014-05-07T16:07"
                                             },
-                                            "arrivalData" : {
-                                                    "arrivalCity": {
-                                                    "code" : "SCL",
-                                                    "name" : "Santiado de Chile"
+                                            "arrivalData": {
+                                                "arrivalCity": {
+                                                    "code": "SCL",
+                                                    "name": "Santiado de Chile"
                                                 },
-                                                    
-                                                 "arrivalAirport": {
-                                                    "code" : "SCL",
-                                                    "name" : "Santiado de Chile"
+                                                "arrivalAirport": {
+                                                    "code": "SCL",
+                                                    "name": "Santiado de Chile"
                                                 },
-                                                "estimatedArrivalDateTime" : "2014-05-07T17:38"
+                                                "estimatedArrivalDateTime": "2014-05-07T17:38"
                                             },
-                                            "status" : "OPEN",
-                                            "messages" :[
+                                            "connectionWith": 2,
+                                            "status": "OPEN",
+                                            "isLeg": false,
+                                            "messages": [
                                                 {
-                                                    "text":"Vuelo abierto para checkin"
+                                                    "text": "Este vuelo esta abierto para checkin"
                                                 }
                                             ],
-                                            "isLeg": true,
-                                            "connectionWith": null,
-                                            "passengers" : [
+                                            "passengers": [
                                                 {
-                                                    "id" : 2,
-                                                    "status" : "ENABLE",
-                                                    "documents" : {
-                                                        "boardingpasspdf" : true,
-                                                        "emailboardingpass" : true,
-                                                        "mobileboardingpass" : false,
-                                                        "precheckvoucher" : false     
-                                                    }
-                                                },
-                                                {
-                                                    "id":"3",
-                                                    "status" : "DISABLE",
-                                                    "documents" : {
-                                                        "boardingpasspdf" : true,
-                                                        "emailboardingpass" : true,
-                                                        "mobileboardingpass" : false,
-                                                        "precheckvoucher" : false    
+                                                    "id": 1,
+                                                    "ticketNumber": "04534245452342",
+                                                    "status": "ENABLE",
+                                                    "documents": {
+                                                        "boardingpasspdf": true,
+                                                        "emailboardingpass": true,
+                                                        "mobileboardingpass": false,
+                                                        "precheckvoucher": true
                                                     },
-                                                    "messages" : [
-                                                        {
-                                                            "text" : "Pasajero no habilitado para checkin por que es un terrorista"
-                                                        }
-                                                    ]
+                                                    "messages": []
+                                                },
+                                                {
+                                                    "id": 2,
+                                                    "ticketNumber": "04534245452343",
+                                                    "status": "ENABLE",
+                                                    "documents": {
+                                                        "boardingpasspdf": true,
+                                                        "emailboardingpass": true,
+                                                        "mobileboardingpass": false,
+                                                        "precheckvoucher": true
+                                                    },
+                                                    "messages": []
+                                                },
+                                                {
+                                                    "id": 3,
+                                                    "ticketNumber": "04534245452344",
+                                                    "status": "ENABLE",
+                                                    "documents": {
+                                                        "boardingpasspdf": true,
+                                                        "emailboardingpass": true,
+                                                        "mobileboardingpass": false,
+                                                        "precheckvoucher": true
+                                                    },
+                                                    "messages": []
                                                 }
                                             ],
-                                            "gds" : 1    
-                                        }           
-                                    ],
-                                    "status" : "CHECK",
-                                    "messages" :[
+                                            "gds": 1
+                                        },
                                         {
-                                            "text":"Segmento chequeble "
+                                            "id": 2,
+                                            "flightNumber": 23323,
+                                            "operatingAirlineCode": "JJ",
+                                            "marketinfAirlineCode": "LA",
+                                            "departureData": {
+                                                "departureCity": {
+                                                    "code": "IGU",
+                                                    "name": "Foz de Iguazu"
+                                                },
+                                                "departureAirport": {
+                                                    "code": "IGU",
+                                                    "name": "Foz de Iguazu"
+                                                },
+                                                "estimatedDepartureDateTime": "2014-05-07T16:07"
+                                            },
+                                            "arrivalData": {
+                                                "arrivalCity": {
+                                                    "code": "SCL",
+                                                    "name": "Santiado de Chile"
+                                                },
+                                                "arrivalAirport": {
+                                                    "code": "SCL",
+                                                    "name": "Santiado de Chile"
+                                                },
+                                                "estimatedArrivalDateTime": "2014-05-07T17:38"
+                                            },
+                                            "connectionWith": 2,
+                                            "status": "OPEN",
+                                            "isLeg": false,
+                                            "messages": [
+                                                {
+                                                    "text": "Este vuelo esta abierto para checkin"
+                                                }
+                                            ],
+                                            "passengers": [
+                                                {
+                                                    "id": 1,
+                                                    "ticketNumber": "04534245452342",
+                                                    "status": "ENABLE",
+                                                    "documents": {
+                                                        "boardingpasspdf": true,
+                                                        "emailboardingpass": true,
+                                                        "mobileboardingpass": false,
+                                                        "precheckvoucher": true
+                                                    },
+                                                    "messages": []
+                                                },
+                                                {
+                                                    "id": 2,
+                                                    "ticketNumber": "04534245452343",
+                                                    "status": "ENABLE",
+                                                    "documents": {
+                                                        "boardingpasspdf": true,
+                                                        "emailboardingpass": true,
+                                                        "mobileboardingpass": false,
+                                                        "precheckvoucher": true
+                                                    },
+                                                    "messages": []
+                                                },
+                                                {
+                                                    "id": 3,
+                                                    "ticketNumber": "04534245452344",
+                                                    "status": "ENABLE",
+                                                    "documents": {
+                                                        "boardingpasspdf": true,
+                                                        "emailboardingpass": true,
+                                                        "mobileboardingpass": false,
+                                                        "precheckvoucher": true
+                                                    },
+                                                    "messages": []
+                                                }
+                                            ],
+                                            "gds": 1
+                                        },
+                                        {
+                                            "id": 3,
+                                            "flightNumber": 23323,
+                                            "operatingAirlineCode": "JJ",
+                                            "marketinfAirlineCode": "LA",
+                                            "departureData": {
+                                                "departureCity": {
+                                                    "code": "IGU",
+                                                    "name": "Foz de Iguazu"
+                                                },
+                                                "departureAirport": {
+                                                    "code": "IGU",
+                                                    "name": "Foz de Iguazu"
+                                                },
+                                                "estimatedDepartureDateTime": "2014-05-07T16:07"
+                                            },
+                                            "arrivalData": {
+                                                "arrivalCity": {
+                                                    "code": "SCL",
+                                                    "name": "Santiado de Chile"
+                                                },
+                                                "arrivalAirport": {
+                                                    "code": "SCL",
+                                                    "name": "Santiado de Chile"
+                                                },
+                                                "estimatedArrivalDateTime": "2014-05-07T17:38"
+                                            },
+                                            "connectionWith": 2,
+                                            "status": "OPEN",
+                                            "isLeg": false,
+                                            "messages": [
+                                                {
+                                                    "text": "Este vuelo esta abierto para checkin"
+                                                }
+                                            ],
+                                            "passengers": [
+                                                {
+                                                    "id": 2,
+                                                    "ticketNumber": "04534245452343",
+                                                    "status": "ENABLE",
+                                                    "documents": {
+                                                        "boardingpasspdf": true,
+                                                        "emailboardingpass": true,
+                                                        "mobileboardingpass": false,
+                                                        "precheckvoucher": true
+                                                    },
+                                                    "messages": []
+                                                },
+                                                {
+                                                    "id": 3,
+                                                    "ticketNumber": "04534245452344",
+                                                    "status": "ENABLE",
+                                                    "documents": {
+                                                        "boardingpasspdf": true,
+                                                        "emailboardingpass": true,
+                                                        "mobileboardingpass": false,
+                                                        "precheckvoucher": true
+                                                    },
+                                                    "messages": []
+                                                }
+                                            ],
+                                            "gds": 1
                                         }
-                                    ]            
-                                }
-                            ],
-                            "passengers" : [ 
-                                {
-                                    "id" : 1,
-                                    "ticketNumber": "04534245452342",
-                                    "name" : "TUTO",
-                                    "lastName" : "PEREZ",
-                                    "gender" : "MALE",
-                                    "frequentFlyerProgram" : "JJ",
-                                    "frequentFlyerNumber" : 23453254,
-                                    "type" : "ADT" //ADT =  pasajero adulto, CHD = pasajero child, INF = pasajero infante
+                                    ],
+                                    "status": "NOCHECK",
+                                    "messages": [
+                                        {
+                                            "text": "Segmento no chequeble"
+                                        }
+                                    ]
                                 },
                                 {
-                                    "id" : 2,
+                                    "id": 4,
+                                    "flights": [
+                                        {
+                                            "id": 2,
+                                            "flightNumber": 23323,
+                                            "operatingAirlineCode": "JJ",
+                                            "marketinfAirlineCode": "LA",
+                                            "departureData": {
+                                                "departureCity": {
+                                                    "code": "IGU",
+                                                    "name": "Foz de Iguazu"
+                                                },
+                                                "departureAirport": {
+                                                    "code": "IGU",
+                                                    "name": "Foz de Iguazu"
+                                                },
+                                                "estimatedDepartureDateTime": "2014-05-07T16:07"
+                                            },
+                                            "arrivalData": {
+                                                "arrivalCity": {
+                                                    "code": "SCL",
+                                                    "name": "Santiado de Chile"
+                                                },
+                                                "arrivalAirport": {
+                                                    "code": "SCL",
+                                                    "name": "Santiado de Chile"
+                                                },
+                                                "estimatedArrivalDateTime": "2014-05-07T17:38"
+                                            },
+                                            "connectionWith": 2,
+                                            "status": "OPEN",
+                                            "isLeg": false,
+                                            "messages": [
+                                                {
+                                                    "text": "Este vuelo esta abierto para checkin"
+                                                }
+                                            ],
+                                            "passengers": [
+                                                {
+                                                    "id": 1,
+                                                    "ticketNumber": "04534245452342",
+                                                    "status": "ENABLE",
+                                                    "documents": {
+                                                        "boardingpasspdf": true,
+                                                        "emailboardingpass": true,
+                                                        "mobileboardingpass": false,
+                                                        "precheckvoucher": true
+                                                    },
+                                                    "messages": []
+                                                },
+                                                {
+                                                    "id": 2,
+                                                    "ticketNumber": "04534245452343",
+                                                    "status": "ENABLE",
+                                                    "documents": {
+                                                        "boardingpasspdf": true,
+                                                        "emailboardingpass": true,
+                                                        "mobileboardingpass": false,
+                                                        "precheckvoucher": true
+                                                    },
+                                                    "messages": []
+                                                },
+                                                {
+                                                    "id": 3,
+                                                    "ticketNumber": "04534245452344",
+                                                    "status": "ENABLE",
+                                                    "documents": {
+                                                        "boardingpasspdf": true,
+                                                        "emailboardingpass": true,
+                                                        "mobileboardingpass": false,
+                                                        "precheckvoucher": true
+                                                    },
+                                                    "messages": []
+                                                }
+                                            ],
+                                            "gds": 1
+                                        }
+                                    ],
+                                    "status": "CHECK",
+                                    "messages": [
+                                        {
+                                            "text": "Segmento chequeble "
+                                        }
+                                    ]
+                                }
+                            ],
+                            "passengers": [
+                                {
+                                    "id": 2,
                                     "ticketNumber": "04534245452343",
-                                    "name" : "TUTIN",
-                                    "lastName" : "PEREZ",
-                                    "gender" : "MALE",
-                                    "frequentFlyerProgram" : "JJ",
-                                    "frequentFlyerNumber" : 23453254,
-                                    "type" : "CHD"
+                                    "name": "TUTIN",
+                                    "lastName": "PEREZ",
+                                    "gender": "MALE",
+                                    "frequentFlyerProgram": "JJ",
+                                    "frequentFlyerNumber": 23453254,
+                                    "type": "CHD"
                                 },
                                 {
-                                    "id" : 3,
+                                    "id": 3,
                                     "ticketNumber": "04534245452344",
-                                    "name" : "TUTITO",
-                                    "lastName" : "PEREZ",
-                                    "gender" : "MALE",
-                                    "frequentFlyerProgram" : "JJ",
-                                    "frequentFlyerNumber" : 23453254,
-                                    "type" : "INF"
+                                    "name": "TUTITO",
+                                    "lastName": "PEREZ",
+                                    "gender": "MALE",
+                                    "frequentFlyerProgram": "JJ",
+                                    "frequentFlyerNumber": 23453254,
+                                    "type": "INF"
                                 }
                             ],
-                            "status" : "ENABLE" //ENABLE = reserva habilitada para checkin, DISABLE = reserva no habilitada para checkin
-                            "messages" : [
+                            "status": "ENABLE",
+                            "messages": [
                                 {
-                                    "text" : "Reserva no habilitada para checkin"
-                                    "url" : "lan.com/cgi-bin/checkin/paso2.cgi" //si este campo trae una url es porque esta reserva debe chequearse en ese sitio, sino debe ser null
+                                    "text": "Reserva no habilitada para checkin",
+                                    "url": "lan.com/cgi-bin/checkin/paso2.cgi"
                                 }
-                            ] 
-
-                        }, 
-                    ]    
+                            ]
+                        }
+                    ]
                 }
             }
+
+    + Schema
+
+            {
+                "type":"object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required":false,
+                "properties":{
+                    "data": {
+                        "type":"object",
+                        "required":false,
+                        "properties":{
+                            "bookings": {
+                                "type":"array",
+                                "required":false,
+                                "items":
+                                    {
+                                        "type":"object",
+                                        "required":false,
+                                        "properties":{
+                                            "messages": {
+                                                "type":"array",
+                                                "required":false,
+                                                "items":
+                                                    {
+                                                        "type":"object",
+                                                        "required":false,
+                                                        "properties":{
+                                                            "text": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "url": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            }
+                                                        }
+                                                    }
+                                                
+
+                                            },
+                                            "passengers": {
+                                                "type":"array",
+                                                "required":false,
+                                                "items":
+                                                    {
+                                                        "type":"object",
+                                                        "id": "http://jsonschema.net/data/bookings/0/passengers/0",
+                                                        "required":false,
+                                                        "properties":{
+                                                            "frequentFlyerNumber": {
+                                                                "type":"number",
+                                                                "required":false
+                                                            },
+                                                            "frequentFlyerProgram": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "gender": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "id": {
+                                                                "type":"number",
+                                                                "required":false
+                                                            },
+                                                            "lastName": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "name": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "ticketNumber": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            },
+                                                            "type": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            }
+                                                        }
+                                                    }
+                                                
+
+                                            },
+                                            "recordLocator": {
+                                                "type":"string",
+                                                "required":false
+                                            },
+                                            "segments": {
+                                                "type":"array",
+                                                "required":false,
+                                                "items":
+                                                    {
+                                                        "type":"object",
+                                                        "id": "http://jsonschema.net/data/bookings/0/segments/0",
+                                                        "required":false,
+                                                        "properties":{
+                                                            "flights": {
+                                                                "type":"array",
+                                                                "required":false,
+                                                                "items":
+                                                                    {
+                                                                        "type":"object",
+                                                                        "id": "http://jsonschema.net/data/bookings/0/segments/0/flights/0",
+                                                                        "required":false,
+                                                                        "properties":{
+                                                                            "arrivalData": {
+                                                                                "type":"object",
+                                                                                "required":false,
+                                                                                "properties":{
+                                                                                    "arrivalAirport": {
+                                                                                        "type":"object",
+                                                                                        "required":false,
+                                                                                        "properties":{
+                                                                                            "code": {
+                                                                                                "type":"string",
+                                                                                                "required":false
+                                                                                            },
+                                                                                            "name": {
+                                                                                                "type":"string",
+                                                                                                "required":false
+                                                                                            }
+                                                                                        }
+                                                                                    },
+                                                                                    "arrivalCity": {
+                                                                                        "type":"object",
+                                                                                        "required":false,
+                                                                                        "properties":{
+                                                                                            "code": {
+                                                                                                "type":"string",
+                                                                                                "required":false
+                                                                                            },
+                                                                                            "name": {
+                                                                                                "type":"string",
+                                                                                                "required":false
+                                                                                            }
+                                                                                        }
+                                                                                    },
+                                                                                    "estimatedArrivalDateTime": {
+                                                                                        "type":"string",
+                                                                                        "required":false
+                                                                                    }
+                                                                                }
+                                                                            },
+                                                                            "connectionWith": {
+                                                                                "type":"number",
+                                                                                "required":false
+                                                                            },
+                                                                            "departureData": {
+                                                                                "type":"object",
+                                                                                "required":false,
+                                                                                "properties":{
+                                                                                    "departureAirport": {
+                                                                                        "type":"object",
+                                                                                        "required":false,
+                                                                                        "properties":{
+                                                                                            "code": {
+                                                                                                "type":"string",
+                                                                                                "required":false
+                                                                                            },
+                                                                                            "name": {
+                                                                                                "type":"string",
+                                                                                                "required":false
+                                                                                            }
+                                                                                        }
+                                                                                    },
+                                                                                    "departureCity": {
+                                                                                        "type":"object",
+                                                                                        "required":false,
+                                                                                        "properties":{
+                                                                                            "code": {
+                                                                                                "type":"string",
+                                                                                                "required":false
+                                                                                            },
+                                                                                            "name": {
+                                                                                                "type":"string",
+                                                                                                "required":false
+                                                                                            }
+                                                                                        }
+                                                                                    },
+                                                                                    "estimatedDepartureDateTime": {
+                                                                                        "type":"string",
+                                                                                        "required":false
+                                                                                    }
+                                                                                }
+                                                                            },
+                                                                            "flightNumber": {
+                                                                                "type":"number",
+                                                                                "required":false
+                                                                            },
+                                                                            "gds": {
+                                                                                "type":"number",
+                                                                                "required":false
+                                                                            },
+                                                                            "id": {
+                                                                                "type":"number",
+                                                                                "required":false
+                                                                            },
+                                                                            "isLeg": {
+                                                                                "type":"boolean",
+                                                                                "required":false
+                                                                            },
+                                                                            "marketinfAirlineCode": {
+                                                                                "type":"string",
+                                                                                "required":false
+                                                                            },
+                                                                            "messages": {
+                                                                                "type":"array",
+                                                                                "required":false,
+                                                                                "items":
+                                                                                    {
+                                                                                        "type":"object",
+                                                                                        "required":false,
+                                                                                        "properties":{
+                                                                                            "text": {
+                                                                                                "type":"string",
+                                                                                                "required":false
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                
+
+                                                                            },
+                                                                            "operatingAirlineCode": {
+                                                                                "type":"string",
+                                                                                "required":false
+                                                                            },
+                                                                            "passengers": {
+                                                                                "type":"array",
+                                                                                "required":false,
+                                                                                "items":
+                                                                                    {
+                                                                                        "type":"object",
+                                                                                        "required":false,
+                                                                                        "properties":{
+                                                                                            "documents": {
+                                                                                                "type":"object",
+                                                                                                "required":false,
+                                                                                                "properties":{
+                                                                                                    "boardingpasspdf": {
+                                                                                                        "type":"boolean",
+                                                                                                        "required":false
+                                                                                                    },
+                                                                                                    "emailboardingpass": {
+                                                                                                        "type":"boolean",
+                                                                                                        "required":false
+                                                                                                    },
+                                                                                                    "mobileboardingpass": {
+                                                                                                        "type":"boolean",
+                                                                                                        "required":false
+                                                                                                    },
+                                                                                                    "precheckvoucher": {
+                                                                                                        "type":"boolean",
+                                                                                                        "required":false
+                                                                                                    }
+                                                                                                }
+                                                                                            },
+                                                                                            "id": {
+                                                                                                "type":"number",
+                                                                                                "required":false
+                                                                                            },
+                                                                                            "messages": {
+                                                                                                "type":"array",
+                                                                                                "required":false
+                                                                                            },
+                                                                                            "status": {
+                                                                                                "type":"string",
+                                                                                                "required":false
+                                                                                            },
+                                                                                            "ticketNumber": {
+                                                                                                "type":"string",
+                                                                                                "required":false
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                
+
+                                                                            },
+                                                                            "status": {
+                                                                                "type":"string",
+                                                                                "required":false
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                
+
+                                                            },
+                                                            "id": {
+                                                                "type":"number",
+                                                                "required":false
+                                                            },
+                                                            "messages": {
+                                                                "type":"array",
+                                                                "required":false,
+                                                                "items":
+                                                                    {
+                                                                        "type":"object",
+                                                                        "required":false,
+                                                                        "properties":{
+                                                                            "text": {
+                                                                                "type":"string",
+                                                                                "required":false
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                
+
+                                                            },
+                                                            "status": {
+                                                                "type":"string",
+                                                                "required":false
+                                                            }
+                                                        }
+                                                    }
+                                                
+
+                                            },
+                                            "status": {
+                                                "type":"string",
+                                                "required":false
+                                            }
+                                        }
+                                    }
+                                
+
+                            }
+                        }
+                    },
+                    "status": {
+                        "type":"object",
+                        "required":false,
+                        "properties":{
+                            "code": {
+                                "type":"number",
+                                "required":false
+                            }
+                        }
+                    }
+                }
+            }
+
 
 + Response 500 (application/json)
 
