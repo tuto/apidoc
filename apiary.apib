@@ -50,7 +50,7 @@ API Rest para la aplicación checkin de LAN.com
                                             "id": 1,
                                             "flightNumber": 23323,
                                             "operatingAirlineCode": "JJ",
-                                            "marketinfAirlineCode": "LA",
+                                            "marketingAirlineCode": "LA",
                                             "departureData": {
                                                 "departureCity": {
                                                     "code": "IGU",
@@ -125,7 +125,7 @@ API Rest para la aplicación checkin de LAN.com
                                             "id": 2,
                                             "flightNumber": 23323,
                                             "operatingAirlineCode": "JJ",
-                                            "marketinfAirlineCode": "LA",
+                                            "marketingAirlineCode": "LA",
                                             "departureData": {
                                                 "departureCity": {
                                                     "code": "IGU",
@@ -200,7 +200,7 @@ API Rest para la aplicación checkin de LAN.com
                                             "id": 3,
                                             "flightNumber": 23323,
                                             "operatingAirlineCode": "JJ",
-                                            "marketinfAirlineCode": "LA",
+                                            "marketingAirlineCode": "LA",
                                             "departureData": {
                                                 "departureCity": {
                                                     "code": "IGU",
@@ -274,7 +274,7 @@ API Rest para la aplicación checkin de LAN.com
                                             "id": 2,
                                             "flightNumber": 23323,
                                             "operatingAirlineCode": "JJ",
-                                            "marketinfAirlineCode": "LA",
+                                            "marketingAirlineCode": "LA",
                                             "departureData": {
                                                 "departureCity": {
                                                     "code": "IGU",
@@ -316,7 +316,11 @@ API Rest para la aplicación checkin de LAN.com
                                                         "mobileboardingpass": false,
                                                         "precheckvoucher": true
                                                     },
-                                                    "messages": []
+                                                    "messages": [ 
+                                                        {
+                                                            text : "pasajero imposibilitado de realizar checkin por que es terrorista"
+                                                        }
+                                                    ]
                                                 },
                                                 {
                                                     "id": 2,
@@ -468,7 +472,8 @@ API Rest para la aplicación checkin de LAN.com
                                                             },
                                                             "type": {
                                                                 "type":"string",
-                                                                "required":false
+                                                                "required":false,
+                                                                "description" : "ADT = adulto, CHD = child, INF = infante"
                                                             }
                                                         }
                                                     }
@@ -537,7 +542,8 @@ API Rest para la aplicación checkin de LAN.com
                                                                             },
                                                                             "connectionWith": {
                                                                                 "type":"number",
-                                                                                "required":false
+                                                                                "required":false,
+                                                                                "description" : "Este campo indica el id del vuelo con el que esta en conexion este, si esta nulo no es conexion"
                                                                             },
                                                                             "departureData": {
                                                                                 "type":"object",
@@ -583,7 +589,8 @@ API Rest para la aplicación checkin de LAN.com
                                                                             },
                                                                             "gds": {
                                                                                 "type":"number",
-                                                                                "required":false
+                                                                                "required":false,
+                                                                                "description" : "Indica en que gds se debe chequear este vuelo 1 = Sabre, 2 = amadeus"
                                                                             },
                                                                             "id": {
                                                                                 "type":"number",
@@ -591,9 +598,10 @@ API Rest para la aplicación checkin de LAN.com
                                                                             },
                                                                             "isLeg": {
                                                                                 "type":"boolean",
-                                                                                "required":false
+                                                                                "required":false,
+                                                                                "description" : "Indica si este vuelo es escala del segmento al que pertenece"
                                                                             },
-                                                                            "marketinfAirlineCode": {
+                                                                            "marketingAirlineCode": {
                                                                                 "type":"string",
                                                                                 "required":false
                                                                             },
@@ -607,7 +615,8 @@ API Rest para la aplicación checkin de LAN.com
                                                                                         "properties":{
                                                                                             "text": {
                                                                                                 "type":"string",
-                                                                                                "required":false
+                                                                                                "required":false,
+                                                                                                "description" : "texto que describe el status del vuelo en el segmento"
                                                                                             }
                                                                                         }
                                                                                     }
@@ -654,11 +663,24 @@ API Rest para la aplicación checkin de LAN.com
                                                                                             },
                                                                                             "messages": {
                                                                                                 "type":"array",
-                                                                                                "required":false
+                                                                                                "required":false,
+                                                                                                "items":
+                                                                                                {
+                                                                                                    "type":"object",
+                                                                                                    "required":false,
+                                                                                                    "properties":{
+                                                                                                        "text": {
+                                                                                                            "type":"string",
+                                                                                                            "required":false,
+                                                                                                            "description" : "mensajes para describir el status del pasajero en el vuelo"
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
                                                                                             },
                                                                                             "status": {
                                                                                                 "type":"string",
-                                                                                                "required":false
+                                                                                                "required":false,
+                                                                                                "description" : "status del pasajero en ese vuelo ENABLE = se puede chequear, DISABLE = no se puede chequear"
                                                                                             },
                                                                                             "ticketNumber": {
                                                                                                 "type":"string",
@@ -671,7 +693,8 @@ API Rest para la aplicación checkin de LAN.com
                                                                             },
                                                                             "status": {
                                                                                 "type":"string",
-                                                                                "required":false
+                                                                                "required":false,
+                                                                                "description" : "Indica el status del vuelo OPEN = abierto para checkin, CLOSE = cerrado para checkin, se paso la ventana operacional, NOTOPENYET = aun no abierto, aun no entra en la ventana operacional"
                                                                             }
                                                                         }
                                                                     }
@@ -692,7 +715,8 @@ API Rest para la aplicación checkin de LAN.com
                                                                         "properties":{
                                                                             "text": {
                                                                                 "type":"string",
-                                                                                "required":false
+                                                                                "required":false,
+                                                                                "description" : "mensajes para describir el status del segmento"
                                                                             }
                                                                         }
                                                                     }
@@ -701,7 +725,8 @@ API Rest para la aplicación checkin de LAN.com
                                                             },
                                                             "status": {
                                                                 "type":"string",
-                                                                "required":false
+                                                                "required":false,
+                                                                "description" : "status del segmento CHEK = checkeable , NOCHEK =  no chequeable"
                                                             }
                                                         }
                                                     }
@@ -710,7 +735,8 @@ API Rest para la aplicación checkin de LAN.com
                                             },
                                             "status": {
                                                 "type":"string",
-                                                "required":false
+                                                "required":false,
+                                                "description" : "status de la reserva ENABLE = se puede chequear, DISABLE =  no se puede chequear "
                                             }
                                         }
                                     }
