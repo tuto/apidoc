@@ -84,6 +84,7 @@ API Rest para la aplicación checkin de LAN.com
                                             "passengers": [
                                                 {
                                                     "id": 1,
+                                                    "gdsPaxSegmentID" : "1104534245452342",
                                                     "ticketNumber": "04534245452342",
                                                     "status": "ENABLE",
                                                     "documents": {
@@ -96,6 +97,7 @@ API Rest para la aplicación checkin de LAN.com
                                                 },
                                                 {
                                                     "id": 2,
+                                                    "gdsPaxSegmentID" : "1104534245452342",
                                                     "ticketNumber": "04534245452343",
                                                     "status": "ENABLE",
                                                     "documents": {
@@ -108,6 +110,7 @@ API Rest para la aplicación checkin de LAN.com
                                                 },
                                                 {
                                                     "id": 3,
+                                                    "gdsPaxSegmentID" : "1104534245452342",
                                                     "ticketNumber": "04534245452344",
                                                     "status": "ENABLE",
                                                     "documents": {
@@ -159,6 +162,7 @@ API Rest para la aplicación checkin de LAN.com
                                             "passengers": [
                                                 {
                                                     "id": 1,
+                                                    "gdsPaxSegmentID" : "1104534245452342",
                                                     "ticketNumber": "04534245452342",
                                                     "status": "ENABLE",
                                                     "documents": {
@@ -171,6 +175,7 @@ API Rest para la aplicación checkin de LAN.com
                                                 },
                                                 {
                                                     "id": 2,
+                                                    "gdsPaxSegmentID" : "1104534245452342",
                                                     "ticketNumber": "04534245452343",
                                                     "status": "ENABLE",
                                                     "documents": {
@@ -183,6 +188,7 @@ API Rest para la aplicación checkin de LAN.com
                                                 },
                                                 {
                                                     "id": 3,
+                                                    "gdsPaxSegmentID" : "1104534245452342",
                                                     "ticketNumber": "04534245452344",
                                                     "status": "ENABLE",
                                                     "documents": {
@@ -198,6 +204,7 @@ API Rest para la aplicación checkin de LAN.com
                                         },
                                         {
                                             "id": 3,
+
                                             "flightNumber": 23323,
                                             "operatingAirlineCode": "JJ",
                                             "marketingAirlineCode": "LA",
@@ -234,6 +241,7 @@ API Rest para la aplicación checkin de LAN.com
                                             "passengers": [
                                                 {
                                                     "id": 2,
+                                                    "gdsPaxSegmentID" : "1104534245452342",
                                                     "ticketNumber": "04534245452343",
                                                     "status": "ENABLE",
                                                     "documents": {
@@ -246,6 +254,7 @@ API Rest para la aplicación checkin de LAN.com
                                                 },
                                                 {
                                                     "id": 3,
+                                                    "gdsPaxSegmentID" : "1104534245452342",
                                                     "ticketNumber": "04534245452344",
                                                     "status": "ENABLE",
                                                     "documents": {
@@ -308,6 +317,7 @@ API Rest para la aplicación checkin de LAN.com
                                             "passengers": [
                                                 {
                                                     "id": 1,
+                                                    "gdsPaxSegmentID" : "1104534245452342",
                                                     "ticketNumber": "04534245452342",
                                                     "status": "ENABLE",
                                                     "documents": {
@@ -324,6 +334,7 @@ API Rest para la aplicación checkin de LAN.com
                                                 },
                                                 {
                                                     "id": 2,
+                                                    "gdsPaxSegmentID" : "1104534245452342",
                                                     "ticketNumber": "04534245452343",
                                                     "status": "ENABLE",
                                                     "documents": {
@@ -336,6 +347,7 @@ API Rest para la aplicación checkin de LAN.com
                                                 },
                                                 {
                                                     "id": 3,
+                                                    "gdsPaxSegmentID" : "1104534245452342",
                                                     "ticketNumber": "04534245452344",
                                                     "status": "ENABLE",
                                                     "documents": {
@@ -361,7 +373,6 @@ API Rest para la aplicación checkin de LAN.com
                             "passengers": [
                                 {
                                     "id": 2,
-                                    "ticketNumber": "04534245452343",
                                     "name": "TUTIN",
                                     "lastName": "PEREZ",
                                     "gender": "MALE",
@@ -370,8 +381,16 @@ API Rest para la aplicación checkin de LAN.com
                                     "type": "CHD"
                                 },
                                 {
+                                    "id": 2,
+                                    "name": "TUTITO",
+                                    "lastName": "PEREZ",
+                                    "gender": "MALE",
+                                    "frequentFlyerProgram": "JJ",
+                                    "frequentFlyerNumber": 23453254,
+                                    "type": "INF"
+                                },
+                                {
                                     "id": 3,
-                                    "ticketNumber": "04534245452344",
                                     "name": "TUTITO",
                                     "lastName": "PEREZ",
                                     "gender": "MALE",
@@ -463,10 +482,6 @@ API Rest para la aplicación checkin de LAN.com
                                                                 "required":false
                                                             },
                                                             "name": {
-                                                                "type":"string",
-                                                                "required":false
-                                                            },
-                                                            "ticketNumber": {
                                                                 "type":"string",
                                                                 "required":false
                                                             },
@@ -661,6 +676,11 @@ API Rest para la aplicación checkin de LAN.com
                                                                                                 "type":"number",
                                                                                                 "required":false
                                                                                             },
+                                                                                            "gdsPaxSegmentID" :  {
+                                                                                                "type":"string",
+                                                                                                "required":false,
+                                                                                                "description" : "Identificador del pasajero segmento, para amadeus debería ser el productID para sabre el passengerID"            
+                                                                                            },
                                                                                             "messages": {
                                                                                                 "type":"array",
                                                                                                 "required":false,
@@ -803,90 +823,54 @@ API Rest para la aplicación checkin de LAN.com
             "application": "checkin",
             "language": "PT",
             "country": "BR",
-            "segments": [
+            "legs": [
                 {
                     "departureAirport": "IGU",
                     "arrivalAirport": "CGH",
-                    "operatingAirline": "JJ",
                     "passengers": [
                         {
-                            "name": "MARIA",
-                            "lastName": "PAULA SOARES SAMPLES",
-                            "ticketNumber": "9572483127883",
-                            "frequentFlyerNumber": "1681462637",
-                            "frequentFlyerProgram": "JJ",
-                            "nationality": "BR"
+                            "gdsPaxSegmentID" : "sfd3fsdf324fsda"
                         },
                         {
-                            "name": "HOMERO",
-                            "lastName": "SIMPSON",
-                            "ticketNumber": "9572483127884",
-                            "nationality": "BR"
+                           "gdsPaxSegmentID" : "sfd3fsdf324fsda"
                         },
                         {
-                            "name": "LISA",
-                            "lastName": "SIMPSON",
-                            "ticketNumber": "9572483127885",
-                            "dateOfBirth": "2011-04-05",
-                            "nationality": "BR"
+                            "gdsPaxSegmentID" : "sfd3fsdf324fsda"
                         }
-                    ]
+                    ],
+                    "gds" : 1
                 },
                 {
                     "departureAirport": "CGH",
                     "arrivalAirport": "SDU",
-                    "operatingAirline": "JJ",
                     "passengers": [
                         {
-                            "name": "MARIA",
-                            "lastName": "PAULA SOARES SAMPLES",
-                            "ticketNumber": "9572483127883",
-                            "frequentFlyerNumber": "1681462637",
-                            "frequentFlyerProgram": "JJ",
-                            "nationality": "BR"
+                            "gdsPaxSegmentID" : "sfd3fsdf324fsda"
                         },
                         {
-                            "name": "HOMERO",
-                            "lastName": "SIMPSON",
-                            "ticketNumber": "9572483127884",
-                            "nationality": "BR"
+                           "gdsPaxSegmentID" : "sfd3fsdf324fsda"
                         },
                         {
-                            "name": "LISA",
-                            "lastName": "SIMPSON",
-                            "ticketNumber": "9572483127885",
-                            "dateOfBirth": "2011-04-05",
-                            "nationality": "BR"
+                            "gdsPaxSegmentID" : "sfd3fsdf324fsda"
                         }
-                    ]
+                    ],
+                    "gds" : 1
                 },
                 {
                     "departureAirport": "GIG",
                     "arrivalAirport": "POA",
-                    "operatingAirline": "JJ",
                     "passengers": [
                         {
-                            "name": "MARIA",
-                            "lastName": "PAULA SOARES SAMPLES",
-                            "ticketNumber": "9572483127883",
-                            "frequentFlyerNumber": "1681462637",
-                            "frequentFlyerProgram": "JJ",
-                            "nationality": "BR"
+                            "gdsPaxSegmentID" : "sfd3fsdf324fsda"
                         },
                         {
-                            "name": "HOMERO",
-                            "lastName": "SIMPSON",
-                            "ticketNumber": "9572483127884",
-                            "nationality": "BR"
+                           "gdsPaxSegmentID" : "sfd3fsdf324fsda"
                         },
                         {
-                            "name": "LISA",
-                            "lastName": "SIMPSON",
-                            "ticketNumber": "9572483127885",
-                            "dateOfBirth": "2011-04-05",
-                            "nationality": "BR"
+                            "gdsPaxSegmentID" : "sfd3fsdf324fsda"
                         }
-                    ]
+                    ],
+                    "gds" : 2
                 }
             ]
         }      
@@ -908,7 +892,7 @@ API Rest para la aplicación checkin de LAN.com
                 "data": {
                     "passengers": [
                         {
-                            "id": "23161548000063A1",
+                            "gdsPaxSegmentID": "23161548000063A1",
                             "name": "MARIA",
                             "lastName": "PAULA SOARES SAMPLES",
                             "ticketNumber": "9572483127883",
@@ -982,7 +966,7 @@ API Rest para la aplicación checkin de LAN.com
                             ]
                         },
                         {
-                            "id": "3362054900001A3B",
+                            "gdsPaxSegmentID": "3362054900001A3B",
                             "name": "HOMERO",
                             "lastName": "SIMPSON",
                             "ticketNumber": "9572483127884",
@@ -1056,7 +1040,7 @@ API Rest para la aplicación checkin de LAN.com
                             ]
                         },
                         {
-                            "id": "3362054900001A3C",
+                            "gdsPaxSegmentID": "3362054900001A3C",
                             "name": "LISA",
                             "lastName": "SIMPSON",
                             "ticketNumber": "9572483127885",
@@ -1130,222 +1114,160 @@ API Rest para la aplicación checkin de LAN.com
                                 }
                             ]
                         }
-                    ],
-                    "warnings": [],
-                    "identifiers": [
-                        {
-                            "passengerId": "23161548000063A1",
-                            "segmentId": "JJ-3339-20140507",
-                            "passengerSegmentId": "2317154800006590"
-                        },
-                        {
-                            "passengerId": "23161548000063A1",
-                            "segmentId": "JJ-3952-20140507",
-                            "passengerSegmentId": "2317154800006593"
-                        },
-                        {
-                            "passengerId": "23161548000063A1",
-                            "segmentId": "JJ-3411-20140508",
-                            "passengerSegmentId": "2317154800006596"
-                        },
-                        {
-                            "passengerId": "3362054900001A3B",
-                            "segmentId": "JJ-3339-20140507",
-                            "passengerSegmentId": "231715480000658E"
-                        },
-                        {
-                            "passengerId": "3362054900001A3B",
-                            "segmentId": "JJ-3952-20140507",
-                            "passengerSegmentId": "2317154800006591"
-                        },
-                        {
-                            "passengerId": "3362054900001A3B",
-                            "segmentId": "JJ-3411-20140508",
-                            "passengerSegmentId": "2317154800006594"
-                        },
-                        {
-                            "passengerId": "3362054900001A3C",
-                            "segmentId": "JJ-3339-20140507",
-                            "passengerSegmentId": "231715480000658F"
-                        },
-                        {
-                            "passengerId": "3362054900001A3C",
-                            "segmentId": "JJ-3952-20140507",
-                            "passengerSegmentId": "2317154800006592"
-                        },
-                        {
-                            "passengerId": "3362054900001A3C",
-                            "segmentId": "JJ-3411-20140508",
-                            "passengerSegmentId": "2317154800006595"
-                        }
-                    ],
-                    "segments": [
-                        {
-                            "id": "JJ-3339-20140507",
-                            "departureAirport": "IGU",
-                            "arrivalAirport": "CGH"
-                        },
-                        {
-                            "id": "JJ-3952-20140507",
-                            "departureAirport": "CGH",
-                            "arrivalAirport": "SDU"
-                        },
-                        {
-                            "id": "JJ-3411-20140508",
-                            "departureAirport": "GIG",
-                            "arrivalAirport": "POA"
-                        }
                     ]
-                }
+                }                    
             }
 
 
     + Schema
 
             {
-                "type":"object",
-                "$schema": "http://json-schema.org/draft-03/schema",
-                "id": "http://jsonschema.net",
-                "required":false,
-                "properties":{
-                    "data": {
-                        "type":"object",
-                        "required":false,
-                        "properties":{
-                            "identifiers": {
-                                "type":"array",
-                                "required":false,
-                                "items":
-                                    {
-                                        "type":"object",
-                                        "required":false,
-                                        "properties":{
-                                            "passengerId": {
-                                                "type":"string",
-                                                "required":false
-                                            },
-                                            "passengerSegmentId": {
-                                                "type":"string",
-                                                "required":false
-                                            },
-                                            "segmentId": {
-                                                "type":"string",
-                                                "required":false
-                                            }
-                                        }
-                                    }
-                                
-
-                            },
-                            "passengers": {
-                                "type":"array",
-                                "required":false,
-                                "items":
-                                    {
-                                        "type":"object",
-                                        "required":false,
-                                        "properties":{
-                                            "blockElements": {
-                                                "type":"array",
-                                                "required":false,
-                                                "items":
-                                                    {
-                                                        "type":"object",
-                                                        "required":false,
-                                                        "properties":{
-                                                            "fieldElements": {
-                                                                "type":"array",
-                                                                "required":false,
-                                                                "items":
-                                                                    {
-                                                                        "type":"object",
-                                                                        "required":false,
-                                                                        "properties":{
-                                                                            "elementId": {
-                                                                                "type":"string",
-                                                                                "required":false
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                
-
-                                                            },
-                                                            "name": {
-                                                                "type":"string",
-                                                                "required":false
-                                                            }
-                                                        }
-                                                    }
-                                                
-
-                                            },
-                                            "id": {
-                                                "type":"string",
-                                                "required":false
-                                            },
-                                            "lastName": {
-                                                "type":"string",
-                                                "required":false
-                                            },
-                                            "name": {
-                                                "type":"string",
-                                                "required":false
-                                            },
-                                            "ticketNumber": {
-                                                "type":"string",
-                                                "required":false
-                                            }
-                                        }
-                                    }
-                                
-
-                            },
-                            "segments": {
-                                "type":"array",
-                                "required":false,
-                                "items":
-                                    {
-                                        "type":"object",
-                                        "required":false,
-                                        "properties":{
-                                            "arrivalAirport": {
-                                                "type":"string",
-                                                "required":false
-                                            },
-                                            "departureAirport": {
-                                                "type":"string",
-                                                "required":false
-                                            },
-                                            "id": {
-                                                "type":"string",
-                                                "required":false
-                                            }
-                                        }
-                                    }
-                                
-
-                            },
-                            "warnings": {
-                                "type":"array",
-                                "required":false
-                            }
-                        }
+              "$schema": "http://json-schema.org/draft-04/schema#",
+              "id": "http://jsonschema.net#",
+              "type": "object",
+              "required": false,
+              "title": "root",
+              "description": "",
+              "name": "",
+              "properties": {
+                "status": {
+                  "type": "object",
+                  "required": false,
+                  "title": "",
+                  "description": "",
+                  "name": "",
+                  "properties": {
+                    "code": {
+                      "type": "integer",
+                      "required": false,
+                      "title": "",
+                      "description": "",
+                      "name": "",
+                      "minimum": 0
                     },
-                    "status": {
-                        "type":"object",
-                        "required":false,
-                        "properties":{
-                            "code": {
-                                "type":"number",
-                                "required":false
-                            },
-                            "message": {
-                                "type":"string",
-                                "required":false
-                            }
-                        }
+                    "message": {
+                      "type": "string",
+                      "required": false,
+                      "title": "",
+                      "description": "",
+                      "name": "",
+                      "minLength": 0
                     }
+                  }
+                },
+                "data": {
+                  "id": "http://jsonschema.net/data#",
+                  "type": "object",
+                  "required": false,
+                  "title": "",
+                  "description": "",
+                  "name": "",
+                  "properties": {
+                    "passengers": {
+                      "type": "array",
+                      "required": false,
+                      "title": "",
+                      "description": "",
+                      "name": "",
+                      "minItems": 0,
+                      "uniqueItems": false,
+                      "items": {
+                        "type": "object",
+                        "required": false,
+                        "title": "",
+                        "description": "",
+                        "name": "",
+                        "properties": {
+                          "gdsPaxSegmentID": {
+                            "type": "string",
+                            "required": true,
+                            "title": "",
+                            "description": "",
+                            "name": "",
+                            "minLength": 0
+                          },
+                          "name": {
+                            "type": "string",
+                            "required": false,
+                            "title": "",
+                            "description": "",
+                            "name": "",
+                            "minLength": 0
+                          },
+                          "lastName": {
+                            "type": "string",
+                            "required": false,
+                            "title": "",
+                            "description": "",
+                            "name": "",
+                            "minLength": 0
+                          },
+                          "ticketNumber": {
+                            "type": "string",
+                            "required": false,
+                            "title": "",
+                            "description": "",
+                            "name": "",
+                            "minLength": 0
+                          },
+                          "blockElements": {
+                            "type": "array",
+                            "required": false,
+                            "title": "",
+                            "description": "",
+                            "name": "",
+                            "minItems": 0,
+                            "uniqueItems": false,
+                            "items": {
+                              "type": "object",
+                              "required": false,
+                              "title": "",
+                              "description": "",
+                              "name": "",
+                              "properties": {
+                                "name": {
+                                  "type": "string",
+                                  "required": false,
+                                  "title": "",
+                                  "description": "",
+                                  "name": "",
+                                  "minLength": 0
+                                },
+                                "fieldElements": {
+                                  "type": "array",
+                                  "required": false,
+                                  "title": "",
+                                  "description": "",
+                                  "name": "",
+                                  "minItems": 0,
+                                  "uniqueItems": false,
+                                  "items": {
+                                    "type": "object",
+                                    "required": false,
+                                    "title": "",
+                                    "description": "",
+                                    "name": "",
+                                    "properties": {
+                                      "elementId": {
+                                        "type": "string",
+                                        "required": false,
+                                        "title": "",
+                                        "description": "",
+                                        "name": "",
+                                        "minLength": 0
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
+              }
             }
 
 + Response 500 (application/json)
