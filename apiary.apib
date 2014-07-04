@@ -5,7 +5,8 @@ HOST: http://www.lan.com
 API Rest para la aplicación checkin de LAN.com
 
 
-## Booking [/ws/api/checkin/1.0/rest/reservation/information]
+# Group Checkin Bookings 
+## Get Reservations [/ws/api/checkin/1.0/rest/reservation/information]
 ### Get reservation information [GET]
 
 + Request (application/json)
@@ -812,6 +813,7 @@ API Rest para la aplicación checkin de LAN.com
         { "title": "Reserva de grupo, pedir ingreso foid o eticket" }
 
 
+# Group Pax Information
 ## API Information [/ws/api/checkin/1.0/rest/api/get_api_information]
 ### Get API information [POST]
 
@@ -1461,7 +1463,8 @@ API Rest para la aplicación checkin de LAN.com
 
 
 
-## Seat Map [/ws/api/checkin/1.0/rest/seat_map/get_seat_map]
+# Group Seats
+## Get Seat Map  [/ws/api/checkin/1.0/rest/seat_map/get_seat_map]
 ### Get Seat Map Data [POST]
 
 + Request (application/json)
@@ -2248,8 +2251,8 @@ API Rest para la aplicación checkin de LAN.com
 
 
 
-## Seat Map [/ws/api/checkin/1.0/rest/seat_map/take_seats]
-### Take Seats [POST]
+## Take Seats [/ws/api/checkin/1.0/rest/seat_map/take_seats]
+### Take Seats  [POST]
 
 + Request (application/json)
 
@@ -2609,6 +2612,7 @@ API Rest para la aplicación checkin de LAN.com
 
 
 
+# Group Checkin
 ## Perform Checkin [/ws/api/checkin/1.0/rest/reservation/passengers_checkin]
 ### Check Passengers [POST]
 
@@ -3769,11 +3773,8 @@ API Rest para la aplicación checkin de LAN.com
         { "title": "Request invalido" }
 
 
-
-
-
-
-## Documents [/ws/api/checkin/1.0/rest/document/send_email_boarding_pass]
+# Group Travel Documents
+## Email Boarding Pass [/ws/api/checkin/1.0/rest/document/send_email_boarding_pass]
 ### Send Email Boarding Pass [POST]
 
 + Request (application/json)
@@ -3841,7 +3842,7 @@ API Rest para la aplicación checkin de LAN.com
             }
 
 
-## Documents [/ws/api/checkin/1.0/rest/document/send_mobile_boarding_pass]
+## Mobile Boarding Pass [/ws/api/checkin/1.0/rest/document/send_mobile_boarding_pass]
 ### Send Mobile Boarding Pass [POST]
 
 + Request (application/json)
@@ -3907,7 +3908,7 @@ API Rest para la aplicación checkin de LAN.com
                 }
             }
 
-## Documents [/ws/api/checkin/1.0/rest/document/boarding_pass_pdf]
+## Boarding Pass pdf  [/ws/api/checkin/1.0/rest/document/boarding_pass_pdf]
 ### Get Boarding Pass in pdf format [POST]
 
 + Request (application/json)
