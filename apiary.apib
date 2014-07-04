@@ -5,7 +5,7 @@ HOST: http://www.lan.com
 API Rest para la aplicación checkin de LAN.com
 
 
-## Reservation Information [/ws/api/checkin/1.0/rest/reservation/information]
+## Booking [/ws/api/checkin/1.0/rest/reservation/information]
 ### Get reservation information [GET]
 
 + Request (application/json)
@@ -2248,6 +2248,367 @@ API Rest para la aplicación checkin de LAN.com
 
 
 
+## Seat Map [/ws/api/checkin/1.0/rest/seat_map/take_seats]
+### Take Seats [POST]
+
++ Request (application/json)
+
+        {
+            "language": "PT",
+            "country": "BR",
+            "portal": "personas",
+            "application": "checkin",
+            "recordLocator": "6VKQD5",
+            "flights" : [
+                {
+                    "id": "01",
+                    "flightNumber" : 34323,
+                    "operatingAirlineCode" : "JJ",
+                    "passengers" : [
+                        {
+                            "name": "maria",
+                            "lastName": "paula soares samples",
+                            "paxSegmentID": "3362054900001A3C",
+                            "seat" : "24L"
+                        },
+                        {
+                            "name": "maria",
+                            "lastName": "paula soares samples",
+                            "paxSegmentID": "3362054900001A3C",
+                            "seat" : "24L"
+                        }
+                    ]
+
+                }
+            ]
+        }
+
+        + Schema
+
+            {
+              "$schema": "http://json-schema.org/draft-04/schema#",
+              "id": "http://jsonschema.net#",
+              "type": "object",
+              "required": false,
+              "title": "root",
+              "description": "",
+              "name": "",
+              "properties": {
+                "language": {
+                  "type": "string",
+                  "required": false,
+                  "title": "",
+                  "description": "",
+                  "name": "",
+                  "minLength": 0
+                },
+                "country": {
+                  "type": "string",
+                  "required": false,
+                  "title": "",
+                  "description": "",
+                  "name": "",
+                  "minLength": 0
+                },
+                "portal": {
+                  "type": "string",
+                  "required": false,
+                  "title": "",
+                  "description": "",
+                  "name": "",
+                  "minLength": 0
+                },
+                "application": {
+                  "type": "string",
+                  "required": false,
+                  "title": "",
+                  "description": "",
+                  "name": "",
+                  "minLength": 0
+                },
+                "recordLocator": {
+                  "type": "string",
+                  "required": false,
+                  "title": "",
+                  "description": "",
+                  "name": "",
+                  "minLength": 0
+                },
+                "flights": {
+                  "type": "array",
+                  "required": false,
+                  "title": "",
+                  "description": "",
+                  "name": "",
+                  "minItems": 0,
+                  "uniqueItems": false,
+                  "items": {
+                    "type": "object",
+                    "required": false,
+                    "title": "",
+                    "description": "",
+                    "name": "",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "required": false,
+                        "title": "",
+                        "description": "",
+                        "name": "",
+                        "minLength": 0
+                      },
+                      "flightNumber": {
+                        "type": "integer",
+                        "required": false,
+                        "title": "",
+                        "description": "",
+                        "name": "",
+                        "minimum": 0
+                      },
+                      "operatingAirlineCode": {
+                        "type": "string",
+                        "required": false,
+                        "title": "",
+                        "description": "",
+                        "name": "",
+                        "minLength": 0
+                      },
+                      "passengers": {
+                        "type": "array",
+                        "required": false,
+                        "title": "",
+                        "description": "",
+                        "name": "",
+                        "minItems": 0,
+                        "uniqueItems": false,
+                        "items": {
+                          "type": "object",
+                          "required": false,
+                          "title": "",
+                          "description": "",
+                          "name": "",
+                          "properties": {
+                            "name": {
+                              "type": "string",
+                              "required": false,
+                              "title": "",
+                              "description": "",
+                              "name": "",
+                              "minLength": 0
+                            },
+                            "lastName": {
+                              "type": "string",
+                              "required": false,
+                              "title": "",
+                              "description": "",
+                              "name": "",
+                              "minLength": 0
+                            },
+                            "paxSegmentID": {
+                              "type": "string",
+                              "required": false,
+                              "title": "",
+                              "description": "",
+                              "name": "",
+                              "minLength": 0
+                            },
+                            "seat": {
+                              "type": "string",
+                              "required": false,
+                              "title": "",
+                              "description": "",
+                              "name": "",
+                              "minLength": 0
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+
+
+
++ Response 200
+
+
+    + Header
+
+            flowId:a4f390e1-af0d-4bcd-8682-fd932d2d8ad
+            trackId:4264964            
+    
+    + Body
+
+            {
+                "status": {
+                    "code": 200
+                },
+                "data": {
+                    "flights" : [
+                        {
+                            "id": "01",
+                            "passengers" : [
+                                {
+                                    "paxSegmentID": "3362054900001A3C",
+                                    "status"  : "TAKEN",
+                                    "messages" : []
+                                },
+                                 {
+                                    "paxSegmentID": "3362054900001A3C",
+                                    "status"  : "NOTTAKEN",
+                                    "messages" : [
+                                        {
+                                            "text" : "No se pudo tomar el asiento porque estaba ocupado"
+                                        }
+                                    ]
+                                }
+                            ]
+
+                        }
+                    ]     
+                }
+            }    
+
+            + Schema
+
+                {
+                  "$schema": "http://json-schema.org/draft-04/schema#",
+                  "id": "http://jsonschema.net#",
+                  "type": "object",
+                  "required": false,
+                  "title": "root",
+                  "description": "",
+                  "name": "",
+                  "properties": {
+                    "status": {
+                      "type": "object",
+                      "required": false,
+                      "title": "",
+                      "description": "",
+                      "name": "",
+                      "properties": {
+                        "code": {
+                          "type": "integer",
+                          "required": false,
+                          "title": "",
+                          "description": "",
+                          "name": "",
+                          "minimum": 0
+                        }
+                      }
+                    },
+                    "data": {
+                      "type": "object",
+                      "required": false,
+                      "title": "",
+                      "description": "",
+                      "name": "",
+                      "properties": {
+                        "flights": {
+                          "type": "array",
+                          "required": false,
+                          "title": "",
+                          "description": "",
+                          "name": "",
+                          "minItems": 0,
+                          "uniqueItems": false,
+                          "items": {
+                            "type": "object",
+                            "required": false,
+                            "title": "",
+                            "description": "",
+                            "name": "",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "required": false,
+                                "title": "",
+                                "description": "",
+                                "name": "",
+                                "minLength": 0
+                              },
+                              "passengers": {
+                                "type": "array",
+                                "required": false,
+                                "title": "",
+                                "description": "",
+                                "name": "",
+                                "minItems": 0,
+                                "uniqueItems": false,
+                                "items": {
+                                  "type": "object",
+                                  "required": false,
+                                  "title": "",
+                                  "description": "",
+                                  "name": "",
+                                  "properties": {
+                                    "paxSegmentID": {
+                                      "type": "string",
+                                      "required": false,
+                                      "title": "",
+                                      "description": "",
+                                      "name": "",
+                                      "minLength": 0
+                                    },
+                                    "status": {
+                                      "type": "string",
+                                      "required": false,
+                                      "title": "",
+                                      "description": "",
+                                      "name": "",
+                                      "minLength": 0
+                                    },
+                                    "messages": {
+                                      "type": "array",
+                                      "required": false,
+                                      "title": "",
+                                      "description": "",
+                                      "name": "",
+                                      "minItems": 0,
+                                      "uniqueItems": false,
+                                      "items": {
+                                        "type": "object",
+                                        "required": false,
+                                        "title": "",
+                                        "description": "",
+                                        "name": "",
+                                        "properties": {
+                                          "text": {
+                                            "type": "string",
+                                            "required": false,
+                                            "title": "",
+                                            "description": "",
+                                            "name": "",
+                                            "minLength": 0
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+
+
++ Response 500 (application/json)
+
+        { "title": "Fatal Error" }
+
++ Response 520 (application/json)
+
+        { "title": "Request invalido" }
+
+
+
 ## Perform Checkin [/ws/api/checkin/1.0/rest/reservation/passengers_checkin]
 ### Check Passengers [POST]
 
@@ -3407,3 +3768,163 @@ API Rest para la aplicación checkin de LAN.com
 
         { "title": "Request invalido" }
 
+
+
+
+
+
+## Documents [/ws/api/checkin/1.0/rest/document/send_email_boarding_pass]
+### Send Email Boarding Pass [POST]
+
++ Request (application/json)
+
+        {
+            "language":"ES",
+            "country":"CL",
+            "portal":"personas",
+            "application":"checkin",
+            "email":"jsd@csda.com",
+            "recordLocator" : "dsfsfd",
+            "boardingPassElementRequest":[
+                {
+                    "paxSegmentID":2317154800006512
+                }
+            ]
+        }
+
+
++ Response 200 (application/json)
+
+
+    + Header
+
+            flowId:a4f390e1-af0d-4bcd-8682-fd932d2d8ad
+            trackId:4264964            
+    
+    + Body
+
+            {
+                "status":{
+                    "code":200,
+                    "message":""
+                },
+                "data":null
+            }
+
+    + Schema
+
+            {
+                "type":"object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required":false,
+                "properties":{
+                    "data": {
+                        "type":"null",
+                        "required":false
+                    },
+                    "status": {
+                        "type":"object",
+                        "required":false,
+                        "properties":{
+                            "code": {
+                                "type":"number",
+                                "required":false
+                            },
+                            "message": {
+                                "type":"string",
+                                "required":false
+                            }
+                        }
+                    }
+                }
+            }
+
+
+## Documents [/ws/api/checkin/1.0/rest/document/send_mobile_boarding_pass]
+### Send Mobile Boarding Pass [POST]
+
++ Request (application/json)
+    
+        {
+            "language":"ES",
+            "country":"CL",
+            "portal":"personas",
+            "application":"checkin",
+            "email":"jlueiza@gmail.com",
+            "recordLocator" : "sdffds",
+            "boardingPassElementRequest":[
+                {
+                    "paxSegmentID":2317154800006590
+                }
+            ]
+        }
+
++ Response 200 (application/json)       
+
+
+    + Header
+
+                flowId:a4f390e1-af0d-4bcd-8682-fd932d2d8ad
+                trackId:4264964     
+        
+    + Body
+
+                {
+                    "status":{
+                        "code":509,
+                        "message":"Error Send Mobile Boarding Pass"
+                    },
+                    "data":null
+                }
+
+    + Schema
+
+            {
+                "type":"object",
+                "$schema": "http://json-schema.org/draft-03/schema",
+                "id": "http://jsonschema.net",
+                "required":false,
+                "properties":{
+                    "data": {
+                        "type":"null",
+                        "required":false
+                    },
+                    "status": {
+                        "type":"object",
+                        "required":false,
+                        "properties":{
+                            "code": {
+                                "type":"number",
+                                "required":false
+                            },
+                            "message": {
+                                "type":"string",
+                                "required":false
+                            }
+                        }
+                    }
+                }
+            }
+
+## Documents [/ws/api/checkin/1.0/rest/document/boarding_pass_pdf]
+### Get Boarding Pass in pdf format [POST]
+
++ Request (application/json)
+    
+        {
+            "language":"ES",
+            "country":"CL",
+            "portal":"personas",
+            "application":"checkin",
+            "recordLocator" : "sdfdad",
+            "boardingPassElementRequest":[
+                {
+                    "paxSegmentID":"2317154800006590"
+                }
+            ]
+        }
+
+    
+
++ Response 200 (application/pdf)
