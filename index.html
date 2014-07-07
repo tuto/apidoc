@@ -96,7 +96,7 @@ a.list-group-item.heading {
     min-width: 212px;
   }
 }
-</style></head><body><a href="#top" class="text-muted back-to-top"><i class="fa fa-toggle-up"></i>&nbsp;Back to top</a><div class="container"><div class="row"><div class="col-md-3"><nav id="nav" class="hidden-sm hidden-xs affix nav"><div class="list-group"><a href="#checkin-bookings" class="list-group-item heading">Checkin Bookings</a><a href="#checkin-bookings-get-reservations" class="list-group-item"><i class="fa fa-arrow-circle-down"></i>&nbsp;Get Reservations</a></div><div class="list-group"><a href="#pax-information" class="list-group-item heading">Pax Information</a><a href="#pax-information-api-information" class="list-group-item"><i class="fa fa-plus-square"></i>&nbsp;API Information</a><a href="#pax-information-identification-documents" class="list-group-item"><i class="fa fa-plus-square"></i>&nbsp;Identification Documents</a></div><div class="list-group"><a href="#seats" class="list-group-item heading">Seats</a><a href="#seats-get-seat-map" class="list-group-item"><i class="fa fa-plus-square"></i>&nbsp;Get Seat Map</a><a href="#seats-take-seats" class="list-group-item"><i class="fa fa-plus-square"></i>&nbsp;Take Seats</a></div><div class="list-group"><a href="#checkin" class="list-group-item heading">Checkin</a><a href="#checkin-perform-checkin" class="list-group-item"><i class="fa fa-plus-square"></i>&nbsp;Perform Checkin</a></div><div class="list-group"><a href="#travel-documents" class="list-group-item heading">Travel Documents</a><a href="#travel-documents-email-boarding-pass" class="list-group-item"><i class="fa fa-plus-square"></i>&nbsp;Email Boarding Pass</a><a href="#travel-documents-mobile-boarding-pass" class="list-group-item"><i class="fa fa-plus-square"></i>&nbsp;Mobile Boarding Pass</a><a href="#travel-documents-boarding-pass-pdf" class="list-group-item"><i class="fa fa-plus-square"></i>&nbsp;Boarding Pass pdf</a></div><p style="text-align: center"><a href="http://www.lan.com">http://www.lan.com</a></p></nav></div><div class="col-md-9"><div><header><div class="page-header"><h1 id="top">Latam API Checkin</h1></div></header><div class="description"><p>API Rest para la aplicación checkin de LAN.com</p>
+</style></head><body><a href="#top" class="text-muted back-to-top"><i class="fa fa-toggle-up"></i>&nbsp;Back to top</a><div class="container"><div class="row"><div class="col-md-3"><nav id="nav" class="hidden-sm hidden-xs affix nav"><div class="list-group"><a href="#checkin-bookings" class="list-group-item heading">Checkin Bookings</a><a href="#checkin-bookings-get-reservations" class="list-group-item"><i class="fa fa-arrow-circle-down"></i>&nbsp;Get Reservations</a></div><div class="list-group"><a href="#pax-information" class="list-group-item heading">Pax Information</a><a href="#pax-information-api-information" class="list-group-item"><i class="fa fa-plus-square"></i>&nbsp;API Information</a><a href="#pax-information-identification-documents" class="list-group-item"><i class="fa fa-plus-square"></i>&nbsp;Identification Documents</a></div><div class="list-group"><a href="#seats" class="list-group-item heading">Seats</a><a href="#seats-get-seat-map" class="list-group-item"><i class="fa fa-plus-square"></i>&nbsp;Get Seat Map</a><a href="#seats-take-seats" class="list-group-item"><i class="fa fa-plus-square"></i>&nbsp;Take Seats</a></div><div class="list-group"><a href="#checkin" class="list-group-item heading">Checkin</a><a href="#checkin-perform-checkin" class="list-group-item"><i class="fa fa-plus-square"></i>&nbsp;Perform Checkin</a><a href="#checkin-cancel-checkin" class="list-group-item"><i class="fa fa-plus-square"></i>&nbsp;Cancel Checkin</a></div><div class="list-group"><a href="#travel-documents" class="list-group-item heading">Travel Documents</a><a href="#travel-documents-email-boarding-pass" class="list-group-item"><i class="fa fa-plus-square"></i>&nbsp;Email Boarding Pass</a><a href="#travel-documents-mobile-boarding-pass" class="list-group-item"><i class="fa fa-plus-square"></i>&nbsp;Mobile Boarding Pass</a><a href="#travel-documents-boarding-pass-pdf" class="list-group-item"><i class="fa fa-plus-square"></i>&nbsp;Boarding Pass pdf</a></div><p style="text-align: center"><a href="http://www.lan.com">http://www.lan.com</a></p></nav></div><div class="col-md-9"><div><header><div class="page-header"><h1 id="top">Latam API Checkin</h1></div></header><div class="description"><p>API Rest para la aplicación checkin de LAN.com</p>
 </div></div><div><div class="panel panel-default"><div class="panel-heading"><h3 id="checkin-bookings">Checkin Bookings&nbsp;<a href="#checkin-bookings"><i class="fa fa-link"></i></a></h3></div><div class="panel-body"><h4 id="checkin-bookings-get-reservations">Get Reservations&nbsp;<a href="#checkin-bookings-get-reservations"><i class="fa fa-link"></i></a></h4><section id="checkin-bookings-get-reservations-get" class="panel panel-info"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Get reservation information</span></div><div style="float:left"><a href="#checkin-bookings-get-reservations-get" class="btn btn-xs btn-info">GET</a></div><div style="overflow:hidden"><code>/ws/api/checkin/1.0/rest/reservation/information</code></div></div><ul class="list-group"><li class="list-group-item"><strong>Request</strong><a data-toggle="collapse" data-target="#310d5d3398ecd2a9dbcab10ac186401c" class="pull-right">Toggle</a></li><li id="310d5d3398ecd2a9dbcab10ac186401c" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{
 <span class="hljs-javadoc">/**
   * Portal name where RI is called. Posibles optios are: personas, empresas, etc
@@ -110,7 +110,7 @@ a.list-group-item.heading {
     <span class="hljs-string">"check_input"</span>: <span class="hljs-string">"6VKQD5"</span>,
     <span class="hljs-string">"lastName"</span>: <span class="hljs-string">"SIMPSON"</span>
 }
-</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#65d967a1c968d6c55315126c31feb2a0" class="pull-right">Toggle</a></li><li id="65d967a1c968d6c55315126c31feb2a0" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">flowId</span>: <span class="hljs-string">a4f390e1-af0d-4bcd-8682-fd932d2d8ad</span><br><span class="hljs-attribute">trackId</span>: <span class="hljs-string">4264964</span><br></code></pre><h5>Body</h5><pre><code>{
+</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#bc5a985f1a0fde152a873b41ec28e087" class="pull-right">Toggle</a></li><li id="bc5a985f1a0fde152a873b41ec28e087" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">flowId</span>: <span class="hljs-string">a4f390e1-af0d-4bcd-8682-fd932d2d8ad</span><br><span class="hljs-attribute">trackId</span>: <span class="hljs-string">4264964</span><br></code></pre><h5>Body</h5><pre><code>{
     <span class="hljs-string">"status"</span>: {
         <span class="hljs-string">"code"</span>: <span class="hljs-number">200</span>
     },
@@ -151,7 +151,7 @@ a.list-group-item.heading {
                                 },
                                 <span class="hljs-string">"connectionWith"</span>: <span class="hljs-number">2</span>,
                                 <span class="hljs-string">"status"</span>: <span class="hljs-string">"OPEN"</span>,
-                                <span class="hljs-string">"isLeg"</span>: <span class="hljs-constant">false</span>,
+                                <span class="hljs-string">"isStopOver"</span>: <span class="hljs-constant">false</span>,
                                 <span class="hljs-string">"messages"</span>: [
                                     {
                                         <span class="hljs-string">"text"</span>: <span class="hljs-string">"Este vuelo esta abierto para checkin"</span>
@@ -162,7 +162,7 @@ a.list-group-item.heading {
                                         <span class="hljs-string">"id"</span>: <span class="hljs-number">1</span>,
                                         <span class="hljs-string">"paxSegmentID"</span> : <span class="hljs-string">"1104534245452342"</span>,
                                         <span class="hljs-string">"ticketNumber"</span>: <span class="hljs-string">"04534245452342"</span>,
-                                        <span class="hljs-string">"status"</span>: <span class="hljs-string">"ENABLE"</span>,
+                                        <span class="hljs-string">"status"</span>: <span class="hljs-string">"NOTCHECKED"</span>,
                                         <span class="hljs-string">"documents"</span>: {
                                             <span class="hljs-string">"boardingpasspdf"</span>: <span class="hljs-constant">true</span>,
                                             <span class="hljs-string">"emailboardingpass"</span>: <span class="hljs-constant">true</span>,
@@ -175,7 +175,7 @@ a.list-group-item.heading {
                                         <span class="hljs-string">"id"</span>: <span class="hljs-number">2</span>,
                                         <span class="hljs-string">"paxSegmentID"</span> : <span class="hljs-string">"1104534245452342"</span>,
                                         <span class="hljs-string">"ticketNumber"</span>: <span class="hljs-string">"04534245452343"</span>,
-                                        <span class="hljs-string">"status"</span>: <span class="hljs-string">"ENABLE"</span>,
+                                        <span class="hljs-string">"status"</span>: <span class="hljs-string">"NOTCHECKED"</span>,
                                         <span class="hljs-string">"documents"</span>: {
                                             <span class="hljs-string">"boardingpasspdf"</span>: <span class="hljs-constant">true</span>,
                                             <span class="hljs-string">"emailboardingpass"</span>: <span class="hljs-constant">true</span>,
@@ -188,7 +188,7 @@ a.list-group-item.heading {
                                         <span class="hljs-string">"id"</span>: <span class="hljs-number">3</span>,
                                         <span class="hljs-string">"paxSegmentID"</span> : <span class="hljs-string">"1104534245452342"</span>,
                                         <span class="hljs-string">"ticketNumber"</span>: <span class="hljs-string">"04534245452344"</span>,
-                                        <span class="hljs-string">"status"</span>: <span class="hljs-string">"ENABLE"</span>,
+                                        <span class="hljs-string">"status"</span>: <span class="hljs-string">"NOTCHECKED"</span>,
                                         <span class="hljs-string">"documents"</span>: {
                                             <span class="hljs-string">"boardingpasspdf"</span>: <span class="hljs-constant">true</span>,
                                             <span class="hljs-string">"emailboardingpass"</span>: <span class="hljs-constant">true</span>,
@@ -197,8 +197,7 @@ a.list-group-item.heading {
                                         },
                                         <span class="hljs-string">"messages"</span>: []
                                     }
-                                ],
-                                <span class="hljs-string">"gds"</span>: <span class="hljs-number">1</span>
+                                ]
                             },
                             {
                                 <span class="hljs-string">"id"</span>: <span class="hljs-number">2</span>,
@@ -229,7 +228,7 @@ a.list-group-item.heading {
                                 },
                                 <span class="hljs-string">"connectionWith"</span>: <span class="hljs-number">2</span>,
                                 <span class="hljs-string">"status"</span>: <span class="hljs-string">"OPEN"</span>,
-                                <span class="hljs-string">"isLeg"</span>: <span class="hljs-constant">false</span>,
+                                <span class="hljs-string">"isStopOver"</span>: <span class="hljs-constant">false</span>,
                                 <span class="hljs-string">"messages"</span>: [
                                     {
                                         <span class="hljs-string">"text"</span>: <span class="hljs-string">"Este vuelo esta abierto para checkin"</span>
@@ -240,7 +239,7 @@ a.list-group-item.heading {
                                         <span class="hljs-string">"id"</span>: <span class="hljs-number">1</span>,
                                         <span class="hljs-string">"paxSegmentID"</span> : <span class="hljs-string">"1104534245452342"</span>,
                                         <span class="hljs-string">"ticketNumber"</span>: <span class="hljs-string">"04534245452342"</span>,
-                                        <span class="hljs-string">"status"</span>: <span class="hljs-string">"ENABLE"</span>,
+                                        <span class="hljs-string">"status"</span>: <span class="hljs-string">"CHECKED"</span>,
                                         <span class="hljs-string">"documents"</span>: {
                                             <span class="hljs-string">"boardingpasspdf"</span>: <span class="hljs-constant">true</span>,
                                             <span class="hljs-string">"emailboardingpass"</span>: <span class="hljs-constant">true</span>,
@@ -253,7 +252,7 @@ a.list-group-item.heading {
                                         <span class="hljs-string">"id"</span>: <span class="hljs-number">2</span>,
                                         <span class="hljs-string">"paxSegmentID"</span> : <span class="hljs-string">"1104534245452342"</span>,
                                         <span class="hljs-string">"ticketNumber"</span>: <span class="hljs-string">"04534245452343"</span>,
-                                        <span class="hljs-string">"status"</span>: <span class="hljs-string">"ENABLE"</span>,
+                                        <span class="hljs-string">"status"</span>: <span class="hljs-string">"NOTCHECKED"</span>,
                                         <span class="hljs-string">"documents"</span>: {
                                             <span class="hljs-string">"boardingpasspdf"</span>: <span class="hljs-constant">true</span>,
                                             <span class="hljs-string">"emailboardingpass"</span>: <span class="hljs-constant">true</span>,
@@ -266,7 +265,7 @@ a.list-group-item.heading {
                                         <span class="hljs-string">"id"</span>: <span class="hljs-number">3</span>,
                                         <span class="hljs-string">"paxSegmentID"</span> : <span class="hljs-string">"1104534245452342"</span>,
                                         <span class="hljs-string">"ticketNumber"</span>: <span class="hljs-string">"04534245452344"</span>,
-                                        <span class="hljs-string">"status"</span>: <span class="hljs-string">"ENABLE"</span>,
+                                        <span class="hljs-string">"status"</span>: <span class="hljs-string">"CHECKED"</span>,
                                         <span class="hljs-string">"documents"</span>: {
                                             <span class="hljs-string">"boardingpasspdf"</span>: <span class="hljs-constant">true</span>,
                                             <span class="hljs-string">"emailboardingpass"</span>: <span class="hljs-constant">true</span>,
@@ -275,8 +274,7 @@ a.list-group-item.heading {
                                         },
                                         <span class="hljs-string">"messages"</span>: []
                                     }
-                                ],
-                                <span class="hljs-string">"gds"</span>: <span class="hljs-number">1</span>
+                                ]
                             },
                             {
                                 <span class="hljs-string">"id"</span>: <span class="hljs-number">3</span>,
@@ -307,7 +305,7 @@ a.list-group-item.heading {
                                 },
                                 <span class="hljs-string">"connectionWith"</span>: <span class="hljs-number">2</span>,
                                 <span class="hljs-string">"status"</span>: <span class="hljs-string">"OPEN"</span>,
-                                <span class="hljs-string">"isLeg"</span>: <span class="hljs-constant">false</span>,
+                                <span class="hljs-string">"isStopOver"</span>: <span class="hljs-constant">false</span>,
                                 <span class="hljs-string">"messages"</span>: [
                                     {
                                         <span class="hljs-string">"text"</span>: <span class="hljs-string">"Este vuelo esta abierto para checkin"</span>
@@ -318,7 +316,7 @@ a.list-group-item.heading {
                                         <span class="hljs-string">"id"</span>: <span class="hljs-number">2</span>,
                                         <span class="hljs-string">"paxSegmentID"</span> : <span class="hljs-string">"1104534245452342"</span>,
                                         <span class="hljs-string">"ticketNumber"</span>: <span class="hljs-string">"04534245452343"</span>,
-                                        <span class="hljs-string">"status"</span>: <span class="hljs-string">"ENABLE"</span>,
+                                        <span class="hljs-string">"status"</span>: <span class="hljs-string">"NOTCHECKED"</span>,
                                         <span class="hljs-string">"documents"</span>: {
                                             <span class="hljs-string">"boardingpasspdf"</span>: <span class="hljs-constant">true</span>,
                                             <span class="hljs-string">"emailboardingpass"</span>: <span class="hljs-constant">true</span>,
@@ -331,7 +329,7 @@ a.list-group-item.heading {
                                         <span class="hljs-string">"id"</span>: <span class="hljs-number">3</span>,
                                         <span class="hljs-string">"paxSegmentID"</span> : <span class="hljs-string">"1104534245452342"</span>,
                                         <span class="hljs-string">"ticketNumber"</span>: <span class="hljs-string">"04534245452344"</span>,
-                                        <span class="hljs-string">"status"</span>: <span class="hljs-string">"ENABLE"</span>,
+                                        <span class="hljs-string">"status"</span>: <span class="hljs-string">"NOTCHECKED"</span>,
                                         <span class="hljs-string">"documents"</span>: {
                                             <span class="hljs-string">"boardingpasspdf"</span>: <span class="hljs-constant">true</span>,
                                             <span class="hljs-string">"emailboardingpass"</span>: <span class="hljs-constant">true</span>,
@@ -340,8 +338,7 @@ a.list-group-item.heading {
                                         },
                                         <span class="hljs-string">"messages"</span>: []
                                     }
-                                ],
-                                <span class="hljs-string">"gds"</span>: <span class="hljs-number">1</span>
+                                ]
                             }
                         ],
                         <span class="hljs-string">"status"</span>: <span class="hljs-string">"NOCHECK"</span>,
@@ -383,7 +380,7 @@ a.list-group-item.heading {
                                 },
                                 <span class="hljs-string">"connectionWith"</span>: <span class="hljs-number">2</span>,
                                 <span class="hljs-string">"status"</span>: <span class="hljs-string">"OPEN"</span>,
-                                <span class="hljs-string">"isLeg"</span>: <span class="hljs-constant">false</span>,
+                                <span class="hljs-string">"isStopOver"</span>: <span class="hljs-constant">false</span>,
                                 <span class="hljs-string">"messages"</span>: [
                                     {
                                         <span class="hljs-string">"text"</span>: <span class="hljs-string">"Este vuelo esta abierto para checkin"</span>
@@ -394,7 +391,7 @@ a.list-group-item.heading {
                                         <span class="hljs-string">"id"</span>: <span class="hljs-number">1</span>,
                                         <span class="hljs-string">"paxSegmentID"</span> : <span class="hljs-string">"1104534245452342"</span>,
                                         <span class="hljs-string">"ticketNumber"</span>: <span class="hljs-string">"04534245452342"</span>,
-                                        <span class="hljs-string">"status"</span>: <span class="hljs-string">"ENABLE"</span>,
+                                        <span class="hljs-string">"status"</span>: <span class="hljs-string">"NOTCHECKED"</span>,
                                         <span class="hljs-string">"documents"</span>: {
                                             <span class="hljs-string">"boardingpasspdf"</span>: <span class="hljs-constant">true</span>,
                                             <span class="hljs-string">"emailboardingpass"</span>: <span class="hljs-constant">true</span>,
@@ -411,7 +408,7 @@ a.list-group-item.heading {
                                         <span class="hljs-string">"id"</span>: <span class="hljs-number">2</span>,
                                         <span class="hljs-string">"paxSegmentID"</span> : <span class="hljs-string">"1104534245452342"</span>,
                                         <span class="hljs-string">"ticketNumber"</span>: <span class="hljs-string">"04534245452343"</span>,
-                                        <span class="hljs-string">"status"</span>: <span class="hljs-string">"ENABLE"</span>,
+                                        <span class="hljs-string">"status"</span>: <span class="hljs-string">"CHECKED"</span>,
                                         <span class="hljs-string">"documents"</span>: {
                                             <span class="hljs-string">"boardingpasspdf"</span>: <span class="hljs-constant">true</span>,
                                             <span class="hljs-string">"emailboardingpass"</span>: <span class="hljs-constant">true</span>,
@@ -424,7 +421,7 @@ a.list-group-item.heading {
                                         <span class="hljs-string">"id"</span>: <span class="hljs-number">3</span>,
                                         <span class="hljs-string">"paxSegmentID"</span> : <span class="hljs-string">"1104534245452342"</span>,
                                         <span class="hljs-string">"ticketNumber"</span>: <span class="hljs-string">"04534245452344"</span>,
-                                        <span class="hljs-string">"status"</span>: <span class="hljs-string">"ENABLE"</span>,
+                                        <span class="hljs-string">"status"</span>: <span class="hljs-string">"CHECKED"</span>,
                                         <span class="hljs-string">"documents"</span>: {
                                             <span class="hljs-string">"boardingpasspdf"</span>: <span class="hljs-constant">true</span>,
                                             <span class="hljs-string">"emailboardingpass"</span>: <span class="hljs-constant">true</span>,
@@ -433,8 +430,7 @@ a.list-group-item.heading {
                                         },
                                         <span class="hljs-string">"messages"</span>: []
                                     }
-                                ],
-                                <span class="hljs-string">"gds"</span>: <span class="hljs-number">1</span>
+                                ]
                             }
                         ],
                         <span class="hljs-string">"status"</span>: <span class="hljs-string">"CHECK"</span>,
@@ -673,16 +669,11 @@ a.list-group-item.heading {
                                                                     "<span class="hljs-attribute">type</span>":<span class="hljs-value"><span class="hljs-string">"number"</span></span>,
                                                                     "<span class="hljs-attribute">required</span>":<span class="hljs-value"><span class="hljs-literal">false</span>
                                                                 </span>}</span>,
-                                                                "<span class="hljs-attribute">gds</span>": <span class="hljs-value">{
-                                                                    "<span class="hljs-attribute">type</span>":<span class="hljs-value"><span class="hljs-string">"number"</span></span>,
-                                                                    "<span class="hljs-attribute">required</span>":<span class="hljs-value"><span class="hljs-literal">false</span></span>,
-                                                                    "<span class="hljs-attribute">description</span>" : <span class="hljs-value"><span class="hljs-string">"Indica en que gds se debe chequear este vuelo 1 = Sabre, 2 = amadeus"</span>
-                                                                </span>}</span>,
                                                                 "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
                                                                     "<span class="hljs-attribute">type</span>":<span class="hljs-value"><span class="hljs-string">"number"</span></span>,
                                                                     "<span class="hljs-attribute">required</span>":<span class="hljs-value"><span class="hljs-literal">false</span>
                                                                 </span>}</span>,
-                                                                "<span class="hljs-attribute">isLeg</span>": <span class="hljs-value">{
+                                                                "<span class="hljs-attribute">isStopOver</span>": <span class="hljs-value">{
                                                                     "<span class="hljs-attribute">type</span>":<span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
                                                                     "<span class="hljs-attribute">required</span>":<span class="hljs-value"><span class="hljs-literal">false</span></span>,
                                                                     "<span class="hljs-attribute">description</span>" : <span class="hljs-value"><span class="hljs-string">"Indica si este vuelo es escala del segmento al que pertenece"</span>
@@ -770,7 +761,7 @@ a.list-group-item.heading {
                                                                                 "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
                                                                                     "<span class="hljs-attribute">type</span>":<span class="hljs-value"><span class="hljs-string">"string"</span></span>,
                                                                                     "<span class="hljs-attribute">required</span>":<span class="hljs-value"><span class="hljs-literal">false</span></span>,
-                                                                                    "<span class="hljs-attribute">description</span>" : <span class="hljs-value"><span class="hljs-string">"status del pasajero en ese vuelo ENABLE = se puede chequear, DISABLE = no se puede chequear"</span>
+                                                                                    "<span class="hljs-attribute">description</span>" : <span class="hljs-value"><span class="hljs-string">"status del pasajero en ese vuelo NOTCHECKED = se puede chequear, CHECKED = no se puede chequear"</span>
                                                                                 </span>}</span>,
                                                                                 "<span class="hljs-attribute">ticketNumber</span>": <span class="hljs-value">{
                                                                                     "<span class="hljs-attribute">type</span>":<span class="hljs-value"><span class="hljs-string">"string"</span></span>,
@@ -2356,7 +2347,7 @@ a.list-group-item.heading {
         }
       }
     }
-</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#99a2a91386acb5bde32e2325cb5536fb" class="pull-right">Toggle</a></li><li id="99a2a91386acb5bde32e2325cb5536fb" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">flowId</span>: <span class="hljs-string">a4f390e1-af0d-4bcd-8682-fd932d2d8ad</span><br><span class="hljs-attribute">trackId</span>: <span class="hljs-string">4264964</span><br></code></pre><h5>Body</h5><pre><code>{
+</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#6b3a77c3f7ebcff125891895bd75b61e" class="pull-right">Toggle</a></li><li id="6b3a77c3f7ebcff125891895bd75b61e" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">flowId</span>: <span class="hljs-string">a4f390e1-af0d-4bcd-8682-fd932d2d8ad</span><br><span class="hljs-attribute">trackId</span>: <span class="hljs-string">4264964</span><br></code></pre><h5>Body</h5><pre><code>{
     <span class="hljs-string">"status"</span>: {
         <span class="hljs-string">"code"</span>: <span class="hljs-number">200</span>
     },
@@ -2368,11 +2359,13 @@ a.list-group-item.heading {
                     {
                         <span class="hljs-string">"paxSegmentID"</span>: <span class="hljs-string">"3362054900001A3C"</span>,
                         <span class="hljs-string">"status"</span>  : <span class="hljs-string">"TAKEN"</span>,
+                        <span class="hljs-string">"seat"</span> : <span class="hljs-string">"24A"</span>
                         <span class="hljs-string">"messages"</span> : []
                     },
                      {
                         <span class="hljs-string">"paxSegmentID"</span>: <span class="hljs-string">"3362054900001A3C"</span>,
                         <span class="hljs-string">"status"</span>  : <span class="hljs-string">"NOTTAKEN"</span>,
+                        <span class="hljs-string">"seat"</span> : <span class="hljs-string">""</span>,
                         <span class="hljs-string">"messages"</span> : [
                             {
                                 <span class="hljs-string">"text"</span> : <span class="hljs-string">"No se pudo tomar el asiento porque estaba ocupado"</span>
@@ -2460,6 +2453,14 @@ a.list-group-item.heading {
                       <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
                       <span class="hljs-string">"properties"</span>: {
                         <span class="hljs-string">"paxSegmentID"</span>: {
+                          <span class="hljs-string">"type"</span>: <span class="hljs-string">"string"</span>,
+                          <span class="hljs-string">"required"</span>: <span class="hljs-literal">false</span>,
+                          <span class="hljs-string">"title"</span>: <span class="hljs-string">""</span>,
+                          <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+                          <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+                          <span class="hljs-string">"minLength"</span>: <span class="hljs-number">0</span>
+                        },
+                        <span class="hljs-string">"seat"</span>: {
                           <span class="hljs-string">"type"</span>: <span class="hljs-string">"string"</span>,
                           <span class="hljs-string">"required"</span>: <span class="hljs-literal">false</span>,
                           <span class="hljs-string">"title"</span>: <span class="hljs-string">""</span>,
@@ -3627,6 +3628,436 @@ a.list-group-item.heading {
 </code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>503</code></strong><a data-toggle="collapse" data-target="#04aac851a4e1ad745fc5dec4f76060a3" class="pull-right">Toggle</a></li><li id="04aac851a4e1ad745fc5dec4f76060a3" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{ "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"No disponible el checkin"</span> </span>}
 </code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>510</code></strong><a data-toggle="collapse" data-target="#9e75779f968f05e8449d483cdaae18c6" class="pull-right">Toggle</a></li><li id="9e75779f968f05e8449d483cdaae18c6" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{ "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Reserva inhibida para checkin"</span> </span>}
 </code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>520</code></strong><a data-toggle="collapse" data-target="#86437473ca6696179d493d2c802c8540" class="pull-right">Toggle</a></li><li id="86437473ca6696179d493d2c802c8540" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{ "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Request invalido"</span> </span>}
+</code></pre></li></ul></section><h4 id="checkin-cancel-checkin">Cancel Checkin&nbsp;<a href="#checkin-cancel-checkin"><i class="fa fa-link"></i></a></h4><section id="checkin-cancel-checkin-post" class="panel panel-success"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Cancel Checkin Passengers</span></div><div style="float:left"><a href="#checkin-cancel-checkin-post" class="btn btn-xs btn-success">POST</a></div><div style="overflow:hidden"><code>/ws/api/checkin/1.0/rest/cancel/checkin</code></div></div><ul class="list-group"><li class="list-group-item"><strong>Request</strong><a data-toggle="collapse" data-target="#3dfeb85ec436b19d4aa89be577a4057d" class="pull-right">Toggle</a></li><li id="3dfeb85ec436b19d4aa89be577a4057d" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{
+    <span class="hljs-string">"language"</span>: <span class="hljs-string">"PT"</span>,
+    <span class="hljs-string">"country"</span>: <span class="hljs-string">"BR"</span>,
+    <span class="hljs-string">"portal"</span>: <span class="hljs-string">"personas"</span>,
+    <span class="hljs-string">"application"</span>: <span class="hljs-string">"checkin"</span>,
+    <span class="hljs-string">"recordLocator"</span>: <span class="hljs-string">"6VKQD5"</span>,
+    <span class="hljs-string">"flights"</span> : [
+        {
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"01"</span>,
+            <span class="hljs-string">"departureAirport"</span>: <span class="hljs-string">"IGU"</span>,
+            <span class="hljs-string">"arrivalAirport"</span>: <span class="hljs-string">"CGH"</span>,
+            <span class="hljs-string">"departureDateTime"</span>: <span class="hljs-string">"2014-05-07T16:07"</span>,
+            <span class="hljs-string">"operatingAirline"</span>: <span class="hljs-string">"JJ"</span>,
+            <span class="hljs-string">"flightNumber"</span>: <span class="hljs-string">"3339"</span>,
+            <span class="hljs-string">"passengers"</span> : [
+                {
+                    <span class="hljs-string">"lastName"</span>: <span class="hljs-string">"SIMPSON"</span>,
+                    <span class="hljs-string">"name"</span>: <span class="hljs-string">"LISA"</span>,
+                    <span class="hljs-string">"seatNumber"</span>: <span class="hljs-string">"5A"</span>,
+                    <span class="hljs-string">"ticketNumber"</span>: <span class="hljs-string">"9572483127885"</span>,
+                    <span class="hljs-string">"paxSegmentID"</span> : <span class="hljs-string">"dsf23fdfdsf"</span>
+                }
+            ]
+        }
+    ]           
+}
+
++ Schema
+
+  {
+      <span class="hljs-string">"<span class="hljs-variable">$schema</span>"</span>: <span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span>,
+      <span class="hljs-string">"id"</span>: <span class="hljs-string">"http://jsonschema.net#"</span>,
+      <span class="hljs-string">"type"</span>: <span class="hljs-string">"object"</span>,
+      <span class="hljs-string">"title"</span>: <span class="hljs-string">"root"</span>,
+      <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+      <span class="hljs-string">"additionalProperties"</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-string">"properties"</span>: {
+        <span class="hljs-string">"language"</span>: {
+          <span class="hljs-string">"type"</span>: <span class="hljs-string">"string"</span>,
+          <span class="hljs-string">"title"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"minLength"</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-string">"additionalProperties"</span>: <span class="hljs-literal">false</span>
+        },
+        <span class="hljs-string">"country"</span>: {
+          <span class="hljs-string">"type"</span>: <span class="hljs-string">"string"</span>,
+          <span class="hljs-string">"title"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"minLength"</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-string">"additionalProperties"</span>: <span class="hljs-literal">false</span>
+        },
+        <span class="hljs-string">"portal"</span>: {
+          <span class="hljs-string">"type"</span>: <span class="hljs-string">"string"</span>,
+          <span class="hljs-string">"title"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"minLength"</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-string">"additionalProperties"</span>: <span class="hljs-literal">false</span>
+        },
+        <span class="hljs-string">"application"</span>: {
+          <span class="hljs-string">"type"</span>: <span class="hljs-string">"string"</span>,
+          <span class="hljs-string">"title"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"minLength"</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-string">"additionalProperties"</span>: <span class="hljs-literal">false</span>
+        },
+        <span class="hljs-string">"recordLocator"</span>: {
+          <span class="hljs-string">"type"</span>: <span class="hljs-string">"string"</span>,
+          <span class="hljs-string">"title"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"minLength"</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-string">"additionalProperties"</span>: <span class="hljs-literal">false</span>
+        },
+        <span class="hljs-string">"flights"</span>: {
+          <span class="hljs-string">"type"</span>: <span class="hljs-string">"array"</span>,
+          <span class="hljs-string">"title"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"minItems"</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-string">"uniqueItems"</span>: <span class="hljs-literal">false</span>,
+          <span class="hljs-string">"additionalProperties"</span>: <span class="hljs-literal">false</span>,
+          <span class="hljs-string">"items"</span>: {
+            <span class="hljs-string">"type"</span>: <span class="hljs-string">"object"</span>,
+            <span class="hljs-string">"title"</span>: <span class="hljs-string">""</span>,
+            <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+            <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+            <span class="hljs-string">"additionalProperties"</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">"properties"</span>: {
+              <span class="hljs-string">"id"</span>: {
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"string"</span>,
+                <span class="hljs-string">"title"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"minLength"</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-string">"additionalProperties"</span>: <span class="hljs-literal">false</span>
+              },
+              <span class="hljs-string">"departureAirport"</span>: {
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"string"</span>,
+                <span class="hljs-string">"title"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"minLength"</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-string">"additionalProperties"</span>: <span class="hljs-literal">false</span>
+              },
+              <span class="hljs-string">"arrivalAirport"</span>: {
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"string"</span>,
+                <span class="hljs-string">"title"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"minLength"</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-string">"additionalProperties"</span>: <span class="hljs-literal">false</span>
+              },
+              <span class="hljs-string">"departureDateTime"</span>: {
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"string"</span>,
+                <span class="hljs-string">"title"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"minLength"</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-string">"additionalProperties"</span>: <span class="hljs-literal">false</span>
+              },
+              <span class="hljs-string">"operatingAirline"</span>: {
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"string"</span>,
+                <span class="hljs-string">"title"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"minLength"</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-string">"additionalProperties"</span>: <span class="hljs-literal">false</span>
+              },
+              <span class="hljs-string">"flightNumber"</span>: {
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"string"</span>,
+                <span class="hljs-string">"title"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"minLength"</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-string">"additionalProperties"</span>: <span class="hljs-literal">false</span>
+              },
+              <span class="hljs-string">"passengers"</span>: {
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"array"</span>,
+                <span class="hljs-string">"title"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+                <span class="hljs-string">"minItems"</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-string">"uniqueItems"</span>: <span class="hljs-literal">false</span>,
+                <span class="hljs-string">"additionalProperties"</span>: <span class="hljs-literal">false</span>,
+                <span class="hljs-string">"items"</span>: {
+                  <span class="hljs-string">"type"</span>: <span class="hljs-string">"object"</span>,
+                  <span class="hljs-string">"title"</span>: <span class="hljs-string">""</span>,
+                  <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+                  <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+                  <span class="hljs-string">"additionalProperties"</span>: <span class="hljs-literal">false</span>,
+                  <span class="hljs-string">"properties"</span>: {
+                    <span class="hljs-string">"lastName"</span>: {
+                      <span class="hljs-string">"type"</span>: <span class="hljs-string">"string"</span>,
+                      <span class="hljs-string">"title"</span>: <span class="hljs-string">""</span>,
+                      <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+                      <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+                      <span class="hljs-string">"minLength"</span>: <span class="hljs-number">0</span>,
+                      <span class="hljs-string">"additionalProperties"</span>: <span class="hljs-literal">false</span>
+                    },
+                    <span class="hljs-string">"name"</span>: {
+                      <span class="hljs-string">"type"</span>: <span class="hljs-string">"string"</span>,
+                      <span class="hljs-string">"title"</span>: <span class="hljs-string">""</span>,
+                      <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+                      <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+                      <span class="hljs-string">"minLength"</span>: <span class="hljs-number">0</span>,
+                      <span class="hljs-string">"additionalProperties"</span>: <span class="hljs-literal">false</span>
+                    },
+                    <span class="hljs-string">"seatNumber"</span>: {
+                      <span class="hljs-string">"type"</span>: <span class="hljs-string">"string"</span>,
+                      <span class="hljs-string">"title"</span>: <span class="hljs-string">""</span>,
+                      <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+                      <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+                      <span class="hljs-string">"minLength"</span>: <span class="hljs-number">0</span>,
+                      <span class="hljs-string">"additionalProperties"</span>: <span class="hljs-literal">false</span>
+                    },
+                    <span class="hljs-string">"ticketNumber"</span>: {
+                      <span class="hljs-string">"type"</span>: <span class="hljs-string">"string"</span>,
+                      <span class="hljs-string">"title"</span>: <span class="hljs-string">""</span>,
+                      <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+                      <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+                      <span class="hljs-string">"minLength"</span>: <span class="hljs-number">0</span>,
+                      <span class="hljs-string">"additionalProperties"</span>: <span class="hljs-literal">false</span>
+                    },
+                    <span class="hljs-string">"paxSegmentID"</span>: {
+                      <span class="hljs-string">"type"</span>: <span class="hljs-string">"string"</span>,
+                      <span class="hljs-string">"title"</span>: <span class="hljs-string">""</span>,
+                      <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+                      <span class="hljs-string">"name"</span>: <span class="hljs-string">""</span>,
+                      <span class="hljs-string">"minLength"</span>: <span class="hljs-number">0</span>,
+                      <span class="hljs-string">"additionalProperties"</span>: <span class="hljs-literal">false</span>
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#c8ed3dd55565cc46e24f6ea772e5bed6" class="pull-right">Toggle</a></li><li id="c8ed3dd55565cc46e24f6ea772e5bed6" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">flowId</span>: <span class="hljs-string">a4f390e1-af0d-4bcd-8682-fd932d2d8ad</span><br><span class="hljs-attribute">trackId</span>: <span class="hljs-string">4264964</span><br></code></pre><h5>Body</h5><pre><code>{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">code</span>": <span class="hljs-value"><span class="hljs-number">200</span></span>,
+        "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">""</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">flights</span>": <span class="hljs-value">[
+            {
+                "<span class="hljs-attribute">passengers</span>": <span class="hljs-value">[
+                    {
+                        "<span class="hljs-attribute">paxSegmentID</span>": <span class="hljs-value"><span class="hljs-string">"sdfsd324324"</span></span>,
+                        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"LISA"</span></span>,
+                        "<span class="hljs-attribute">lastName</span>": <span class="hljs-value"><span class="hljs-string">"SIMPSON"</span></span>,
+                        "<span class="hljs-attribute">ticketNumber</span>": <span class="hljs-value"><span class="hljs-string">"9572483127885"</span></span>,
+                        "<span class="hljs-attribute">seat</span>": <span class="hljs-value"><span class="hljs-string">"5A"</span></span>,
+                        "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"NOTCHECKED"</span></span>,
+                        "<span class="hljs-attribute">seatStatus</span>": <span class="hljs-value"><span class="hljs-string">"RELEASED"</span></span>,
+                        "<span class="hljs-attribute">seatMesages</span>": <span class="hljs-value">[
+                            {
+                                "<span class="hljs-attribute">text</span>": <span class="hljs-value"><span class="hljs-string">"se libero bien el asiento"</span>
+                            </span>}
+                        ]</span>,
+                        "<span class="hljs-attribute">statusMessages</span>": <span class="hljs-value">[
+                            {
+                                "<span class="hljs-attribute">text</span>": <span class="hljs-value"><span class="hljs-string">"el pasajero esta chequeable"</span>
+                            </span>}
+                        ]
+                    </span>}
+                ]
+            </span>}
+        ]
+    </span>}
+</span>}
+</code></pre><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"http://jsonschema.net#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"root"</span></span>,
+  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+      "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">code</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"integer"</span></span>,
+          "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+          "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+          "<span class="hljs-attribute">minimum</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+          "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">message</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+          "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+          "<span class="hljs-attribute">minLength</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+          "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+        </span>}
+      </span>}
+    </span>}</span>,
+    "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+      "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">flights</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+          "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+          "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+          "<span class="hljs-attribute">minItems</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+          "<span class="hljs-attribute">uniqueItems</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+          "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+          "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+            "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+            "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+            "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+            "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">passengers</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                "<span class="hljs-attribute">minItems</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+                "<span class="hljs-attribute">uniqueItems</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+                "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+                "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                  "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+                  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">paxSegmentID</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">minLength</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+                      "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">minLength</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+                      "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">lastName</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">minLength</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+                      "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">ticketNumber</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">minLength</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+                      "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">seat</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">minLength</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+                      "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">minLength</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+                      "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">seatStatus</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">minLength</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+                      "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">seatMesages</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">minItems</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+                      "<span class="hljs-attribute">uniqueItems</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+                      "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+                      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                        "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+                        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                          "<span class="hljs-attribute">text</span>": <span class="hljs-value">{
+                            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                            "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                            "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                            "<span class="hljs-attribute">minLength</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+                            "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+                          </span>}
+                        </span>}
+                      </span>}
+                    </span>}</span>,
+                    "<span class="hljs-attribute">statusMessages</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                      "<span class="hljs-attribute">minItems</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+                      "<span class="hljs-attribute">uniqueItems</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+                      "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+                      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+                        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                        "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                        "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+                        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                          "<span class="hljs-attribute">text</span>": <span class="hljs-value">{
+                            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                            "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                            "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+                            "<span class="hljs-attribute">minLength</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+                            "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+                          </span>}
+                        </span>}
+                      </span>}
+                    </span>}
+                  </span>}
+                </span>}
+              </span>}
+            </span>}
+          </span>}
+        </span>}
+      </span>}
+    </span>}
+  </span>}
+</span>}  
+</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>500</code></strong><a data-toggle="collapse" data-target="#789dc1f5c69bcebe470807bd6d76b4c3" class="pull-right">Toggle</a></li><li id="789dc1f5c69bcebe470807bd6d76b4c3" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{ "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Fatal Error"</span> </span>}
+</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>501</code></strong><a data-toggle="collapse" data-target="#d23d92560079df65380b99e955a45c4d" class="pull-right">Toggle</a></li><li id="d23d92560079df65380b99e955a45c4d" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{ "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"No paso la validacion del apellido o record locator, intente de nuevo"</span> </span>} 
+</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>502</code></strong><a data-toggle="collapse" data-target="#7c9cd5f84760f0a56371e775dfda5025" class="pull-right">Toggle</a></li><li id="7c9cd5f84760f0a56371e775dfda5025" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{ "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Error llamando al servicio, trate en un rato"</span> </span>}         
+</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>503</code></strong><a data-toggle="collapse" data-target="#8e62a22ff5805cf066c103db15d37b60" class="pull-right">Toggle</a></li><li id="8e62a22ff5805cf066c103db15d37b60" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{ "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"No disponible el checkin"</span> </span>}
 </code></pre></li></ul></section></div></div></div><div><div class="panel panel-default"><div class="panel-heading"><h3 id="travel-documents">Travel Documents&nbsp;<a href="#travel-documents"><i class="fa fa-link"></i></a></h3></div><div class="panel-body"><h4 id="travel-documents-email-boarding-pass">Email Boarding Pass&nbsp;<a href="#travel-documents-email-boarding-pass"><i class="fa fa-link"></i></a></h4><section id="travel-documents-email-boarding-pass-post" class="panel panel-success"><div class="panel-heading"><div style="float:right"><span style="text-transform: lowercase">Send Email Boarding Pass</span></div><div style="float:left"><a href="#travel-documents-email-boarding-pass-post" class="btn btn-xs btn-success">POST</a></div><div style="overflow:hidden"><code>/ws/api/checkin/1.0/rest/document/send_email_boarding_pass</code></div></div><ul class="list-group"><li class="list-group-item"><strong>Request</strong><a data-toggle="collapse" data-target="#e4ebd885babbd5cb842482d2a29756e1" class="pull-right">Toggle</a></li><li id="e4ebd885babbd5cb842482d2a29756e1" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br></code></pre><h5>Body</h5><pre><code>{
     "<span class="hljs-attribute">language</span>":<span class="hljs-value"><span class="hljs-string">"ES"</span></span>,
     "<span class="hljs-attribute">country</span>":<span class="hljs-value"><span class="hljs-string">"CL"</span></span>,
@@ -3731,7 +4162,7 @@ a.list-group-item.heading {
         </span>}
     ]
 </span>}
-</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#dd7cb010f00849eedf53f05a4bcf4b98" class="pull-right">Toggle</a></li><li id="dd7cb010f00849eedf53f05a4bcf4b98" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/pdf</span><br></code></pre></li></ul></section></div></div></div></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 04 Jul 2014</p><div id="localFile" style="display: none; position: absolute; top: 0; left: 0; width: 100%; color: white; background: red; font-size: 150%; text-align: center; padding: 1em;">This page may not display correctly when opened as a local file. Instead, view it from a web server.
+</code></pre></li><li class="list-group-item"><strong>Response&nbsp;&nbsp;<code>200</code></strong><a data-toggle="collapse" data-target="#dd7cb010f00849eedf53f05a4bcf4b98" class="pull-right">Toggle</a></li><li id="dd7cb010f00849eedf53f05a4bcf4b98" class="list-group-item panel-collapse collapse"><div class="description"></div><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/pdf</span><br></code></pre></li></ul></section></div></div></div></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 07 Jul 2014</p><div id="localFile" style="display: none; position: absolute; top: 0; left: 0; width: 100%; color: white; background: red; font-size: 150%; text-align: center; padding: 1em;">This page may not display correctly when opened as a local file. Instead, view it from a web server.
 
 </div></body><script src="//code.jquery.com/jquery-1.11.0.min.js"></script><script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script><script>(function() {
   if (location.protocol === 'file:') {
