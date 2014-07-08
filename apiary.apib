@@ -18,7 +18,8 @@ API Rest para la aplicación checkin de LAN.com
             "language": "PT",
             "check_input": "6VKQD5",
             "lastName": "SIMPSON",
-            "gds" : 1
+            "gds" : 1,
+            "channel" : "WEB"
         }
 
     + Schema
@@ -56,7 +57,12 @@ API Rest para la aplicación checkin de LAN.com
                 "gds": {
                   "type": number,
                   "additionalProperties": false,
-                  "descripcion" : "1 sabre, 2 amadeus"
+                  "description" : "1 sabre, 2 amadeus"
+                },
+                "channel": {
+                  "type": "string",
+                  "additionalProperties": false,
+                  "description" : "Canal desde el cual se esta consumiendo el servicio, posibilidades WEB, MOBILE, KIOSKO"
                 }
               }
             }
@@ -729,7 +735,7 @@ API Rest para la aplicación checkin de LAN.com
                                                                                             "status": {
                                                                                                 "type":"string",
                                                                                                 "required":false,
-                                                                                                "description" : "status del pasajero en ese vuelo NOTCHECKED = se puede chequear, CHECKED = no se puede chequear"
+                                                                                                "description" : "status del pasajero en ese vuelo NOTCHECKED = se puede chequear, CHECKED = no se puede chequear, PRECHECK pasajero prechequeable, PRECHECKED pasajero prechequeado"
                                                                                             },
                                                                                             "ticketNumber": {
                                                                                                 "type":"string",
@@ -874,6 +880,7 @@ API Rest para la aplicación checkin de LAN.com
             "application": "checkin",
             "language": "PT",
             "country": "BR",
+            "channel" : "WEB",
             "legs": [
                 {
                     "departureAirport": "IGU",
@@ -1427,6 +1434,7 @@ API Rest para la aplicación checkin de LAN.com
             "recordLocator": "6VKQD5",
             "surName": "SIMPSON",
             "application": "checkin",
+            "channel" : "WEB",
             "legs": [
                 {
                     "id" : "01",
@@ -2111,6 +2119,229 @@ API Rest para la aplicación checkin de LAN.com
         { "title": "Request invalido" }
 
 
+## Add Pax FQTVs [/ws/api/common/1.0/rest/add_pax_fqtvs]
+### Add pax FQTVs  [POST]
+
++ Request (application/json)
+       
+        {
+            "application": "checkin",
+            "nationality": "BR",            
+            "portal": "personas",
+            "language": "PT",
+            "country": "BR",
+            "channel" : "WEB",
+            "fqtvs" : [
+                {
+                    "firstName" : "juan",
+                    "lastName" : "perez",
+                    "paxSegmentID" : "34dfsf32df",
+                    "airlineCode" : "JJ",
+                    "fqtv" : "32432453253"
+                }
+            ]
+        }
+
+
+    + Schema
+
+            {
+              "$schema": "http://json-schema.org/draft-04/schema#",
+              "id": "http://jsonschema.net#",
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "application": {
+                  "type": "string",
+                  "additionalProperties": false
+                },
+                "nationality": {
+                  "type": "string",
+                  "additionalProperties": false
+                },
+                "portal": {
+                  "type": "string",
+                  "additionalProperties": false
+                },
+                "language": {
+                  "type": "string",
+                  "additionalProperties": false
+                },
+                "country": {
+                  "type": "string",
+                  "additionalProperties": false
+                },
+                "fqtvs": {
+                  "type": "array",
+                  "additionalProperties": false,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "firstName": {
+                        "type": "string",
+                        "additionalProperties": false
+                      },
+                      "lastName": {
+                        "type": "string",
+                        "additionalProperties": false
+                      },
+                      "paxSegmentID": {
+                        "type": "string",
+                        "additionalProperties": false
+                      },
+                      "airlineCode": {
+                        "type": "string",
+                        "additionalProperties": false
+                      },
+                      "fqtv": {
+                        "type": "string",
+                        "additionalProperties": false
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+
+
++ Response 200 (application/json)
+
+
+    + Header
+
+            flowId:a4f390e1-af0d-4bcd-8682-fd932d2d8ad
+            trackId:4264964            
+    
+    + Body
+
+            {
+                "status": {
+                    "code": 200,
+                    "message": ""
+                },
+                "data": {
+                    "fqtvs" : [
+                        {
+                            "paxSegmentID" : "34dfsf32df",
+                            "airlineCode" : "JJ",
+                            "fqtv" : "32432453253"
+                            "status" : "ADDED",
+                            "messages" : [
+                                {
+                                    "text" : "fqtv agregado"
+                                }
+                            ]
+                        },
+                        {
+                            "paxSegmentID" : "34dfsf32df",
+                            "airlineCode" : "JJ",
+                            "fqtv" : "32432453253",
+                            "status" : "NOTADDED",
+                            "messages" : [
+                                {
+                                    "text" : "fqtv no agregado"
+                                }
+                            ]
+                        }
+                    ]
+
+                }
+            }
+
+    + Schema
+
+                {
+                  "$schema": "http://json-schema.org/draft-04/schema#",
+                  "id": "http://jsonschema.net#",
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "status": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "code": {
+                          "type": "integer",
+                          "additionalProperties": false
+                        },
+                        "message": {
+                          "type": "string",
+                          "additionalProperties": false
+                        }
+                      },
+                      "required": [
+                        "code",
+                        "message"
+                      ]
+                    },
+                    "data": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "fqtvs": {
+                          "type": "array",
+                          "additionalProperties": false,
+                          "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                              "paxSegmentID": {
+                                "type": "string",
+                                "additionalProperties": false
+                              },
+                              "airlineCode": {
+                                "type": "string",
+                                "additionalProperties": false
+                              },
+                              "fqtv": {
+                                "type": "string",
+                                "additionalProperties": false
+                              },
+                              "status": {
+                                "type": "string",
+                                "additionalProperties": false
+                              },
+                              "messages": {
+                                "type": "array",
+                                "additionalProperties": false,
+                                "items": {
+                                  "type": "object",
+                                  "additionalProperties": false,
+                                  "properties": {
+                                    "text": {
+                                      "type": "string",
+                                      "additionalProperties": false
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+
++ Response 500 (application/json)
+
+        { "title": "Fatal Error" }
+
++ Response 502 (application/json)  
+
+        { "title": "Error llamando al servicio, trate en un rato" }         
+
++ Response 503 (application/json)
+
+        { "title": "No disponible el checkin" }
+
++ Response 520 (application/json)
+
+        { "title": "Request invalido" }
+
+
 ## Identification Documents [/ws/api/common/1.0/rest/display_identification_document]
 ### Get Identification document [POST]
 
@@ -2135,7 +2366,8 @@ API Rest para la aplicación checkin de LAN.com
             ],
             "portal": "personas",
             "language": "PT",
-            "country": "BR"
+            "country": "BR",
+            "channel" : "WEB"
         }
 
     + Schema
@@ -2341,6 +2573,7 @@ API Rest para la aplicación checkin de LAN.com
             "portal": "personas",
             "application": "checkin",
             "recordLocator": "6VKQD5",
+            "channel" : "WEB",
             "segments": [
                 {
                     "id": "3339",
@@ -3280,6 +3513,7 @@ API Rest para la aplicación checkin de LAN.com
             "portal": "personas",
             "application": "checkin",
             "recordLocator": "6VKQD5",
+            "channel" : "WEB",
             "flights" : [
                 {
                     "id": "01",
@@ -3601,6 +3835,7 @@ API Rest para la aplicación checkin de LAN.com
             "recordLocator": "6VKQD5",
             "surName": "SIMPSON",
             "application": "checkin",
+            "channel" : "WEB",
             "segments": [
                 {
                     "id" : "01",
@@ -4394,6 +4629,7 @@ API Rest para la aplicación checkin de LAN.com
             "portal": "personas",
             "application": "checkin",
             "recordLocator": "6VKQD5",
+            "channel" : "WEB",
             "flights" : [
                 {
                     "id": "01",
@@ -4862,6 +5098,7 @@ API Rest para la aplicación checkin de LAN.com
             "application":"checkin",
             "email":"jsd@csda.com",
             "recordLocator" : "dsfsfd",
+            "channel" : "WEB",
             "boardingPassElementRequest":[
                 {
                     "paxSegmentID":2317154800006512
@@ -4946,6 +5183,7 @@ API Rest para la aplicación checkin de LAN.com
             "application":"checkin",
             "email":"jlueiza@gmail.com",
             "recordLocator" : "sdffds",
+            "channel" : "WEB",
             "boardingPassElementRequest":[
                 {
                     "paxSegmentID":2317154800006590
@@ -5028,6 +5266,7 @@ API Rest para la aplicación checkin de LAN.com
             "portal":"personas",
             "application":"checkin",
             "recordLocator" : "sdfdad",
+            "channel" : "WEB",
             "boardingPassElementRequest":[
                 {
                     "paxSegmentID":"2317154800006590"
