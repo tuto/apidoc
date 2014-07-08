@@ -17,7 +17,8 @@ API Rest para la aplicación checkin de LAN.com
             "country": "BR",
             "language": "PT",
             "check_input": "6VKQD5",
-            "lastName": "SIMPSON"
+            "lastName": "SIMPSON",
+            "gds" : 1
         }
 
     + Schema
@@ -29,44 +30,35 @@ API Rest para la aplicación checkin de LAN.com
               "additionalProperties": false,
               "properties": {
                 "portal": {
-                  "id": "http://jsonschema.net/portal#",
                   "type": "string",
                   "additionalProperties": false
                 },
                 "application": {
-                  "id": "http://jsonschema.net/application#",
                   "type": "string",
                   "additionalProperties": false
                 },
                 "country": {
-                  "id": "http://jsonschema.net/country#",
                   "type": "string",
                   "additionalProperties": false
                 },
                 "language": {
-                  "id": "http://jsonschema.net/language#",
                   "type": "string",
                   "additionalProperties": false
                 },
                 "check_input": {
-                  "id": "http://jsonschema.net/check_input#",
                   "type": "string",
                   "additionalProperties": false
                 },
                 "lastName": {
-                  "id": "http://jsonschema.net/lastName#",
                   "type": "string",
                   "additionalProperties": false
+                },
+                "gds": {
+                  "type": number,
+                  "additionalProperties": false,
+                  "descripcion" : "1 sabre, 2 amadeus"
                 }
-              },
-              "required": [
-                "portal",
-                "application",
-                "country",
-                "language",
-                "check_input",
-                "lastName"
-              ]
+              }
             }
 
         
@@ -445,7 +437,8 @@ API Rest para la aplicación checkin de LAN.com
                                     "text": "Reserva no habilitada para checkin",
                                     "url": "lan.com/cgi-bin/checkin/paso2.cgi"
                                 }
-                            ]
+                            ],
+                            "gds": 1
                         }
                     ]
                 }
@@ -793,7 +786,28 @@ API Rest para la aplicación checkin de LAN.com
                                                 "type":"string",
                                                 "required":false,
                                                 "description" : "status de la reserva ENABLE = se puede chequear, DISABLE =  no se puede chequear "
-                                            }
+                                            },
+                                            "messages": {
+                                                "type":"array",
+                                                "required":false,
+                                                "items":
+                                                {
+                                                    "type":"object",
+                                                    "required":false,
+                                                    "properties":{
+                                                        "text": {
+                                                            "type":"string",
+                                                            "required":false,
+                                                            "description" : "texto que describe el status de una reserva"
+                                                        }
+                                                    }
+                                                }                               
+                                            },
+                                            "gds": {
+                                                "type":number,
+                                                "required":false,
+                                                "description" : "gds a la que pertenece la reserva 1 sabre, 2 amadeus"
+                                            },
                                         }
                                     }
                                 
@@ -1379,10 +1393,6 @@ API Rest para la aplicación checkin de LAN.com
 + Response 500 (application/json)
 
         { "title": "Fatal Error" }
-
-+ Response 501 (application/json)
-
-        { "title": "No paso la validacion del apellido o record locator, intente de nuevo" } 
 
 + Response 502 (application/json)  
 
@@ -2084,16 +2094,9 @@ API Rest para la aplicación checkin de LAN.com
             }         
 
 
-
-
-
 + Response 500 (application/json)
 
         { "title": "Fatal Error" }
-
-+ Response 501 (application/json)
-
-        { "title": "No paso la validacion del apellido o record locator, intente de nuevo" } 
 
 + Response 502 (application/json)  
 
@@ -2103,8 +2106,9 @@ API Rest para la aplicación checkin de LAN.com
 
         { "title": "No disponible el checkin" }
 
++ Response 520 (application/json)
 
-
+        { "title": "Request invalido" }
 
 
 ## Identification Documents [/ws/api/common/1.0/rest/display_identification_document]
@@ -2310,6 +2314,14 @@ API Rest para la aplicación checkin de LAN.com
 + Response 500 (application/json)
 
         { "title": "Fatal Error" }
+
++ Response 502 (application/json)  
+
+        { "title": "Error llamando al servicio, trate en un rato" }         
+
++ Response 503 (application/json)
+
+        { "title": "No disponible el checkin" }
 
 + Response 520 (application/json)
 
@@ -3243,10 +3255,6 @@ API Rest para la aplicación checkin de LAN.com
 
         { "title": "Fatal Error" }
 
-+ Response 501 (application/json)
-
-        { "title": "No paso la validacion del apellido o record locator, intente de nuevo" } 
-
 + Response 502 (application/json)  
 
         { "title": "Error llamando al servicio, trate en un rato" }         
@@ -3254,6 +3262,10 @@ API Rest para la aplicación checkin de LAN.com
 + Response 503 (application/json)
 
         { "title": "No disponible el checkin" }
+
++ Response 520 (application/json)
+
+        { "title": "Request invalido" }
 
 
 
@@ -3439,8 +3451,6 @@ API Rest para la aplicación checkin de LAN.com
             }
 
 
-
-
 + Response 200
 
 
@@ -3483,70 +3493,68 @@ API Rest para la aplicación checkin de LAN.com
                 }
             }    
 
-            + Schema
+    + Schema
 
-                {
-                  "$schema": "http://json-schema.org/draft-04/schema#",
-                  "id": "http://jsonschema.net#",
+            {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "id": "http://jsonschema.net#",
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                "status": {
                   "type": "object",
                   "additionalProperties": false,
                   "properties": {
-                    "status": {
-                      "type": "object",
+                    "code": {
+                      "type": "integer",
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "data": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "flights": {
+                      "type": "array",
                       "additionalProperties": false,
-                      "properties": {
-                        "code": {
-                          "type": "integer",
-                          "additionalProperties": false
-                        }
-                      }
-                    },
-                    "data": {
-                      "type": "object",
-                      "additionalProperties": false,
-                      "properties": {
-                        "flights": {
-                          "type": "array",
-                          "additionalProperties": false,
-                          "items": {
-                            "type": "object",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "additionalProperties": false
+                          },
+                          "passengers": {
+                            "type": "array",
                             "additionalProperties": false,
-                            "properties": {
-                              "id": {
-                                "type": "string",
-                                "additionalProperties": false
-                              },
-                              "passengers": {
-                                "type": "array",
-                                "additionalProperties": false,
-                                "items": {
-                                  "type": "object",
+                            "items": {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "properties": {
+                                "paxSegmentID": {
+                                  "type": "string",
+                                  "additionalProperties": false
+                                },
+                                "status": {
+                                  "type": "string",
+                                  "additionalProperties": false
+                                },
+                                "seat": {
+                                  "type": "string",
+                                  "additionalProperties": false
+                                },
+                                "messages": {
+                                  "type": "array",
                                   "additionalProperties": false,
-                                  "properties": {
-                                    "paxSegmentID": {
-                                      "type": "string",
-                                      "additionalProperties": false
-                                    },
-                                    "status": {
-                                      "type": "string",
-                                      "additionalProperties": false
-                                    },
-                                    "seat": {
-                                      "type": "string",
-                                      "additionalProperties": false
-                                    },
-                                    "messages": {
-                                      "type": "array",
-                                      "additionalProperties": false,
-                                      "items": {
-                                        "type": "object",
-                                        "additionalProperties": false,
-                                        "properties": {
-                                          "text": {
-                                            "type": "string",
-                                            "additionalProperties": false
-                                          }
-                                        }
+                                  "items": {
+                                    "type": "object",
+                                    "additionalProperties": false,
+                                    "properties": {
+                                      "text": {
+                                        "type": "string",
+                                        "additionalProperties": false
                                       }
                                     }
                                   }
@@ -3559,16 +3567,25 @@ API Rest para la aplicación checkin de LAN.com
                     }
                   }
                 }
+                }
+                }
            
 
 + Response 500 (application/json)
 
         { "title": "Fatal Error" }
 
++ Response 502 (application/json)  
+
+        { "title": "Error llamando al servicio, trate en un rato" }         
+
++ Response 503 (application/json)
+
+        { "title": "No disponible el checkin" }
+
 + Response 520 (application/json)
 
         { "title": "Request invalido" }
-
 
 
 # Group Checkin
@@ -3848,8 +3865,6 @@ API Rest para la aplicación checkin de LAN.com
                 }
             }
             
-
-
     
         
 + Response 200 (application/json)
@@ -4820,10 +4835,6 @@ API Rest para la aplicación checkin de LAN.com
 
         { "title": "Fatal Error" }
 
-+ Response 501 (application/json)
-
-        { "title": "No paso la validacion del apellido o record locator, intente de nuevo" } 
-
 + Response 502 (application/json)  
 
         { "title": "Error llamando al servicio, trate en un rato" }         
@@ -4833,6 +4844,9 @@ API Rest para la aplicación checkin de LAN.com
         { "title": "No disponible el checkin" }
 
 
++ Response 520 (application/json)
+
+        { "title": "Request invalido" }
 
 
 # Group Travel Documents
@@ -4903,6 +4917,22 @@ API Rest para la aplicación checkin de LAN.com
                 }
             }
 
++ Response 500 (application/json)
+
+        { "title": "Fatal Error" }
+
++ Response 502 (application/json)  
+
+        { "title": "Error llamando al servicio, trate en un rato" }         
+
++ Response 503 (application/json)
+
+        { "title": "No disponible el checkin" }
+
+
++ Response 520 (application/json)
+
+        { "title": "Request invalido" }
 
 ## Mobile Boarding Pass [/ws/api/checkin/1.0/rest/document/send_mobile_boarding_pass]
 ### Send Mobile Boarding Pass [POST]
@@ -4970,6 +5000,23 @@ API Rest para la aplicación checkin de LAN.com
                 }
             }
 
++ Response 500 (application/json)
+
+        { "title": "Fatal Error" }
+
++ Response 502 (application/json)  
+
+        { "title": "Error llamando al servicio, trate en un rato" }         
+
++ Response 503 (application/json)
+
+        { "title": "No disponible el checkin" }
+
+
++ Response 520 (application/json)
+
+        { "title": "Request invalido" }
+
 ## Boarding Pass pdf  [/ws/api/checkin/1.0/rest/document/boarding_pass_pdf]
 ### Get Boarding Pass in pdf format [POST]
 
@@ -4991,3 +5038,21 @@ API Rest para la aplicación checkin de LAN.com
     
 
 + Response 200 (application/pdf)
+
+
++ Response 500 (application/json)
+
+        { "title": "Fatal Error" }
+
++ Response 502 (application/json)  
+
+        { "title": "Error llamando al servicio, trate en un rato" }         
+
++ Response 503 (application/json)
+
+        { "title": "No disponible el checkin" }
+
+
++ Response 520 (application/json)
+
+        { "title": "Request invalido" }
