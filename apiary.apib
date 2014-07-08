@@ -5099,11 +5099,25 @@ API Rest para la aplicación checkin de LAN.com
             "email":"jsd@csda.com",
             "recordLocator" : "dsfsfd",
             "channel" : "WEB",
-            "boardingPassElementRequest":[
+            "flights" : [
                 {
-                    "paxSegmentID":2317154800006512
+                    "id": "01",
+                    "departureAirport": "IGU",
+                    "arrivalAirport": "CGH",
+                    "departureDateTime": "2014-05-07T16:07",
+                    "operatingAirline": "JJ",
+                    "flightNumber": "3339",
+                    "passengers" : [
+                        {
+                            "lastName": "SIMPSON",
+                            "name": "LISA",
+                            "seatNumber": "5A",
+                            "ticketNumber": "9572483127885",
+                            "paxSegmentID" : "dsf23fdfdsf"
+                        }
+                    ]
                 }
-            ]
+            ]           
         }
 
 
@@ -5184,11 +5198,25 @@ API Rest para la aplicación checkin de LAN.com
             "email":"jlueiza@gmail.com",
             "recordLocator" : "sdffds",
             "channel" : "WEB",
-            "boardingPassElementRequest":[
+            "flights" : [
                 {
-                    "paxSegmentID":2317154800006590
+                    "id": "01",
+                    "departureAirport": "IGU",
+                    "arrivalAirport": "CGH",
+                    "departureDateTime": "2014-05-07T16:07",
+                    "operatingAirline": "JJ",
+                    "flightNumber": "3339",
+                    "passengers" : [
+                        {
+                            "lastName": "SIMPSON",
+                            "name": "LISA",
+                            "seatNumber": "5A",
+                            "ticketNumber": "9572483127885",
+                            "paxSegmentID" : "dsf23fdfdsf"
+                        }
+                    ]
                 }
-            ]
+            ]    
         }
 
 + Response 200 (application/json)       
@@ -5267,13 +5295,82 @@ API Rest para la aplicación checkin de LAN.com
             "application":"checkin",
             "recordLocator" : "sdfdad",
             "channel" : "WEB",
-            "boardingPassElementRequest":[
+            "flights" : [
                 {
-                    "paxSegmentID":"2317154800006590"
+                    "id": "01",
+                    "departureAirport": "IGU",
+                    "arrivalAirport": "CGH",
+                    "departureDateTime": "2014-05-07T16:07",
+                    "operatingAirline": "JJ",
+                    "flightNumber": "3339",
+                    "passengers" : [
+                        {
+                            "lastName": "SIMPSON",
+                            "name": "LISA",
+                            "seatNumber": "5A",
+                            "ticketNumber": "9572483127885",
+                            "paxSegmentID" : "dsf23fdfdsf"
+                        }
+                    ]
                 }
-            ]
+            ]    
         }
 
+    
+
++ Response 200 (application/pdf)
+
+
++ Response 500 (application/json)
+
+        { "title": "Fatal Error" }
+
++ Response 502 (application/json)  
+
+        { "title": "Error llamando al servicio, trate en un rato" }         
+
++ Response 503 (application/json)
+
+        { "title": "No disponible el checkin" }
+
+
++ Response 520 (application/json)
+
+        { "title": "Request invalido" }
+
+
+## Precheck voucher pdf  [/ws/api/checkin/1.0/rest/document/precheck_voucher_pdf]
+### Get Precheck voucher in pdf format [POST]
+
++ Request (application/json)
+    
+        {
+            "language":"ES",
+            "country":"CL",
+            "portal":"personas",
+            "application":"checkin",
+            "recordLocator" : "sdfdad",
+            "channel" : "WEB",
+            "flights" : [
+                {
+                    "id": "01",
+                    "departureAirport": "IGU",
+                    "arrivalAirport": "CGH",
+                    "departureDateTime": "2014-05-07T16:07",
+                    "operatingAirline": "JJ",
+                    "flightNumber": "3339",
+                    "passengers" : [
+                        {
+                            "lastName": "SIMPSON",
+                            "name": "LISA",
+                            "seatNumber": "5A",
+                            "ticketNumber": "9572483127885",
+                            "paxSegmentID" : "dsf23fdfdsf"
+                        }
+                    ]
+                }
+            ]    
+        }
     
 
 + Response 200 (application/pdf)
